@@ -13,10 +13,12 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+  public function index()
+{
+    $data= Service::all();
+    return view('Service.service',['service'=>$data]); 
+}
+
 
     /**
      * Show the form for creating a new resource.

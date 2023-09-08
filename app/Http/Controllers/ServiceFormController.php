@@ -36,8 +36,21 @@ class ServiceFormController extends Controller
      */
     public function store(StoreService_formRequest $request)
     {
-        //
+           $serviceForm = new Service_form;
+    
+        // Set the values for the name and password fields
+        $serviceForm->service = $request->input('service');
+        $serviceForm->description = $request->input('description');
+        $serviceForm->date = $request->input('date');
+        $serviceForm->time = $request->input('time');
+    
+        // Save the model to the database
+        $serviceForm->save();
+    
+        // Redirect to the home route
+        return redirect()->route('Service.service');
     }
+    
 
     /**
      * Display the specified resource.
