@@ -15,7 +15,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $data= Item::all();
+        return view('Item.item',['item'=>$data]);
     }
 
     /**

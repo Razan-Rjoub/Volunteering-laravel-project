@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DonationController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +32,34 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+
+
+
+
+
+
+
+
+Route::get('/', function () {
+    return view('Home.index');
+});
+Route::get('/form', function () {
+    return view('Form');
+});
+Route::get('/aboutus', function () {
+    return view('aboutus.aboutus');
+})->name('aboutus');
+
+Route::get('/contactus', function () {
+    return view('Contact.contactus');
+})->name('contact');
+
+Route::get('/',[CategoryController::class,'index'])->name('home');
+Route::get('/donation',[DonationController::class,'index'])->name('donation');
+
+Route::get('/item',[ItemController::class,'index'])->name('item');
+Route::get('/itemform', function () {
+    return view('Item.Form');
+});

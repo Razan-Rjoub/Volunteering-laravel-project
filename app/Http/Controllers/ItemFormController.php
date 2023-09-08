@@ -36,7 +36,30 @@ class ItemFormController extends Controller
      */
     public function store(StoreItem_formRequest $request)
     {
-        //
+        // $validatedData = $request->validate([
+        //     'description' => 'required',
+        //     'status' => 'required',
+        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        // ]);
+
+
+        // Upload and store the image
+        // $image = $request->file('image');
+        // $imageName = time() . '.' . $image->getClientOriginalExtension();
+        // $image->move(public_path('images/products'), $imageName);
+
+
+        // Create a new product with the image filename
+        // Item_form::create([
+        //     'user_id' => $userid,
+        //     'item_id' => $itemid,
+        //     'description' => $request->description,
+        //     'status' => $request->status,
+        //     'image' => $imageName,
+        // ]);
+
+        // return redirect()->route('/')->with(['success' => 'donation successfully
+        // ']);
     }
 
     /**
