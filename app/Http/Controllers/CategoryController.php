@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use App\Models\Donation;
 
 class CategoryController extends Controller
 {
@@ -12,7 +13,11 @@ class CategoryController extends Controller
     public function index()
     {
         $data= Category::all();
-        return view('Home.index',['category'=>$data]); 
+        $donationData = Donation::all();
+        return view('Home.index', [
+            'category' => $data,
+            'donation' => $donationData,
+        ]);
     }
 
     /**
