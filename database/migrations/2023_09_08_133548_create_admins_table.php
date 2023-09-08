@@ -1,3 +1,5 @@
+
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -13,14 +15,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
-            $table->mediumText('image');
-            $table->bigInteger('category_id')->unsigned();
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('admins');
     }
 };

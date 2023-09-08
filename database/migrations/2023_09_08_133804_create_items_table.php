@@ -1,3 +1,5 @@
+
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -13,13 +15,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('donations', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longText('description');
+            $table->string('description');
             $table->mediumText('image');
-            $table->Integer('amount_needed');
+          
             $table->timestamps();
+
         });
     }
 
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donations');
+        Schema::dropIfExists('items');
     }
 };
