@@ -62,6 +62,7 @@
 										</li>
 									</ul>
 								</li>
+								<li><a href="{{route('donation')}}">Donation</a></li>
 								<li><a href="{{route('aboutus')}}">About</a></li>
 								<li><a href="news.html">News</a></li>
 								<li><a href="{{route('contact')}}">Contact</a></li>
