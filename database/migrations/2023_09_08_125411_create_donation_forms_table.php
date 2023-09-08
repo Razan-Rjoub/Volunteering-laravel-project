@@ -1,4 +1,3 @@
-services
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -14,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('donation_forms', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->mediumText('image');
-            $table->bigInteger('category_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('donation_id')->unsigned();
+            $table->integer('price');
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('categories');
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('donation_id')->references('id')->on('donations');
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('donation_forms');
     }
 };

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->String('description');
             $table->String('status');
             $table->mediumText('image');
-            $table->timestamps();            
+            $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('item_id')->references('id')->on('items');
         });
