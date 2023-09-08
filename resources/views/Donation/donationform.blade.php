@@ -9,7 +9,6 @@
                         <input type="radio" id="amount-1" name="radio-amount" checked="true">
                         <span>$1</span>
                     </label>
-
                     <label for="amount-2" class="amount js-amount" data-value="5.00">
                         <input type="radio" id="amount-2" name="radio-amount">
                         <span>$5</span>
@@ -56,3 +55,11 @@
         </div>
 
     @endsection
+    <script src="style/js/bootstrap.bundle.min.js"></script>
+    <script src="style/js/tiny-slider.js"></script>
+    <script src="style/js/flatpickr.min.js"></script>
+    <script src="style/js/glightbox.min.js"></script>
+    <script src="style/js/aos.js"></script>
+    <script src="style/js/navbar.js"></script>
+    <script src="style/js/counter.js"></script>
+    <script src="style/js/custom.js"></script>
