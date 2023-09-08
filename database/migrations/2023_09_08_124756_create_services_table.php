@@ -1,4 +1,3 @@
-services
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -19,9 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->mediumText('image');
-            $table->bigInteger('category_id')->unsigned();
+            // $table->bigInteger('category_id')->unsigned();
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('categories');
+            // $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

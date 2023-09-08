@@ -13,12 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('service_forms', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('service_id')->unsigned();
             $table->string('description');
-            $table->mediumText('image');
+            $table->timestamp('time');
+            $table->date('Date');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('service_id')->references('id')->on('services');
         });
     }
 
@@ -29,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('service_forms');
     }
 };
