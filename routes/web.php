@@ -8,6 +8,13 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceFormController;
 
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,7 +61,11 @@ Route::get('/contactus', function () {
 })->name('contact');
 
 Route::get('/',[CategoryController::class,'index'])->name('home');
-Route::get('/donation',[DonationController::class,'index'])->name('donation');
+Route::get('/donation',[DonationController::class,'index'])->name('Give Donation');
+Route::get('/service',[ServiceController::class,'index'])->name('Give Services');
+Route::get('/item',[ItemController::class,'index'])->name('Give Items');
+Route::get('/donationform/{id}', [DonationController::class, 'form'])->name('donationform');
+Route::get('/submitdonation', [DonationController::class, 'submit'])->name('submitdonate');
 
 
 
