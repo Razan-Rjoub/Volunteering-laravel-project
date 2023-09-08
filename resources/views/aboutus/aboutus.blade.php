@@ -2,22 +2,7 @@
 @extends('layout.master')
 @section('title','Aboutus')
 	@section('content')
-	<div class="hero overlay" style="background-image: url('style/images/img_v_8-min.jpg')">
-		<div class="container">
-			<div class="row align-items-center justify-content-center">
-				<div class="col-lg-6 text-center">
-					<h1 class="heading text-white mb-2" data-aos="fade-up">About Us</h1>
-					<p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum minima dignissimos hic mollitia eius et quam ducimus maiores eos magni.</p>
-					<p data-aos="fade-up"  data-aos-delay="100">
-						<a href="#" class="btn btn-primary me-4">Donate Now</a> 
-					</p>		
-					
-				</div>
-
-				
-			</div>
-		</div>
-	</div>
+@include('Home.hero')
 
 	<div class="section sec-about">
 		<div class="container">
