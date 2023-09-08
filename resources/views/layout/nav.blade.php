@@ -14,14 +14,14 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
 
 
-	<link rel="stylesheet" href="style/fonts/icomoon/style.css">
-	<link rel="stylesheet" href="style/fonts/flaticon/font/flaticon.css">
+	<link rel="stylesheet" href="{{asset('style/fonts/icomoon/style.css')}}">
+	<link rel="stylesheet" href="{{asset('style/fonts/flaticon/font/flaticon.css')}}">
 
-	<link rel="stylesheet" href="style/css/tiny-slider.css">
-	<link rel="stylesheet" href="style/css/aos.css">
-	<link rel="stylesheet" href="style/css/flatpickr.min.css">
-	<link rel="stylesheet" href="style/css/glightbox.min.css">
-	<link rel="stylesheet" href="style/css/style.css">
+	<link rel="stylesheet" href="{{asset('style/css/tiny-slider.css')}}">
+	<link rel="stylesheet" href="{{asset('style/css/aos.css')}}">
+	<link rel="stylesheet" href="{{asset('style/css/flatpickr.min.css')}}">
+	<link rel="stylesheet" href="{{asset('style/css/glightbox.min.css')}}">
+	<link rel="stylesheet" href="{{asset('style/css/style.css')}}">
 
 	<title>@yield('title')</title>
 </head>

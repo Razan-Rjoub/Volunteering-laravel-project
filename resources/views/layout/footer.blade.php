@@ -90,16 +90,13 @@
     </div>
 </div>
 
-<script src="style/js/bootstrap.bundle.min.js"></script>
-<script src="style/js/tiny-slider.js"></script>
-
-<script src="style/js/flatpickr.min.js"></script>
-<script src="style/js/glightbox.min.js"></script>
-
-
-<script src="style/js/aos.js"></script>
-<script src="style/js/navbar.js"></script>
-<script src="style/js/counter.js"></script>
-<script src="style/js/custom.js"></script>
+<script src="{{asset('style/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('style/js/tiny-slider.js')}}"></script>
+<script src="{{asset('style/js/flatpickr.min.js')}}"></script>
+<script src="{{asset('style/js/glightbox.min.js')}}"></script>
+<script src="{{asset('style/js/aos.js')}}"></script>
+<script src="{{asset('style/js/navbar.js')}}"></script>
+<script src="{{asset('style/js/counter.js')}}"></script>
+<script src="{{asset('style/js/custom.js')}}"></script>
 </body>
 </html>
