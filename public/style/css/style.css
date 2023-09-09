@@ -8688,11 +8688,11 @@ textarea.form-control-lg {
         padding: 10px 10px;
         display: inline-block;
         text-decoration: none !important;
-        color: rgba(255, 255, 255, 0.5); }
+        color:black; }
         .site-nav .site-navigation .site-menu > li > a:hover {
-          color: #fff; }
+          color:#ffc85c; }
       .site-nav .site-navigation .site-menu > li.active > a {
-        color: #fff; }
+        color: #ffc85c }
     .site-nav .site-navigation .site-menu .has-children {
       position: relative; }
       .site-nav .site-navigation .site-menu .has-children > a {

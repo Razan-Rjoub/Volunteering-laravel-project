@@ -13,6 +13,9 @@ class Donation_form extends Model
         'price',
         'donation_id',
         'user_id',
+        'phone',
+        'name',
+        'email',
     ];
     public function donations()
     {
