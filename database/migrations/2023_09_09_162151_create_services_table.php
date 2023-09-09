@@ -1,5 +1,4 @@
 
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -20,7 +19,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->mediumText('image');
-          
             $table->timestamps();
 
         });
@@ -36,3 +34,4 @@ return new class extends Migration
         Schema::dropIfExists('services');
     }
 };
+

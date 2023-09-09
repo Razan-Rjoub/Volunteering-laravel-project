@@ -62,18 +62,19 @@ Route::get('/contactus', function () {
 
 Route::get('/',[CategoryController::class,'index'])->name('home');
 Route::get('/donation',[DonationController::class,'index'])->name('Give Donation');
-Route::get('/service',[ServiceController::class,'index'])->name('Give Services');
+
 Route::get('/item',[ItemController::class,'index'])->name('Give Items');
 Route::get('/donationform/{id}', [DonationController::class, 'form'])->name('donationform');
 Route::get('/submitdonation', [DonationController::class, 'submit'])->name('submitdonate');
 
 
 
+Route::get('/serviceform/{id}', [ServiceController::class, 'joinForm'])->name('serviceform');
+Route::post('/serviceform', [ServiceFormController::class,'store'])->name('service.store');
+Route::get('/service',[ServiceController::class,'index'])->name('Give Services');
+Route::get('/serviceform',[ServiceFormController::class,'index'])->name('Servicesform');
 
-Route::post('/service-form', [ServiceFormController::class, 'store'])->name('service-form.store');
 
-
-Route::get('/service',[ServiceController::class,'index'])->name('service');
 Route::get('/dash', function () {
     return view('dashboardbage.home');
 });

@@ -63,6 +63,7 @@
 									</ul>
 								</li>
 								<li><a href="{{route('Give Donation')}}">Donation</a></li>
+								<li><a href="{{route('Give Services')}}">Services</a></li>
 								<li><a href="{{route('aboutus')}}">About</a></li>
 								<li><a href="news.html">News</a></li>
 								<li><a href="{{route('contact')}}">Contact</a></li>

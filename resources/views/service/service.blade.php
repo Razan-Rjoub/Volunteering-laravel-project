@@ -2,7 +2,7 @@
 @section('title','services')
 	@section('content')
 
-    <div class="hero overlay" style="background-image: url('style/images/donation2.jpeg')">
+    <div class="hero overlay" style="background-image: url('style/images/donation2.jpeg')"> 
 		<div class="container">
 			<div class="row align-items-center justify-content-center">
 				<div class="col-lg-6 text-center">
@@ -52,76 +52,27 @@
 <div class="container mb-5">
     <div class="features-slider-wrap position-relative" data-aos="fade-up" data-aos-delay="200">
         <div class="row">
-            @foreach ($service as $index => $item)
-                <div class="col-lg-4 mx-auto"> <!-- Use pr-lg-2 for right margin on even indexes and pl-lg-2 for left margin on odd indexes -->
-                    <div class="causes-item bg-white">
-                        <a href="#"><img src="style/images/{{ $item->image }}" alt="Image" class="img-fluid mb-4 rounded" style="height: 350px; width:500px;" ></a>
-                        <div class="pb-5 pt-3">
-                            <h3><a href="#" class="join-button">{{ $item->name }}</a></h3>
-                            <div class="content-wrapper">
-                                <p>
-                                    {{ $item->description }}
-                                </p>
-                            </div>
-                            <div>
-                                <a href="#" class="btn btn-primary join-button">Join us</a>
-                            </div>
-                        </div>
-                    </div>
+        @foreach ($service as $index => $item)
+    <div class="col-lg-4 mx-auto">
+        <div class="causes-item bg-white">
+            <a href="#"><img src="style/images/{{ $item->image }}" alt="Image" class="img-fluid mb-4 rounded" style="height: 350px; width: 500px;"></a>
+            <div class="pb-5 pt-3">
+                <h3><a href="#" class="join-button">{{ $item->name }}</a></h3>
+                <div class="content-wrapper">
+                    <p>{{ $item->description }}</p>
                 </div>
-            @endforeach
+                <div>
+                    <a href="{{ route('serviceform', ['id' => $item->id]) }}" class="btn btn-primary join-button">Join us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
+
         </div>
     </div>
 </div>
-
-
-
-
-<br><br><br><br><br><br><br>
-
-<div class="container" id="join-form" style="display: none;">
-    <div class="row justify-content-center">
-        <div class="col-lg-6">
-            <h3>Join Us</h3>
-            <form method="POST" action="{{ route('service-form.store') }}">
-             @csrf
-                   <div class="form-group">
-                    <label for="service">Service Interested In</label>
-                    <select class="form-control" id="service" name="service">
-                        <option value="">Select Service</option> 
-                        <option value="delivery">Delivery Volunteer</option>
-                        <option value="maintenance">Maintenance Volunteer</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Description</label>
-                    <input type="text" name="description" class="form-control" id="phone" placeholder="Description">
-                </div>
-            
-                
-                <div class="form-group">
-                    <label for="time">Date Available</label>
-                    <input type="date" name="date" class="form-control" id="time" placeholder="Your Available date">
-                </div>
-                <div class="form-group">
-                    <label for="hour">time Available</label>
-                    <input type="time" name="time" class="form-control" id="hour" placeholder="Your Available time">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </div>
-</div>
-
 
 
 <br><br><br><br><br><br><br><br>
-<script>
-    document.querySelectorAll('.join-button').forEach(function(button) {
-    button.addEventListener('click', function() {
-        document.getElementById('join-form').style.display = 'block';
-    });
-});
-</script>;
 @endsection

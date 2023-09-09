@@ -20,6 +20,14 @@ class ServiceController extends Controller
 }
 
 
+public function joinForm($id) {
+    // Use the $id parameter to retrieve the specific service data
+    $service = Service::find($id);
+
+    // Your logic here...
+
+    return view('service.serviceform', compact('service'));
+}
     /**
      * Show the form for creating a new resource.
      *
