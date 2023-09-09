@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });
     }
 
@@ -33,5 +34,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+
     }
 };

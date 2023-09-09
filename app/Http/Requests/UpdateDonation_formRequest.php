@@ -13,7 +13,7 @@ class UpdateDonation_formRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**

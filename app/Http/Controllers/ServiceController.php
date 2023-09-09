@@ -15,7 +15,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+
+        $data=Service::all();
+        return view('dashboardbage.DonatedServices')->with('data', $data);
     }
 
     /**
@@ -25,7 +27,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboardbage.creatservices');
     }
 
     /**
@@ -36,7 +38,23 @@ class ServiceController extends Controller
      */
     public function store(StoreServiceRequest $request)
     {
-        //
+
+        $filename = '';
+        if ($request->hasFile('image')) {
+            $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/assets/img/'), $filename);
+        }
+
+        $input =$request->all();
+       
+        Service::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $filename,
+
+
+        ]);
+       return redirect('donatedservives')->with('flash_message','donated servives Added!');
     }
 
     /**
@@ -56,11 +74,11 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit($id)
     {
-        //
+        $data= Service::find($id);
+        return view('dashboardbage.editservices')->with('data',$data);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -68,9 +86,12 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateServiceRequest $request, Service $service)
+    public function update(UpdateServiceRequest $request, $id)
     {
-        //
+        $data=Service::find($id);
+        $input=$request->all();
+        $data->update($input);
+         return redirect('donatedservives')->with('flash_message','donated servives Update!');
     }
 
     /**
@@ -79,8 +100,11 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy($id)
     {
-        //
+
+        Service::destroy($id);
+    return redirect('donatedservives')->with('flash_message','donated servives deleted!');
+
     }
 }

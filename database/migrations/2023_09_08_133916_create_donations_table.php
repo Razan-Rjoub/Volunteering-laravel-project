@@ -21,6 +21,7 @@ return new class extends Migration
             $table->longText('description');
             $table->mediumText('image');
             $table->Integer('amount_needed');
+            $table->Integer('amount_donated')->nullable();
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ dashboard
 
 
 @section('title-bage2')
-Donation form
+User
 @endsection
 
 
@@ -53,12 +53,11 @@ Donation form
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                <th>Donation Name</th>
-                  <th>price</th>
-                  <th>phone</th>
+
                   <th>name</th>
                   <th>email</th>
-
+                  <th>phone</th>
+                  <th>password</th>
 
                 </tr>
                 </thead>
@@ -67,26 +66,18 @@ Donation form
                     @foreach ( $data as $item )
                 <tr>
 
+                  <td>{{ $item->name }}</td>
+                  <td>{{ $item->email }}</td>
 
-                    <td>
-                        @if ($item->donstion_id)
-                        {{ $item->donstion_id->name }}
-                        @else
-                        No Associated Donation
-                        @endif
-                    </td>
-                  <td>{{ $item->price }}</td>
                   <td>{{ $item->phone }}</td>
-                  <td>{{ $item->name}}</td>
-                  <td>{{ $item->email}}</td>
-
+                  <td>{{ $item->password }}</td>
 
                 <td>
 
 
 
                 <!-- Delete Admin form (you can use a modal for confirmation) -->
-                <form method="POST" action="{{ url('/donationform' . '/' . $item->id  ) }}" style="display: inline;">
+                <form method="POST" action="{{ url('/user' . '/' . $item->id  ) }}" style="display: inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Confirm delete?')">Delete</button>

@@ -15,7 +15,10 @@ class DonationFormController extends Controller
      */
     public function index()
     {
-        //
+
+
+        $data = Donation_form::with('donation')->get();
+        return view('dashboardbage.DonationForm')->with('data', $data);
     }
 
     /**
@@ -79,8 +82,11 @@ class DonationFormController extends Controller
      * @param  \App\Models\Donation_form  $donation_form
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Donation_form $donation_form)
+    public function destroy($id)
     {
-        //
+        Donation_form::find($id)->delete();
+        Donation_form::destroy($id);
+    return redirect('donationform')->with('flash_message','donationform deleted!');
+
     }
 }

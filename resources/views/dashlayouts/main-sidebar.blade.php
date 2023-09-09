@@ -1,10 +1,10 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    {{-- <a href="index3.html" class="brand-link">
       <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
-    </a>
+    </a> --}}
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -40,7 +40,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ asset('/Users') }}" class="nav-link">
+                <a href="{{ asset('/user') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Users</p>
                 </a>
@@ -54,7 +54,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="{{ asset('/Donations') }}" class="nav-link">
+            <a href="{{ asset('/donation') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Donations</p>
             </a>
@@ -62,14 +62,14 @@
 
 
       <li class="nav-item">
-        <a href="{{ asset('/DonatedItems') }}" class="nav-link">
+        <a href="{{ asset('/donateditems') }}" class="nav-link">
           <i class="far fa-circle nav-icon"></i>
           <p>Donated Items</p>
         </a>
       </li>
 
   <li class="nav-item">
-    <a href="{{ asset('/DonatedServices') }}" class="nav-link">
+    <a href="{{ asset('/donatedservives') }}" class="nav-link">
       <i class="far fa-circle nav-icon"></i>
       <p>Donated Services</p>
     </a>
@@ -86,7 +86,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{ asset('/DonationForm') }}" class="nav-link">
+        <a href="{{ asset('/donationform') }}" class="nav-link">
           <i class="far fa-circle nav-icon"></i>
           <p>Donation Form</p>
         </a>
@@ -95,7 +95,7 @@
     </ul>
   </li>
   <li class="nav-item">
-    <a href="{{ asset('/DonatedItemsForm') }}" class="nav-link">
+    <a href="{{ asset('/donateditemsform') }}" class="nav-link">
       <i class="far fa-circle nav-icon"></i>
       <p>Donated Items Form</p>
     </a>
@@ -105,7 +105,7 @@
 
 
 <li class="nav-item">
-<a href="{{ asset('/DonatedServices') }}" class="nav-link">
+<a href="{{ asset('/donatedservices') }}" class="nav-link">
 <i class="far fa-circle nav-icon"></i>
 <p>Donated Services</p>
 </a>

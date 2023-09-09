@@ -15,7 +15,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $data= Item::all();
+        return view('dashboardbage.DonatedItems')->with('data', $data);
     }
 
     /**
@@ -25,7 +26,8 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboardbage.creatiteam');
+
     }
 
     /**
@@ -36,7 +38,23 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request)
     {
-        //
+
+        $filename = '';
+        if ($request->hasFile('image')) {
+            $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/assets/img/'), $filename);
+        }
+
+        $input =$request->all();
+
+        Item::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $filename,
+           
+
+        ]);
+       return redirect('donateditems')->with('flash_message','donated items Added!');
     }
 
     /**
@@ -56,9 +74,10 @@ class ItemController extends Controller
      * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function edit(Item $item)
+    public function edit($id)
     {
-        //
+        $data=Item::find($id);
+        return view('dashboardbage.editdonationitem')->with('data',$data);
     }
 
     /**
@@ -68,19 +87,25 @@ class ItemController extends Controller
      * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateItemRequest $request, Item $item)
-    {
-        //
-    }
 
+     public function update(UpdateItemRequest $request, $id)
+     {
+         $data=Item::find($id);
+         $input=$request->all();
+         $data->update($input);
+          return redirect('donateditems')->with('flash_message','donated items Update!');
+     }
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy($id)
     {
-        //
+
+        Item::destroy($id);
+    return redirect('donateditems')->with('flash_message','donated items deleted!');
+
     }
 }

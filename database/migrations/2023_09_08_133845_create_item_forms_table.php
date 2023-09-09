@@ -18,6 +18,10 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('item_id')->unsigned();
+            $table->string('volunteerName');
+            $table->string('volunteerEmail');
+            $table->string('volunteerPhone');
+            $table->string('volunteerAddress');
             $table->String('description');
             $table->String('status');
             $table->mediumText('image');

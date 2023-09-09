@@ -4,7 +4,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonationController;
-
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\UsertController;
+use App\Http\Controllers\DonationFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,7 +54,7 @@ Route::get('/contactus', function () {
 })->name('contact');
 
 Route::get('/',[CategoryController::class,'index'])->name('home');
-Route::get('/donation',[DonationController::class,'index'])->name('donation');
+
 
 
 
@@ -60,26 +63,19 @@ Route::get('/dash', function () {
     return view('dashboardbage.home');
 });
 
-Route::get('/table', function () {
-    return view('dashboardbage.table');
-});
+
 
 Route::get('/Admins', function () {
     return view('dashboardbage.Admins');
 });
 
 
-Route::get('/Users', function () {
-    return view('dashboardbage.Users');
-});
+
 
 Route::get('/Categories', function () {
     return view('dashboardbage.Categories');
 });
 
-Route::get('/DonatedItems', function () {
-    return view('dashboardbage.DonatedItems');
-});
 
 
 Route::get('/DonatedItemsForm', function () {
@@ -87,20 +83,19 @@ Route::get('/DonatedItemsForm', function () {
 });
 
 
-Route::get('/DonatedServices', function () {
-    return view('dashboardbage.DonatedServices');
-});
-
 
 Route::get('/DonatedServicesForm', function () {
     return view('dashboardbage.DonatedServicesForm');
 });
 
-Route::get('/DonationForm', function () {
-    return view('dashboardbage.DonationForm');
-});
+// Route::get('/DonationForm', function () {
+//     return view('dashboardbage.DonationForm');
+// });
 
-Route::get('/Donations', function () {
-    return view('dashboardbage.Donations');
-});
 
+
+ Route::resource('/donation',DonationController::class);
+ Route::resource('/donateditems',ItemController::class);
+ Route::resource('/donatedservives',ServiceController::class);
+ Route::resource('/user',UsertController::class);
+ Route::resource('/donationform',DonationFormController::class);
