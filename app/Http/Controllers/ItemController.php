@@ -6,17 +6,46 @@ use App\Models\Item;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
 
+
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
+
 class ItemController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $data= Item::all();
+        return view('Item.item',['item'=>$data]);
     }
+
+
+    public function form($id)
+    {
+        $itemid = Item::find($id);
+
+        if (Auth::check()) {
+            $userId = Auth::id();
+            $user = User::find($userId);
+            return view('Item.itemform', compact('user', 'itemid'));
+        }
+        return redirect()->route('login');
+
+    }
+
+
+    public function store(Request $request)
+    {
+
+
+    }
+
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -28,16 +57,7 @@ class ItemController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreItemRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreItemRequest $request)
-    {
-        //
-    }
+
 
     /**
      * Display the specified resource.

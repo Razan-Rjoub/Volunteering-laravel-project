@@ -9,6 +9,7 @@ use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UsertController;
+use App\Http\Controllers\ItemFormController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -44,6 +45,10 @@ require __DIR__ . '/auth.php';
 
 
 
+
+
+
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -69,12 +74,28 @@ Route::get('/', [CategoryController::class, 'index'])->name('home');
 Route::get('/donation', [DonationController::class, 'indexDonation'])->name('Give Donation');
 Route::get('/service', [ServiceController::class, 'index'])->name('Give Services');
 Route::get('/item', [ItemController::class, 'index'])->name('Give Items');
+
+Route::get('/',[CategoryController::class,'index'])->name('home');
+Route::get('/donation',[DonationController::class,'index'])->name('Give Donation');
+Route::get('/service',[ServiceController::class,'index'])->name('Give Services');
+Route::get('/item',[ItemController::class,'index'])->name('Give Items');
+
+
+
 Route::get('/donationform/{id}', [DonationController::class, 'form'])->name('donationform');
 Route::post('/submitdonation', [DonationFormController::class, 'store'])->name('submitdonate');
 
 Route::get('payment/{price}', [PaypalController::class, 'payment'])->name('payment');
 Route::get('cancel', [PaypalController::class, 'cancel'])->name('payment.cancel');
 Route::get('payment/success', [PaypalController::class, 'success'])->name('payment.success');
+Route::get('/itemform/{id}', [ItemController::class, 'form'])->name('itemform');
+Route::post('/storeitem', [ItemFormController::class, 'store'])->name('storeitem');
+
+
+
+
+
+
 
 Route::get('/success', function () {
     return view('Thankyou');
