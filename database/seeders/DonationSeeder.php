@@ -17,7 +17,7 @@ class DonationSeeder extends Seeder
     {
         Donation::create([
             'name' => 'Providing Beds for 50 Needy Families',
-            'description' => "We are dedicated to providing each of these 50 families with a brand-new bed, complete with mattresses and bedding. This project not only ensures a good night's sleep but also brings warmth and comfort to their homes. Your contribution can help us reach our goal.",
+            'description' => "We're committed to supplying 50 families with new beds, mattresses, and bedding for a better night's sleep and added warmth and comfort in their homes. Your support can make a difference.",
             'image' => 'img_v_2-min.jpg',
             'amount_needed' => 2000,
         ]);
@@ -29,7 +29,7 @@ class DonationSeeder extends Seeder
         ]);
         Donation::create([
             'name' => 'Providing Lamps to Light Up Lives',
-            'description' => "provide200 energy-efficient lamps to households without proper lighting. These lamps will not only brighten homes but also enable children to study after dark and families to engage in various activities more comfortably.",
+            'description' => "We'll give 200 energy-efficient lamps to homes without proper lighting, improving studying conditions for children and enhancing family activities",
             'image' => 'img_v_4-min.jpg',
             'amount_needed' => 1000,
         ]);

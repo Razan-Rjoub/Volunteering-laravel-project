@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="{{asset('style/css/flatpickr.min.css')}}">
 	<link rel="stylesheet" href="{{asset('style/css/glightbox.min.css')}}">
 	<link rel="stylesheet" href="{{asset('style/css/style.css')}}">
-
+	<link rel="stylesheet" href="{{asset('style/css/thankyou.css')}}">
 	<title>@yield('title')</title>
 </head>
 <body>
@@ -44,7 +44,7 @@
 						<div class="col-2">
 							<a href="Home.index" class="logo m-0 float-start text-white">Volunteer</a>
 						</div>
-						<div class="col-8 text-center">
+						<div class="col-6 text-center">
 							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
 								<li class="active"><a href="{{route('home')}}">Home</a></li>
 								<li class="has-children">
@@ -69,15 +69,21 @@
 								<li><a href="{{route('contact')}}">Contact</a></li>
 							</ul>
 						</div>
-						<div class="col-2 text-end">
-							<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
-								<span></span>
+						<div class="col-4 text-end">
+							@if (Route::has('login'))
+							@auth
+							<a href="{{ route('login') }}" class="btn  btn-warning"style="color: white">
+								<span>Logout</span>
 							</a>
-
-							<a href="#" class="call-us d-flex align-items-center">
-								<span class="icon-phone"></span>
-								<span>123-489-9381</span>
+							@else
+							<a href="{{ route('login') }}" class="btn  btn-warning"style="color: white">
+								<span>Login</span>
 							</a>
+							<a href="{{route('register')}}" class="btn btn-primary"  >
+								<span>Register</span>
+							</a>
+							@endauth
+							@endif
 						</div>
 					</div>
 

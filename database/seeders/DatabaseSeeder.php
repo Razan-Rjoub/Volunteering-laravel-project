@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
 
             ItemSeeder::class,
+            ServiceSeeder::class
         ]);
     }
 }
