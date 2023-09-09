@@ -24,7 +24,6 @@ return new class extends Migration
             $table->String('name');
             $table->string('email');
             $table->timestamps();
-
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->foreign('donation_id')->references('id')->on('donations')->onDelete('CASCADE');
         });
