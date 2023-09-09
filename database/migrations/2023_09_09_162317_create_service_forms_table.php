@@ -15,17 +15,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('service_forms', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->bigInteger('service_id')->unsigned();
             $table->string('description');
-            $table->mediumText('image');
-<<<<<<<< HEAD:database/migrations/2023_09_08_125105_create_items_table.php
-========
-          
->>>>>>>> 2ae3c3e7918def008714ecfddc8f0964c9f3c1eb:database/migrations/2023_09_08_133804_create_items_table.php
+            $table->timestamp('time');
+            $table->date('Date');
             $table->timestamps();
-
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('service_id')->references('id')->on('services');
         });
     }
 
@@ -36,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('service_forms');
     }
 };

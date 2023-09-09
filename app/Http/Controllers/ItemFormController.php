@@ -6,6 +6,12 @@ use App\Models\Item_form;
 use App\Http\Requests\StoreItem_formRequest;
 use App\Http\Requests\UpdateItem_formRequest;
 
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+
+
+
 class ItemFormController extends Controller
 {
     /**
@@ -25,7 +31,7 @@ class ItemFormController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -34,32 +40,48 @@ class ItemFormController extends Controller
      * @param  \App\Http\Requests\StoreItem_formRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreItem_formRequest $request)
+    public function store(Request $request)
     {
-        // $validatedData = $request->validate([
-        //     'description' => 'required',
-        //     'status' => 'required',
-        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        // ]);
+        //dd($request);
 
 
-        // Upload and store the image
-        // $image = $request->file('image');
-        // $imageName = time() . '.' . $image->getClientOriginalExtension();
-        // $image->move(public_path('images/products'), $imageName);
+
+        $validatedData = $request->validate([
+            'volunteerName' => 'required',
+            'volunteerEmail' => 'required',
+            'volunteerPhone' => 'required',
+            'volunteerAddress' => 'required',
+            'description' => 'required',
+            'status' => 'required',
+            'image' => 'required|max:2048',
+        ]);
 
 
-        // Create a new product with the image filename
-        // Item_form::create([
-        //     'user_id' => $userid,
-        //     'item_id' => $itemid,
-        //     'description' => $request->description,
-        //     'status' => $request->status,
-        //     'image' => $imageName,
-        // ]);
 
-        // return redirect()->route('/')->with(['success' => 'donation successfully
-        // ']);
+    if (Auth::check()) {
+        $userId = Auth::id();
+    }
+
+     Item_form::create([
+        'user_id' =>$userId,
+        'item_id'=>$request->item_id,
+        'volunteerName' => $request->volunteerName,
+        'volunteerEmail' => $request->volunteerEmail,
+        'volunteerPhone' => $request->volunteerPhone,
+        'volunteerAddress' => $request->volunteerAddress,
+        'description' => $request->description,
+        'status' => $request->status,
+        'image' => $request->image,
+
+    ]);
+
+    return redirect()->route('home')->with([
+        'success' => 'Donation successfully
+    '
+    ]);
+
+
+
     }
 
     /**

@@ -23,8 +23,7 @@
                                 </div>
                             </div>
                             <div class="back">
-                                <!-- back content -->
-                                <a href="#"><div class="flip-content-wrap">
+                                <a href="{{route($item->name)}}"><div class="flip-content-wrap">
                                     <h3>{{ $item->name }}</h3>
                                     <p>{{ $item->description }}</p>
                                 </div></a>

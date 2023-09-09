@@ -5,7 +5,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ItemFormController;
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,13 +63,26 @@ Route::get('/contactus', function () {
     return view('Contact.contactus');
 })->name('contact');
 
-Route::get('/',[CategoryController::class,'index'])->name('home');
-Route::get('/donation',[DonationController::class,'index'])->name('donation');
 
-Route::get('/item',[ItemController::class,'index'])->name('item');
-Route::get('/itemform', function () {
-    return view('Item.Form');
-});
+Route::get('/',[CategoryController::class,'index'])->name('home');
+Route::get('/donation',[DonationController::class,'index'])->name('Give Donation');
+Route::get('/service',[ServiceController::class,'index'])->name('Give Services');
+Route::get('/item',[ItemController::class,'index'])->name('Give Items');
+
+
+
+Route::get('/donationform/{id}', [DonationController::class, 'form'])->name('donationform');
+Route::get('/submitdonation', [DonationController::class, 'submit'])->name('submitdonate');
+
+
+Route::get('/itemform/{id}', [ItemController::class, 'form'])->name('itemform');
+Route::post('/storeitem', [ItemFormController::class, 'store'])->name('storeitem');
+
+
+
+
+
+
 
 
 Route::get('/dash', function () {
