@@ -72,7 +72,7 @@
 							<img src="style/images/person_3.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
 
 							<h3 class="mb-0">Razan ALkhateeb</h3><br>
-							<p class="text-black-50">Every piece of furniture donated is a step toward a brighter future for someone in need.</p>
+							<p class="text-black-50">When you give furniture, you give the gift of home.</p>
 						</div>
 
 					</div>
