@@ -35,18 +35,17 @@ class DonationController extends Controller
 
     public function submit(Request $request)
     {
-        if (Auth::check()) {
-            $userId = Auth::id();}
-        Donation_form::create([
-            'price' => $request->price,
-            'user_id' =>$userId,
-            'donation_id'=>$request->donation_id
-        ]);
+        // if (Auth::check()) {
+        //     $userId = Auth::id();}
+        // Donation_form::create([
+        //     'price' => $request->price,
+        //     'user_id' =>$userId,
+        //     'donation_id'=>$request->donation_id,
+        // ]);
 
-        return redirect()->route('home')->with([
-            'success' => 'created successfully
-        '
-        ]);
+        // return redirect()->route('home')->with([
+        //     'success' => 'created successfully'
+        // ]);
     }
 
 

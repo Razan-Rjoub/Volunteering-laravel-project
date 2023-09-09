@@ -7,6 +7,8 @@ use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceFormController;
 
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ItemFormController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -42,6 +44,10 @@ require __DIR__.'/auth.php';
 
 
 
+
+
+
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -60,12 +66,24 @@ Route::get('/contactus', function () {
     return view('Contact.contactus');
 })->name('contact');
 
+
 Route::get('/',[CategoryController::class,'index'])->name('home');
 Route::get('/donation',[DonationController::class,'index'])->name('Give Donation');
 
 Route::get('/item',[ItemController::class,'index'])->name('Give Items');
+
+
+
 Route::get('/donationform/{id}', [DonationController::class, 'form'])->name('donationform');
 Route::get('/submitdonation', [DonationController::class, 'submit'])->name('submitdonate');
+
+
+Route::get('/itemform/{id}', [ItemController::class, 'form'])->name('itemform');
+Route::post('/storeitem', [ItemFormController::class, 'store'])->name('storeitem');
+
+
+
+
 
 
 
