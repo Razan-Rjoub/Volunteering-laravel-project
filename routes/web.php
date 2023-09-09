@@ -6,8 +6,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonationController;
-use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServiceFormController;
+
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UsertController;
 use App\Http\Controllers\ItemFormController;
 
@@ -77,7 +79,7 @@ Route::get('/item', [ItemController::class, 'index'])->name('Give Items');
 
 Route::get('/',[CategoryController::class,'index'])->name('home');
 Route::get('/donation',[DonationController::class,'index'])->name('Give Donation');
-Route::get('/service',[ServiceController::class,'index'])->name('Give Services');
+
 Route::get('/item',[ItemController::class,'index'])->name('Give Items');
 
 
@@ -103,6 +105,11 @@ Route::get('/success', function () {
 Route::get('/cancel', function () {
     return view('cancel');
 })->name('cancel');
+Route::get('/serviceform/{id}', [ServiceController::class, 'joinForm'])->name('serviceform');
+Route::post('/serviceform', [ServiceFormController::class,'store'])->name('service.store');
+Route::get('/service',[ServiceController::class,'index'])->name('Give Services');
+Route::get('/serviceform',[ServiceFormController::class,'index'])->name('Servicesform');
+
 
 Route::get('/dash', function () {
     return view('dashboardbage.home');

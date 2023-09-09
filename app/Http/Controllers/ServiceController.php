@@ -13,11 +13,21 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+  public function index()
+{
+    $data= Service::all();
+    return view('Service.service',['service'=>$data]); 
+}
 
+
+public function joinForm($id) {
+    // Use the $id parameter to retrieve the specific service data
+    $service = Service::find($id);
+
+    // Your logic here...
+
+    return view('service.serviceform', compact('service'));
+}
     /**
      * Show the form for creating a new resource.
      *

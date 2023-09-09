@@ -13,9 +13,10 @@
 				<div class="col-lg-4 align-self-center" data-aos="fade-left" data-aos-delay="100">
 					<span class="subheading mb-3">About</span>
 					<h2 class="heading mb-4">History</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-					<p>
-					A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+					<p>"Our furniture donation website is a platform where generosity meets purpose. We connect those with extra furniture to spare with individuals and families in need. By donating your gently used furniture, you're not just decluttering your space; you're helping to create comfortable, welcoming homes for others. Together, we're turning houses into havens, spreading warmth, and making a positive impact on countless lives. Join us in this meaningful journey of sharing, caring, and building stronger, more compassionate communities."
+
+				</p>
+	
 				</div>
 			</div>
 		</div>
@@ -30,7 +31,7 @@
 					<h2 class="heading">Who We Are</h2>
 				</div>
 				<div class="col-lg-6 text-start" data-aos="fade-up" data-aos-delay="100">
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+					<p>We are a dedicated team of individuals driven by the belief that every home should be a place of comfort and solace. Our mission is to bridge the gap between surplus and need. We are passionate about providing essential furniture to those facing challenges, enabling them to rebuild their lives with dignity and hope. With your support, we strive to create a world where no one goes without the basic comfort of a furnished home. Join us in our journey to make a lasting difference in the lives of those we serve.</p>
 				</div>
 			</div>
 		</div>
@@ -45,11 +46,10 @@
 						<div class="feature bg-color-1">
 							<img src="style/images/person_1.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
 
-							<h3 class="mb-0">James Scott</h3>
-							<span class="text-black-50 mb-3 d-block">CEO, Co-Founder</span>
-							<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3 class="mb-0">Hasan refaie</h3><br>
+							<!-- <span class="text-black-50 mb-3 d-block">CEO, Co-Founder</span> -->
+							<p class="text-black-50">Lend a hand, lend a heart. Together, we furnish hope.</p>
 
-							<a href="#" class="more d-block">Learn More</a>
 						</div>
 
 					</div>
@@ -59,11 +59,9 @@
 						<div class="feature bg-color-2">
 							<img src="style/images/person_2.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
 
-							<h3 class="mb-0">Hannah White</h3>
-							<span class="text-black-50 mb-3 d-block">CEO, Co-Founder</span>
-							<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3 class="mb-0">Razan ALRjoob</h3><br>
+							<p class="text-black-50">Turning houses into homes, one act of kindness at a time.</p>
 
-							<a href="#" class="more d-block">Learn More</a>
 						</div>
 
 					</div>
@@ -73,11 +71,8 @@
 						<div class="feature bg-color-3">
 							<img src="style/images/person_3.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
 
-							<h3 class="mb-0">Amy Perez</h3>
-							<span class="text-black-50 mb-3 d-block">CEO, Co-Founder</span>
-							<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-							<a href="#" class="more d-block">Learn More</a>
+							<h3 class="mb-0">Razan ALkhateeb</h3><br>
+							<p class="text-black-50">Every piece of furniture donated is a step toward a brighter future for someone in need.</p>
 						</div>
 
 					</div>
@@ -87,11 +82,9 @@
 						<div class="feature bg-color-4">
 							<img src="style/images/person_4.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
 
-							<h3 class="mb-0">Brian Nance</h3>
-							<span class="text-black-50 mb-3 d-block">CEO, Co-Founder</span>
-							<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3 class="mb-0">Ramez alrijjal</h3><br>
+							<p class="text-black-50">Helping others isn't just about what you give, but the difference you make.</p>
 
-							<a href="#" class="more d-block">Learn More</a>
 						</div>
 
 					</div>
@@ -101,11 +94,9 @@
 						<div class="feature bg-color-5">
 							<img src="style/images/person_2.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
 
-							<h3 class="mb-0">Stephanie Kenney</h3>
-							<span class="text-black-50 mb-3 d-block">CEO, Co-Founder</span>
-							<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3 class="mb-0">Rama Ababneh</h3><br>
+							<p class="text-black-50">Volunteering is not about giving away what you have, but sharing who you are.</p>
 
-							<a href="#" class="more d-block">Learn More</a>
 						</div>
 
 					</div>
@@ -115,11 +106,9 @@
 						<div class="feature bg-color-6">
 							<img src="style/images/person_3.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
 
-							<h3 class="mb-0">Amy Perez</h3>
-							<span class="text-black-50 mb-3 d-block">CEO, Co-Founder</span>
-							<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3 class="mb-0">Anfal dherat</h3><br>
+							<p class="text-black-50">Together, we furnish not just homes but also the promise of a better tomorrow.</p>
 
-							<a href="#" class="more d-block">Learn More</a>
 						</div>
 
 					</div>
@@ -149,15 +138,13 @@
 				<div class="col-lg-6" data-aos="fade-up">
 					<div class="vision">
 						<h2>Our Vision</h2>
-						<p class="mb-4 lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum minima dignissimos hic mollitia eius et quam ducimus maiores eos magni.</p>
-						<p><a href="#" class="link-underline">Learn More</a></p>
+						<p class="mb-4 lead">Our vision is to create a world where no one is without the fundamental comforts of a well-furnished home. We envision a future where generosity and compassion are the driving forces behind thriving communities.We aim to alleviate the burdens of those facing adversity, transforming empty spaces into welcoming sanctuaries. Our vision is one of inclusivity, where everyone has the opportunity to enjoy the warmth and security of a furnished home, fostering a brighter, more equitable world for all.</p>
 					</div>
 				</div>
 				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
 					<div class="mission">
 						<h2>Our Mission</h2>
-						<p class="mb-4 lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum minima dignissimos hic mollitia eius et quam ducimus maiores eos magni.</p>
-						<p><a href="#" class="link-underline">Learn More</a></p>
+						<p class="mb-4 lead">Our mission is to bridge the gap between surplus and need, connecting individuals and families with the generosity of those willing to donate furniture. Through our platform, we transform empty spaces into welcoming sanctuaries, fostering a sense of belonging and dignity. We are dedicated to creating a more compassionate and sustainable world, one piece of furniture at a time. Join us in this meaningful journey as we work to make homes and lives brighter. Connecting surplus furniture to those in need.</p>
 					</div>
 				</div>
 			</div>		
@@ -169,12 +156,11 @@
 		<div class="container mb-5">
 			<div class="row align-items-center">
 				<div class="col-lg-3" data-aos="fade-up">
-					<span class="subheading mb-3">Instagram</span>
-					<h2 class="heading">We Are In Instagram</h2>
+					<span class="subheading mb-3">Our Partners</span>
 				</div>
 				<div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
 					<p>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, aperiam sint voluptatum? Molestiae debitis, ipsum, rem ipsa voluptatum cupiditate quaerat!</p>
+					We're honored to partner with like-minded organizations who share our mission of furnishing hope and comfort in homes. Together, we make a bigger difference.</p>
 				</div>
 			</div>
 		</div>
@@ -184,50 +170,43 @@
 
 				<div class="item">
 					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_8-min.jpg" alt="Image" class="img-fluid">		
+						<img src="style/images/about.jpg" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_2-min.jpg" alt="Image" class="img-fluid">		
+						<img src="style/images/about2.jpg" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_3-min.jpg" alt="Image" class="img-fluid">		
+						<img src="style/images/about7.jpg" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_4-min.jpg" alt="Image" class="img-fluid">		
+						<img src="style/images/about4.jpg" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_5-min.jpg" alt="Image" class="img-fluid">		
+						<img src="style/images/about5.jpg" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_6-min.jpg" alt="Image" class="img-fluid">		
+						<img src="style/images/about6.jpg" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_7-min.jpg" alt="Image" class="img-fluid">		
+						<img src="style/images/about.jpg" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 			</div>
