@@ -1,4 +1,4 @@
-<div class="hero overlay" style="background-image: url('style/images/donation.jpeg')">
+<div class="hero overlay" style="background-image: url('{{asset('style/images/donation.jpeg')}}')">
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="col-lg-6 text-left">

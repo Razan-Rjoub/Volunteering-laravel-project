@@ -7,6 +7,7 @@ use App\Http\Requests\StoreDonationRequest;
 use App\Http\Requests\UpdateDonationRequest;
 use App\Models\Donation_form;
 use App\Models\User;
+use DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 
@@ -14,8 +15,12 @@ class DonationController extends Controller
 {
     public function index()
     {
-        $data = Donation::all();
-        return view('Donation.donation', ['donation' => $data]);
+        $donation = Donation::all();
+        $totals = Donation_form::select('donation_id', DB::raw('SUM(price) as total_price'))
+        ->groupBy('donation_id')
+        ->get();
+
+        return view('Donation.donation',compact('donation','totals'));
     }
 
 
@@ -23,6 +28,7 @@ class DonationController extends Controller
     {
         $donation = Donation::find($id);
 
+        
         if (Auth::check()) {
             $userId = Auth::id();
             $user = User::find($userId);
@@ -33,21 +39,7 @@ class DonationController extends Controller
     }
 
 
-    public function submit(Request $request)
-    {
-        if (Auth::check()) {
-            $userId = Auth::id();}
-        Donation_form::create([
-            'price' => $request->price,
-            'user_id' =>$userId,
-            'donation_id'=>$request->donation_id
-        ]);
-
-        return redirect()->route('home')->with([
-            'success' => 'created successfully
-        '
-        ]);
-    }
+ 
 
 
     public function show(Donation $donation)
