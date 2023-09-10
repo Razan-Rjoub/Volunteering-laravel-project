@@ -98,7 +98,7 @@ Route::post('/storeitem', [ItemFormController::class, 'store'])->name('storeitem
 Route::get('/logout', [ProfileController::class, 'destroy'])->name('logout');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::get('/editprofile', [ProfileController::class, 'edit'])->name('editprofile');
+Route::post('/editprofile', [ProfileController::class, 'edit'])->name('editprofile');
 
 
 Route::get('/success', function () {

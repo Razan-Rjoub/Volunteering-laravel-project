@@ -20,25 +20,24 @@ class ProfileController extends Controller
     }
     public function edit(Request $request)
     {
-        echo 'hhhhhhhh';
-        // $data['name'] = $request->name;
-        // $data['email'] = $request->email;
-        // $data['phone'] = $request->phone;
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        $data['phone'] = $request->phone;
 
-        // $filename = '';
+        $filename = '';
 
-        // if ($request->hasFile('image')) {
-        //     $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
-        //     $request->image->move(public_path('/assets/img/'), $filename);
-        //     $data['image'] = $filename;
-        // } else {
-        //     unset($data['image']);
-        // }
-        // $id = Auth::id();
-        // User::where(['id' => $id])->update($data);
-        // return redirect()->route('home')->with([
-        //     'success' => 'updated successfully'
-        // ]);
+        if ($request->hasFile('image')) {
+            $filename = $request->getSchemeAndHttpHost() . '/style/images/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/style/images/'), $filename);
+            $data['image'] = $filename;
+        } else {
+            unset($data['image']);
+        }
+        $id = Auth::id();
+        User::where(['id' => $id])->update($data);
+        return redirect()->route('home')->with([
+            'success' => 'updated successfully'
+        ]);
     }
     public function image()
     {
