@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\adminLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +18,9 @@ use App\Http\Controllers\DonationController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -35,6 +33,10 @@ require __DIR__.'/auth.php';
 
 
 
+
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 
 Route::get('/', function () {
     return view('Home.index');
@@ -52,3 +54,66 @@ Route::get('/contactus', function () {
 
 Route::get('/',[CategoryController::class,'index'])->name('home');
 Route::get('/donation',[DonationController::class,'index'])->name('donation');
+
+
+
+
+Route::get('/dash', function () {
+    return view('dashboardbage.home');
+});
+
+Route::get('/table', function () {
+    return view('dashboardbage.table');
+});
+
+// Route::get('/Admins', function () {
+//     return view('dashboardbage.Admins');
+// });
+Route::resource('/admin',AdminController::class);
+
+
+Route::get('/Users', function () {
+    return view('dashboardbage.Users');
+});
+
+// Route::get('/Categories', function () {
+//     return view('dashboardbage.Categories');
+// });
+
+Route::resource('/category',CategoryController::class);
+
+Route::get('/DonatedItems', function () {
+    return view('dashboardbage.DonatedItems');
+});
+
+
+Route::get('/DonatedItemsForm', function () {
+    return view('dashboardbage.DonatedItemsForm');
+});
+
+
+Route::get('/DonatedServices', function () {
+    return view('dashboardbage.DonatedServices');
+});
+
+
+Route::get('/DonatedServicesForm', function () {
+    return view('dashboardbage.DonatedServicesForm');
+});
+
+Route::get('/DonationForm', function () {
+    return view('dashboardbage.DonationForm');
+});
+
+Route::get('/Donations', function () {
+    return view('dashboardbage.Donations');
+});
+
+
+// adminlogin
+
+Route::get('/adminLogin', [adminLoginController::class, 'adminLogin'])->name('adminLogin');
+Route::post('/adminLogin', [adminLoginController::class, 'adminLoginPost'])->name('adminLogin');
+Route::get('/home', [AdminController::class, 'index']);
+
+
