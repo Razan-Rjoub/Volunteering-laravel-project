@@ -21,8 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
             DonationSeeder::class,
-            ServiceSeeder::class,
-
             ItemSeeder::class,
             ServiceSeeder::class
         ]);

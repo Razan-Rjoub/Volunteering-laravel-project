@@ -9176,17 +9176,18 @@ textarea {
   background-repeat: no-repeat;
   background-color: #ccc; }
   .hero, .hero > .container > .row {
-    height: 100vh;
-    min-height: 780px; }
+    /* height: 100vh; */
+    min-height: 600px; }
     @media (max-width: 991.98px) {
       .hero, .hero > .container > .row {
         min-height: auto !important;
         height: auto !important;
         padding-top: 4rem;
-        padding-bottom: 4rem; } }
+        padding-bottom: 2rem; } }
   .hero.overlay {
     position: relative;
     z-index: 1;
+    height: 600px;
      }
     .hero.overlay:before {
       background-color: rgba(0, 0, 0, 0.4);
@@ -9202,8 +9203,8 @@ textarea {
     z-index: 2; }
   .hero .heading {
     color: #000;
-    font-size: 60px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 600;
     line-height: 1; }
     @media (max-width: 767.98px) {
       .hero .heading {
@@ -9221,7 +9222,7 @@ textarea {
   font-weight: bold; }
 
 .section {
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 100px;
   position: relative; }
   .section .subheading {
