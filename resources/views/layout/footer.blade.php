@@ -98,5 +98,15 @@
 <script src="{{asset('style/js/navbar.js')}}"></script>
 <script src="{{asset('style/js/counter.js')}}"></script>
 <script src="{{asset('style/js/custom.js')}}"></script>
+
+<script src="{{asset('../assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js')}}"></script>
+<script src="{{asset('../assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js')}}"></script>
+<script src="{{asset('../assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js')}}"></script>
+<script src="{{asset('../assets/vendor/libs/cleavejs/cleave.js')}}"></script>
+<script src="{{asset('../assets/vendor/libs/cleavejs/cleave-phone.js')}}"></script>
+
+<script src="{{asset('../assets/js/main.js')}}"></script>
+
+<script src="{{asset('../assets/js/pages-account-settings-account.js')}}"></script>
 </body>
 </html>

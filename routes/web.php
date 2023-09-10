@@ -58,6 +58,9 @@ Route::get('/welcome', function () {
 // Route::get('/', function () {
 //     return view('Home.index');
 // });
+Route::get('/profile', function () {
+    return view('profile');
+});
 Route::get('/thankyou', function () {
     return view('Thankyou');
 })->name('thankyou');
@@ -75,12 +78,15 @@ Route::get('/contactus', function () {
 
 
 
-Route::get('/', [CategoryController::class, 'index'])->name('home');
+Route::get('/', [CategoryController::class, 'indexCategory'])->name('home');
+
 Route::get('/donation', [DonationController::class, 'indexDonation'])->name('Give Donation');
 Route::get('/service', [ServiceController::class, 'index'])->name('Give Services');
 Route::get('/item', [ItemController::class, 'indexItem'])->name('Give Items');
 
-Route::get('/',[CategoryController::class,'index'])->name('home');
+//Route::get('/',[CategoryController::class,'index'])->name('home');
+
+//Route::get('/item',[ItemController::class,'index'])->name('Give Items');
 
 
 
@@ -97,10 +103,10 @@ Route::get('payment/success', [PaypalController::class, 'success'])->name('payme
 Route::get('/itemform/{id}', [ItemController::class, 'formItem'])->name('itemform');
 Route::post('/storeitem', [ItemFormController::class, 'storeItem'])->name('storeitem');
 
+Route::get('/logout', [ProfileController::class, 'destroy'])->name('logout');
 
-
-
-
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::get('/editprofile', [ProfileController::class, 'edit'])->name('editprofile');
 
 
 Route::get('/success', function () {
