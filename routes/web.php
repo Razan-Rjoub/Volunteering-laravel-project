@@ -105,10 +105,10 @@ Route::get('/success', function () {
 Route::get('/cancel', function () {
     return view('cancel');
 })->name('cancel');
-Route::get('/serviceform/{id}', [ServiceController::class, 'joinForm'])->name('serviceform');
-Route::post('/serviceform', [ServiceFormController::class,'store'])->name('service.store');
-Route::get('/service',[ServiceController::class,'index'])->name('Give Services');
-Route::get('/serviceform',[ServiceFormController::class,'index'])->name('Servicesform');
+Route::get('/serviceform/{id}', [ServiceController::class, 'formService'])->name('serviceform');
+Route::post('/serviceform', [ServiceFormController::class,'storeService'])->name('service.store');
+Route::get('/service',[ServiceController::class,'indexService'])->name('Give Services');
+Route::get('/serviceform',[ServiceFormController::class,'indexService'])->name('Servicesform');
 
 
 Route::get('/dash', function () {

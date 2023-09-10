@@ -2,7 +2,7 @@
 @section('title','services')
 	@section('content')
 
-    <div class="hero overlay" style="background-image: url('style/images/vo.jpg')">
+    <div class="hero overlay" style="background-image: url({{asset('style/images/vo5.jpg')}})">
 		<div class="container">
 			<div class="row align-items-center justify-content-center">
 				<div class="col-lg-6 text-center">
@@ -23,18 +23,25 @@
             <form method="POST" action="{{ route('service.store') }}">
             @csrf             
             <input type="hidden" name="service_id" value="{{ $service->id }}">
+            
             <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control px-4 " id="name" placeholder="Enter your name"
+                    value="{{ $user->name }}" name="name" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control"name="email" id="email" placeholder="Your Email">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control px-4" id="email" placeholder="Enter your email"
+                        value="{{ $user->email }}" name="email" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" class="form-control"name="phone" id="phone" placeholder="Your Phone Number">
+                    <label for="phone">Phone:</label>
+                    <input type="text" class="form-control px-4" id="phone" placeholder="Enter your phone"
+                        value="{{ $user->phone }}" name="phone" required>
                 </div>
+          
                 <div class="form-group">
                     <label for="Description">Description</label>
                     <input type="text" name="description" class="form-control" id="Description" placeholder="Description">

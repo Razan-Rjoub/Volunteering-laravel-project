@@ -14,38 +14,30 @@ class ServiceFormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexService()
     {
         return view('Service.serviceform'); 
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreService_formRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+   
   
-     public function store(Request $request)
+     public function storeService(Request $request)
      {
          $request->validate([
+             'name' => 'required',
+             'email' => 'required',
+             'phone' => 'required',
              'description' => 'required',
              'date' => 'required|date',
              'time' => 'required',
              'service_id' => 'required', // Add validation rule for service_id
          ]);
-     
+         
+         
+        if (Auth::check()) {
+            $userId = Auth::id();
+          }
          Service_form::create([
              'user_id' => Auth::id(),
              'name' => $request->input('name'),
@@ -58,52 +50,9 @@ class ServiceFormController extends Controller
          ]);
      
          // Redirect back with a success message or handle the response as needed
-         return redirect()->back()->with('success', 'Service form submitted successfully');
+         return redirect()->route('home')->with('success', 'Service form submitted successfully');
      }
      
          
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Service_form  $service_form
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Service_form $service_form)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Service_form  $service_form
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Service_form $service_form)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateService_formRequest  $request
-     * @param  \App\Models\Service_form  $service_form
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateService_formRequest $request, Service_form $service_form)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Service_form  $service_form
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Service_form $service_form)
-    {
-        //
-    }
+   
 }

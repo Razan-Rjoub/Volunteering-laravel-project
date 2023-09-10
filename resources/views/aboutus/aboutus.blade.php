@@ -44,7 +44,7 @@
 					<div class="item">
 
 						<div class="feature bg-color-1">
-							<img src="style/images/person_1.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+							<img src="style/images/hasan.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
 
 							<h3 class="mb-0">Hasan refaie</h3><br>
 							<!-- <span class="text-black-50 mb-3 d-block">CEO, Co-Founder</span> -->
@@ -57,7 +57,7 @@
 					<div class="item">
 
 						<div class="feature bg-color-2">
-							<img src="style/images/person_2.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+							<img src="style/images/razan.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
 
 							<h3 class="mb-0">Razan ALRjoob</h3><br>
 							<p class="text-black-50">Turning houses into homes, one act of kindness at a time.</p>
@@ -69,7 +69,7 @@
 					<div class="item">
 
 						<div class="feature bg-color-3">
-							<img src="style/images/person_3.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+							<img src="style/images/razan_alkateeb.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
 
 							<h3 class="mb-0">Razan ALkhateeb</h3><br>
 							<p class="text-black-50">When you give furniture, you give the gift of home.</p>
@@ -170,43 +170,39 @@
 
 				<div class="item">
 					<a class="instagram-item">
-						<img src="style/images/about.jpg" alt="Image" class="img-fluid">		
+						<img src="style/images/about.png" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+
+				<div class="item">
+					<a class="instagram-item"> 
+						<img src="style/images/about2.png"  alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
-						<img src="style/images/about2.jpg" alt="Image" class="img-fluid">		
+						<img src="style/images/about3.png" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
-						<img src="style/images/about7.jpg" alt="Image" class="img-fluid">		
+						<img src="style/images/about4.png" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+
+			
+
+				<div class="item">
+					<a class="instagram-item">
+						<img src="style/images/about6.png" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
-						<img src="style/images/about4.jpg" alt="Image" class="img-fluid">		
-					</a>
-				</div>
-
-				<div class="item">
-					<a class="instagram-item">
-						<img src="style/images/about5.jpg" alt="Image" class="img-fluid">		
-					</a>
-				</div>
-
-				<div class="item">
-					<a class="instagram-item">
-						<img src="style/images/about6.jpg" alt="Image" class="img-fluid">		
-					</a>
-				</div>
-
-				<div class="item">
-					<a class="instagram-item">
-						<img src="style/images/about.jpg" alt="Image" class="img-fluid">		
+						<img src="style/images/about30.png" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 			</div>
