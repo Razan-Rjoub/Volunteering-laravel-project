@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="hero overlay" style="background-image: url('style/images/img_v_5-min.jpg')">
+<div class="hero overlay" style="background-image: url({{asset('style/images/img_v_5-min.jpg')  }})">
     <div class="container">
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 text-center">
@@ -23,13 +23,12 @@
 </div>
 
 
+    <div class="col-lg-8 container" >
 
-    <div class="col-lg-12 container">
-
-        <form action="{{route('storeitem')}}" method="POST" class="bg-white p-5 rounded donation-form" data-aos="fade-up">
+        <form action="{{route('storeitem')}}" method="POST" class="bg-light p-5 rounded donation-form" data-aos="fade-up" style="margin: 50px" >
             @csrf
 
-            <h2>Item Donation Form</h2>
+            
 
             <div class="form-field mb-3">
                 <input type="name" class="form-control px-4" value="{{ $itemid->id }}" name="item_id" hidden>

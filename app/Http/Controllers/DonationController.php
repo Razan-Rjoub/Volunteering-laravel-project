@@ -24,11 +24,11 @@ class DonationController extends Controller
     }
 
 
-    public function form($id)
+    public function formDonation($id)
     {
         $donation = Donation::find($id);
 
-        
+
         if (Auth::check()) {
             $userId = Auth::id();
             $user = User::find($userId);
@@ -40,30 +40,4 @@ class DonationController extends Controller
 
 
 
-
-
-
-
-    public function show(Donation $donation)
-    {
-        //
-    }
-
-
-    public function edit(Donation $donation)
-    {
-        //
-    }
-
-
-    public function update(UpdateDonationRequest $request, Donation $donation)
-    {
-        //
-    }
-
-
-    public function destroy(Donation $donation)
-    {
-        //
-    }
 }

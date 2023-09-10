@@ -75,25 +75,33 @@ Route::get('/contactus', function () {
     return view('Contact.contactus');
 })->name('contact');
 
-Route::get('/', [CategoryController::class, 'index'])->name('home');
+
+
+
+Route::get('/', [CategoryController::class, 'indexCategory'])->name('home');
 
 Route::get('/donation', [DonationController::class, 'indexDonation'])->name('Give Donation');
 Route::get('/service', [ServiceController::class, 'index'])->name('Give Services');
-Route::get('/item', [ItemController::class, 'index'])->name('Give Items');
+Route::get('/item', [ItemController::class, 'indexItem'])->name('Give Items');
+
+//Route::get('/',[CategoryController::class,'index'])->name('home');
+
+//Route::get('/item',[ItemController::class,'index'])->name('Give Items');
 
 
-Route::get('/item',[ItemController::class,'index'])->name('Give Items');
 
 
 
-Route::get('/donationform/{id}', [DonationController::class, 'form'])->name('donationform');
-Route::post('/submitdonation', [DonationFormController::class, 'store'])->name('submitdonate');
+
+Route::get('/donationform/{id}', [DonationController::class, 'formDonation'])->name('donationform');
+Route::post('/submitdonation', [DonationFormController::class, 'storeDonation'])->name('submitdonate');
 
 Route::get('payment/{price}', [PaypalController::class, 'payment'])->name('payment');
 Route::get('cancel', [PaypalController::class, 'cancel'])->name('payment.cancel');
 Route::get('payment/success', [PaypalController::class, 'success'])->name('payment.success');
-Route::get('/itemform/{id}', [ItemController::class, 'form'])->name('itemform');
-Route::post('/storeitem', [ItemFormController::class, 'store'])->name('storeitem');
+
+Route::get('/itemform/{id}', [ItemController::class, 'formItem'])->name('itemform');
+Route::post('/storeitem', [ItemFormController::class, 'storeItem'])->name('storeitem');
 
 Route::get('/logout', [ProfileController::class, 'destroy'])->name('logout');
 
@@ -104,9 +112,11 @@ Route::post('/editprofile', [ProfileController::class, 'edit'])->name('editprofi
 Route::get('/success', function () {
     return view('Thankyou');
 })->name('paysuccess');
+
 Route::get('/cancel', function () {
     return view('cancel');
 })->name('cancel');
+
 Route::get('/serviceform/{id}', [ServiceController::class, 'joinForm'])->name('serviceform');
 Route::post('/serviceform', [ServiceFormController::class,'store'])->name('service.store');
 Route::get('/service',[ServiceController::class,'index'])->name('Give Services');
@@ -152,7 +162,7 @@ Route::get('/DonatedServicesForm', function () {
 
 
 Route::namespace('Admin')->group(function () {
- 
+
     Route::resource('/donatione', DonationController::class);
 Route::resource('/donateditems', ItemController::class);
 Route::resource('/donatedservives', ServiceController::class);
