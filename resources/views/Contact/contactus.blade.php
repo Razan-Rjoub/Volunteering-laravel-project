@@ -6,7 +6,7 @@
 			<div class="row align-items-center justify-content-center">
 				<div class="col-lg-6 text-center">
 					<h1 class="heading text-white mb-2" data-aos="fade-up">Contact Us</h1>
-					<p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum minima dignissimos hic mollitia eius et quam ducimus maiores eos magni.</p>
+					<p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">Contact us if you have any questions and we will respond to you as soon as possible</p>
 					<p data-aos="fade-up"  data-aos-delay="100">
 						<a href="#" class="btn btn-primary me-4">Donate Now</a> 
 					</p>		
@@ -23,27 +23,28 @@
 			<div class="row mb-5">
 				<div class="col-lg-6" data-aos="fade-up">
 					<h2 class="heading">Get In Touch</h2>
-					<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+					<p class="text-black-50">Do you have any questions or comments? We are here to help you! Please feel free to contact us via the following means:
+						Or you can fill out the form below and we will respond to your inquiries as soon as possible: We appreciate your communication with us and look forward to serving you with all your inquiries and needs.</p>
 				</div>
 			</div>
 
-			<form action="" class="row justify-content-between">
-
+			<form action="{{route('store.contactus')}}" method="post" class="row justify-content-between">
+				@csrf
 				<div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
 					<div class="row">
 
 						<div class="mb-3 col-lg-6">
 							<label for="name" class="ps-3 fw-bold mb-2">Name</label>
-							<input type="text" class="form-control" id="name">
+							<input type="text" class="form-control" id="name" name="name">
 						</div>
 						<div class="mb-3 col-lg-6">
 							<label for="email" class="ps-3 fw-bold mb-2">Email</label>
-							<input type="email" class="form-control" id="email">
+							<input type="email" class="form-control" id="email" name="email">
 						</div>
 
 						<div class="mb-3 col-lg-12">
 							<label for="message" class="ps-3 fw-bold mb-2">Message</label>
-							<textarea name="" id="message" class="form-control" cols="30" rows="10"></textarea>
+							<textarea  id="message" class="form-control" cols="30" rows="10" name="message"></textarea>
 						</div>	
 
 						<div class="col-lg-6">

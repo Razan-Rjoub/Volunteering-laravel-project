@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceFormController;
+use App\Http\Controllers\ContactController;
 
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UsertController;
@@ -34,6 +35,8 @@ use App\Http\Controllers\ItemFormController;
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('contactus', [ContactController::class, 'index']);
+Route::post('contact-store', [ContactController::class, 'store'])->name('store.contactus');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
