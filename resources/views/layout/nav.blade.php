@@ -12,7 +12,14 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;ampdisplay=swap" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="{{asset('../assets/vendor/css/rtl/core.css" class="template-customizer-core-css')}}" />
+    <link rel="stylesheet" href="{{asset('../assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css')}}" />
+    <link rel="stylesheet" href="{{asset('../assets/css/demo.css')}}" />
 
 	<link rel="stylesheet" href="{{asset('style/fonts/icomoon/style.css')}}">
 	<link rel="stylesheet" href="{{asset('style/fonts/flaticon/font/flaticon.css')}}">
@@ -24,6 +31,11 @@
 	<link rel="stylesheet" href="{{asset('style/css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('style/css/thankyou.css')}}">
 	<title>@yield('title')</title>
+	<style>
+		.dropdown-menu{
+			margin-left: 250px !important;
+		}
+	</style>
 </head>
 <body>
 
@@ -72,9 +84,32 @@
 						<div class="col-4 text-end">
 							@if (Route::has('login'))
 							@auth
-							<a href="{{ route('login') }}" class="btn  btn-warning"style="color: white">
-								<span>Logout</span>
-							</a>
+							<li class="nav-item navbar-dropdown dropdown-user dropdown"  >
+								<a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown">
+									<div class="" style="">
+										<img style="width: 45px;" src="{{asset('style/images/FZ2_8041.jpg')}}" alt
+											class=" h-auto rounded-circle " />
+									</div>
+								</a>
+								<ul  class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" href="{{route('profile')}}">
+											<i class="mdi mdi-account-outline me-2"></i>
+											<span class="align-middle">My Profile</span>
+										</a>
+									</li>
+		
+									<li>
+										<div class="dropdown-divider"></div>
+									</li>
+									<li>
+										<a class="dropdown-item" href="logout">
+											<i class="mdi mdi-exit-to-app me-2"></i>
+											<span class="align-middle">Log Out</span>
+										</a>
+									</li>
+								</ul>
+							</li>
 							@else
 							<a href="{{ route('login') }}" class="btn  btn-warning"style="color: white">
 								<span>Login</span>
