@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Item;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
@@ -51,7 +52,7 @@ class ItemController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'image' => $filename,
-           
+
 
         ]);
        return redirect('donateditems')->with('flash_message','donated items Added!');
@@ -88,13 +89,42 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    
+
      public function update(UpdateItemRequest $request, $id)
      {
-         $data=Item::find($id);
-         $input=$request->all();
-         $data->update($input);
-          return redirect('donateditems')->with('flash_message','donated items Update!');
+
+         $data = Item::find($id);
+
+
+         if ($request->hasFile('image')) {
+
+             if (file_exists(public_path($data->image))) {
+                 unlink(public_path($data->image));
+             }
+
+
+             $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+             $request->image->move(public_path('/assets/img/'), $filename);
+
+
+             $data->update(['image' => $filename]);
+         }
+
+
+         $data->update([
+             'name' => $request->name,
+             'description' => $request->description,
+             'amount_needed' => $request->amount_needed,
+         ]);
+
+         return redirect('donateditems')->with('flash_message', 'Donation Update!');
      }
+
+
+
+
+
     /**
      * Remove the specified resource from storage.
      *

@@ -15,7 +15,9 @@ class ItemFormController extends Controller
      */
     public function index()
     {
-        //
+
+        $data= Item_form::all();
+        return view('dashboardbage.DonatedItemsForm')->with('data', $data);
     }
 
     /**
@@ -79,8 +81,11 @@ class ItemFormController extends Controller
      * @param  \App\Models\Item_form  $item_form
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item_form $item_form)
+    public function destroy($id)
     {
-        //
+
+        Item_form::find($id)->delete();
+        Item_form::destroy($id);
+    return redirect('donationitemform')->with('flash_message','donationitemform deleted!');
     }
 }

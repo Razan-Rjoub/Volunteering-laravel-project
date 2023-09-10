@@ -42,7 +42,7 @@ Donations
         creat new students
     </div>
     <div class="card-body">
-      <form action="{{ url('/donation') }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ url('/donatione') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <label>Name</label><br>

@@ -46,7 +46,7 @@ class ServiceController extends Controller
         }
 
         $input =$request->all();
-       
+
         Service::create([
             'name' => $request->name,
             'description' => $request->description,
@@ -86,13 +86,44 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
+
+
     public function update(UpdateServiceRequest $request, $id)
     {
-        $data=Service::find($id);
-        $input=$request->all();
-        $data->update($input);
-         return redirect('donatedservives')->with('flash_message','donated servives Update!');
+
+        $data = Service::find($id);
+
+
+        if ($request->hasFile('image')) {
+
+            if (file_exists(public_path($data->image))) {
+                unlink(public_path($data->image));
+            }
+
+
+            $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/assets/img/'), $filename);
+
+
+            $data->update(['image' => $filename]);
+        }
+
+
+        $data->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            
+        ]);
+
+        return redirect('donatedservives')->with('flash_message', 'Donation Update!');
     }
+
+
+
+
+
+
+
 
     /**
      * Remove the specified resource from storage.

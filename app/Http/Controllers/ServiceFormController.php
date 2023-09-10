@@ -15,7 +15,8 @@ class ServiceFormController extends Controller
      */
     public function index()
     {
-        //
+        $data= Service_form::all();
+        return view('dashboardbage.donatedservicesform')->with('data', $data);
     }
 
     /**
@@ -79,8 +80,10 @@ class ServiceFormController extends Controller
      * @param  \App\Models\Service_form  $service_form
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service_form $service_form)
+    public function destroy($id)
     {
-        //
+        Service_form::find($id)->delete();
+        Service_form::destroy($id);
+    return redirect('donatedservicesform')->with('flash_message','donated services form deleted!');
     }
 }

@@ -15,7 +15,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $data= Admin::all();
+        return view('dashboardbage.Admins')->with('data', $data);
     }
 
     /**
@@ -25,7 +26,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboardbage.createadmin');
+
     }
 
     /**
@@ -36,7 +38,20 @@ class AdminController extends Controller
      */
     public function store(StoreAdminRequest $request)
     {
-        //
+         $filename = '';
+        if ($request->hasFile('image')) {
+            $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/assets/img/'), $filename);
+        }
+
+        $input =$request->all();
+        Admin::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'image' => $filename,
+        ]);
+       return redirect('admin')->with('flash_message','Admin Added!');
     }
 
     /**
@@ -45,9 +60,10 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Admin $admin)
+    public function show($id)
     {
-        //
+        $data=Admin::find($id);
+        return view('dashboardbage.show')->with('data',$data);
     }
 
     /**
@@ -56,11 +72,11 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin)
+    public function edit($id)
     {
-        //
+        $data=Admin::find($id);
+        return view('dashboardbage.editadmin')->with('data',$data);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -68,9 +84,33 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAdminRequest $request, Admin $admin)
+    public function update(UpdateAdminRequest $request, $id)
     {
-        //
+        $data = Admin::find($id);
+
+
+        if ($request->hasFile('image')) {
+
+            if (file_exists(public_path($data->image))) {
+                unlink(public_path($data->image));
+            }
+
+
+            $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/assets/img/'), $filename);
+
+
+            $data->update(['image' => $filename]);
+        }
+
+
+        $data->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'amount_needed' => $request->amount_needed,
+        ]);
+
+        return redirect('admin')->with('flash_message', 'Admin Update!');
     }
 
     /**
@@ -79,8 +119,11 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy($id)
     {
-        //
+        Admin::find($id)->delete();
+        Admin::destroy($id);
+    return redirect('admin')->with('flash_message','Admindeleted!');
+
     }
 }

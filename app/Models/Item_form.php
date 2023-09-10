@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item_form extends Model
 {
-    use HasFactory;
+
+use HasFactory;
+protected $fillable = [
+    'volunteerName',
+    'volunteerPhone',
+    'volunteerAddress',
+    'description',
+    'status',
+    'image',
+];
 }

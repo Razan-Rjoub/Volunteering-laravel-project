@@ -49,7 +49,7 @@ Donations
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <a href=" {{ url('/donation/create') }}" > <button class="btn btn-primary mb-2">Add Donations</button></a>
+                <a href=" {{ url('/donatione/create') }}" > <button class="btn btn-primary mb-2">Add Donations</button></a>
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
@@ -76,16 +76,16 @@ Donations
                     No Image
                     @endif
                   </td>
-                 
+
                   <td>{{ $item->amount_needed }}</td>
 
 
                 <td>
 
-               <a href="{{ url('/donation/' . $item->id  . '/edit' ) }}" > <button class="btn btn-warning btn-sm">Edit</button></a>
+               <a href="{{ url('/donatione/' . $item->id  . '/edit' ) }}" > <button class="btn btn-warning btn-sm">Edit</button></a>
 
                 <!-- Delete Admin form (you can use a modal for confirmation) -->
-                <form method="POST" action="{{ url('/donation' . '/' . $item->id  ) }}" style="display: inline;">
+                <form method="POST" action="{{ url('/donatione' . '/' . $item->id  ) }}" style="display: inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Confirm delete?')">Delete</button>

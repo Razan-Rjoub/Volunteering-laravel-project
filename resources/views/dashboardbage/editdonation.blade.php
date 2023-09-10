@@ -42,7 +42,7 @@ Donations
       Edit Donation
     </div>
     <div class="card-body">
-        <form action="{{ url('donation/' .$data->id) }}" method="POST" enctype="multipart/form-data" >
+        <form action="{{ url('donatione/' .$data->id) }}" method="POST"  enctype="multipart/form-data"  enctype="multipart/form-data">
             @csrf
             @method("PATCH")
             <input type="hidden" name="id" value="{{ $data->id }}" id="id">

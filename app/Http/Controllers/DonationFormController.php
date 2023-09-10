@@ -17,7 +17,7 @@ class DonationFormController extends Controller
     {
 
 
-        $data = Donation_form::with('donation')->get();
+        $data= Donation_form::all();
         return view('dashboardbage.DonationForm')->with('data', $data);
     }
 

@@ -19,13 +19,16 @@ return new class extends Migration
         Schema::create('service_forms', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
             $table->bigInteger('service_id')->unsigned();
             $table->string('description');
             $table->timestamp('time');
             $table->date('Date');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('service_id')->references('id')->on('services');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('CASCADE');
         });
     }
 

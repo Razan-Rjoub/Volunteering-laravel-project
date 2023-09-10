@@ -53,7 +53,7 @@ Donation form
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                <th>Donation Name</th>
+                
                   <th>price</th>
                   <th>phone</th>
                   <th>name</th>
@@ -68,13 +68,7 @@ Donation form
                 <tr>
 
 
-                    <td>
-                        @if ($item->donstion_id)
-                        {{ $item->donstion_id->name }}
-                        @else
-                        No Associated Donation
-                        @endif
-                    </td>
+
                   <td>{{ $item->price }}</td>
                   <td>{{ $item->phone }}</td>
                   <td>{{ $item->name}}</td>
