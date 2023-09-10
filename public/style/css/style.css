@@ -2975,6 +2975,7 @@ textarea.form-control-lg {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
+  margin-left: 200px;
   border-radius: 0.25rem; }
   .dropdown-menu[style] {
     right: auto !important; }
@@ -9177,7 +9178,7 @@ textarea {
   background-color: #ccc; }
   .hero, .hero > .container > .row {
     height: 100vh;
-    min-height: 780px; }
+    min-height: 500px; }
     @media (max-width: 991.98px) {
       .hero, .hero > .container > .row {
         min-height: auto !important;
@@ -9187,6 +9188,7 @@ textarea {
   .hero.overlay {
     position: relative;
     z-index: 1;
+    height: 300px;
      }
     .hero.overlay:before {
       background-color: rgba(0, 0, 0, 0.4);
