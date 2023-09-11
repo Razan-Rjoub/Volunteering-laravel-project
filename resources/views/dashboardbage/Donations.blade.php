@@ -7,7 +7,7 @@ table
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
@@ -54,10 +54,11 @@ Donations
                 <thead>
                 <tr>
 
-                  <th>name</th>
-                  <th>description </th>
-                  <th>image</th>
-                  <th>amount_needed </th>
+                  <th>Name</th>
+                  <th>description</th>
+                  <th>Image</th>
+                  <th>Amount</th>
+                  <th>Action</th>
 
                 </tr>
                 </thead>

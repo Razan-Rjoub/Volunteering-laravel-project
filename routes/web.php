@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminLoginController;
 use App\Http\Controllers\DonationFormController;
 use App\Http\Controllers\PaypalController;
 
@@ -155,4 +156,20 @@ Route::resource('/donationitemform', ItemFormController::class);
 Route::resource('/donatedservicesform', ServiceFormController::class);
 Route::resource('/admin', AdminController::class);
 Route::resource('/category',CategoryController::class);
+
+
+
+
+
+// adminlogin
+Route::get('/adminLogin', [adminLoginController::class, 'adminLogin'])->name('adminLogin');
+Route::post('/adminLogin', [adminLoginController::class, 'adminLoginPost'])->name('adminLogin');
+Route::get('/home', [AdminController::class, 'adminIndex']);
+
+// adminLogout
+Route::get('/home', [AdminController::class, 'adminIndex']);
+Route::get('/adminLogout', [adminLoginController::class, 'adminLogout'])->name('adminLogout');
+
+
+
 

@@ -1,6 +1,6 @@
 @extends('dashlayouts.master')
 @section('title')
-dashboard
+Dashboard
 @endsection
 
 
@@ -13,7 +13,7 @@ Home
 
 
 @section('title-bage2')
-dashboard
+Dashboard
 @endsection
 
 
@@ -88,12 +88,12 @@ dashboard
       </div></div>
 
 
-      <div class="container-fluid" style="margin-top: 70px; margin-bottom: 100px;">
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
+      {{-- <div class="container-fluid" style="margin-top: 70px; margin-bottom: 100px;">
+        <div class="row"> --}}
+            {{-- <div class="col-lg-6 col-md-6">
                 <img src="{{ asset('assets/img/Capture.PNG') }}" alt="User Image" style="width: 100%; max-width: 500px;">
-            </div>
-            <div class="col-lg-6 col-md-6">
+            </div> --}}
+            {{-- <div class="col-lg-6 col-md-6">
                 <div class="table-responsive">
                     <table class="table table-bordered" style="width: 100%;">
                         <caption class="text-center">Average Annual Donation (in dollars)</caption>
@@ -167,7 +167,7 @@ dashboard
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
         </section>
 

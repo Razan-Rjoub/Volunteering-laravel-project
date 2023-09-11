@@ -7,7 +7,7 @@ User
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
@@ -45,7 +45,7 @@ Donation form
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Donations</h3>
+              <h3 class="card-title">Donated items</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -54,12 +54,14 @@ Donation form
                 <thead>
                 <tr>
 
-                  <th>volnteer_name</th>
-                  <th>volunteerPhone</th>
-                  <th>volunteerAddress</th>
-                  <th>description</th>
-                  <th>status</th>
-                    <th>image</th>
+                  <th>Volnteer name</th>
+                  <th>Volunteer Phone</th>
+                  <th>Volunteer Address</th>
+                  <th>Description</th>
+                  <th>Status</th>
+                  <th>Image</th>
+                  <th>Action</th>
+                
 
                 </tr>
                 </thead>
@@ -101,15 +103,7 @@ Donation form
 
                 @endforeach
                 </tbody>
-                {{-- <tfoot>
-                <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
-                </tr>
-                </tfoot> --}}
+               
               </table>
             </div>
             <!-- /.card-body -->
