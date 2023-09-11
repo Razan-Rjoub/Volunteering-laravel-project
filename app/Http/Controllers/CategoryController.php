@@ -6,9 +6,12 @@ use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Donation;
+use App\Models\User;
+use Auth;
 
 class CategoryController extends Controller
 {
+
 
     public function index()
     {
@@ -16,13 +19,18 @@ class CategoryController extends Controller
         return view('dashboardbage.Categories')->with('data', $data);
     }
 
+
     public function inCategory()
     {
         $data= Category::all();
+
         $donationData = Donation::all();
+        $userId = Auth::id();
+        $user = User::find($userId);
         return view('Home.index', [
             'category' => $data,
             'donation' => $donationData,
+            'user'=>$user,
         ]);
     }
     /**
@@ -33,8 +41,20 @@ class CategoryController extends Controller
     public function create()
     {
         return view('dashboardbage.createcategory');
-
     }
+
+    public function aboutus(){
+        $userId = Auth::id();
+        $user = User::find($userId);
+        return view('aboutus.aboutus',compact('user')); 
+    }
+
+    public function contactus(){
+        $userId = Auth::id();
+        $user = User::find($userId);
+        return view('Contact.contactus',compact('user')); 
+    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -44,7 +64,7 @@ class CategoryController extends Controller
      */
 
      public function store(StoreCategoryRequest $request)
-     {
+    {
         $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -131,4 +151,5 @@ class CategoryController extends Controller
     return redirect('category')->with('flash_message','Category deleted!');
 
     }
+    
 }

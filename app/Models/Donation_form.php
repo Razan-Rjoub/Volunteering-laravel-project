@@ -19,14 +19,12 @@ class Donation_form extends Model
         'email',
         
     ];
-
-    // public function donations()
-    // {
-    //     return $this->belongsTo(Donation::class);
-    // }
-
     public function donations()
     {
-        return $this->belongsTo(Donation::class, 'donstion_id');
+        return $this->hasMany(Donation::class);
+    }
+    public function users()
+    {
+        return $this->belongsTo(Donation::class);
     }
 }

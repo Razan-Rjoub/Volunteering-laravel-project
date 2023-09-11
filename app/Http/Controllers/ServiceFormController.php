@@ -13,6 +13,8 @@ class ServiceFormController extends Controller
 {
 
 
+
+
     public function index()
     {
         $data= Service_form::all();
@@ -25,10 +27,16 @@ class ServiceFormController extends Controller
      */
     public function infoService()
     {
-        $data= Service_form::all();
-        return view('dashboardbage.donatedservicesform')->with('data', $data);
-    }
+        return view('Service.serviceform');
 
+        
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+  
  
   
      public function stoService(Request $request)
@@ -73,6 +81,10 @@ class ServiceFormController extends Controller
      * @param  \App\Http\Requests\StoreService_formRequest  $request
      * @return \Illuminate\Http\Response
      */
+
+ 
+
+
     public function store(StoreService_formRequest $request)
     {
         //
@@ -127,3 +139,5 @@ class ServiceFormController extends Controller
   
 
 }
+
+

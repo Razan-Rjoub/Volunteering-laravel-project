@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact as Contact;
 use App\Models\Test;
-
+use App\Models\User;
+use Auth;
 
   
 class ContactController extends Controller
@@ -36,8 +37,9 @@ class ContactController extends Controller
         ]);
 
   
-       
+        $userId = Auth::id();
+        $user = User::find($userId);
   
-        return view('Contact.contactus'); 
+        return view('Contact.contactus' , compact('user')); 
     }
 }

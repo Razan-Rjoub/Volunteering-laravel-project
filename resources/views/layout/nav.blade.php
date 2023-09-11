@@ -59,10 +59,25 @@
 						<div class="col-6 text-center">
 							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
 								<li class="active"><a href="{{route('home')}}">Home</a></li>
+								<li class="has-children">
+									<a href="causes.html">Causes</a>
+									<ul class="dropdown">
+										<li><a href="#">Menu One</a></li>
+										<li><a href="#">Menu Two</a></li>
+										<li class="has-children">
+											<a href="#">Dropdown</a>
+											<ul class="dropdown">
+												<li><a href="#">Sub Menu One</a></li>
+												<li><a href="#">Sub Menu Two</a></li>
+												<li><a href="#">Sub Menu Three</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
 								<li><a href="{{route('Give Donation')}}">Donation</a></li>
 								<li><a href="{{route('Give Services')}}">Services</a></li>
-								<li><a href="{{route('Give Items')}}">Items</a></li>
 								<li><a href="{{route('aboutus')}}">About</a></li>
+								<li><a href="news.html">News</a></li>
 								<li><a href="{{route('contact')}}">Contact</a></li>
 							</ul>
 						</div>
@@ -72,7 +87,7 @@
 							<li class="nav-item navbar-dropdown dropdown-user dropdown"  >
 								<a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown">
 									<div class="" style="">
-										<img style="width: 45px;" src="{{asset('style/images/FZ2_8041.jpg')}}" alt
+										<img style="width: 45px;" src="{{$user->image}}" alt
 											class=" h-auto rounded-circle " />
 									</div>
 								</a>

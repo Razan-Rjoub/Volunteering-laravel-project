@@ -5,19 +5,25 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
+use App\Models\User;
+use Auth;
 
 class ServiceController extends Controller
 {
+   
+  public function inService()
+{
+    $data= Service::all();
+    $userId = Auth::id();
+    $user = User::find($userId);
+    return view('Service.service',['service'=>$data,'user'=>$user]); 
+}
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-  public function inService()
-{
-    $data= Service::all();
-    return view('Service.service',['service'=>$data]); 
-}
+
     public function index()
     {
 
@@ -28,10 +34,11 @@ class ServiceController extends Controller
 public function formService($id) {
     // Use the $id parameter to retrieve the specific service data
     $service = Service::find($id);
-
+    $userId = Auth::id();
+    $user = User::find($userId);
     // Your logic here...
 
-    return view('service.serviceform', compact('service'));
+    return view('service.serviceform', compact('service','user'));
 }
     /**
      * Show the form for creating a new resource.
@@ -160,4 +167,5 @@ public function formService($id) {
 
 
 
+ 
 }

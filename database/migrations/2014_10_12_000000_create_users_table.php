@@ -20,9 +20,8 @@ return new class extends Migration
             $table->string('google_id')->nullable();
             $table->rememberToken();
             $table->string('phone');
-            $table->mediumText('image')->default('http://127.0.0.1:8000/style/images/1694359962.jpg');
-            $table->foreignId('current_team_id')->nullable();
-            $table->string('profile_photo_path', 2048)->nullable();
+            $table->mediumText('image')->default('http://127.0.0.1:8000/style/images/1694359962.jpg
+            ');
             $table->timestamps();
 
         });
