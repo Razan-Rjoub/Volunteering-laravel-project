@@ -63,7 +63,7 @@
                                     class="img-fluid mb-4 rounded"></a>
                             <div class="px-4 pb-5 pt-3">
 
-                                <h3><a href="#">{{$key->name}}</a></h3>
+                                <h3><a href="#">{{$key->ItemName}}</a></h3>
                                 <p>{{$key->description}}</p>
 
                                 <div>

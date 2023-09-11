@@ -61,9 +61,11 @@ Route::get('/welcome', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+
 Route::get('/thankyou', function () {
     return view('Thankyou');
 })->name('thankyou');
+
 Route::get('/form', function () {
     return view('Form');
 });
@@ -78,15 +80,12 @@ Route::get('/contactus', function () {
 
 
 
-Route::get('/', [CategoryController::class, 'indexCategory'])->name('home');
+Route::get('/', [CategoryController::class, 'inCategory'])->name('home');
 
-Route::get('/donation', [DonationController::class, 'indexDonation'])->name('Give Donation');
+Route::get('/donation', [DonationController::class, 'inDonation'])->name('Give Donation');
 Route::get('/service', [ServiceController::class, 'index'])->name('Give Services');
-Route::get('/item', [ItemController::class, 'indexItem'])->name('Give Items');
+Route::get('/item', [ItemController::class, 'inItem'])->name('Give Items');
 
-//Route::get('/',[CategoryController::class,'index'])->name('home');
-
-//Route::get('/item',[ItemController::class,'index'])->name('Give Items');
 
 
 
@@ -94,14 +93,14 @@ Route::get('/item', [ItemController::class, 'indexItem'])->name('Give Items');
 
 
 Route::get('/donationform/{id}', [DonationController::class, 'formDonation'])->name('donationform');
-Route::post('/submitdonation', [DonationFormController::class, 'storeDonation'])->name('submitdonate');
+Route::post('/submitdonation', [DonationFormController::class, 'stoDonation'])->name('submitdonate');
 
 Route::get('payment/{price}', [PaypalController::class, 'payment'])->name('payment');
 Route::get('cancel', [PaypalController::class, 'cancel'])->name('payment.cancel');
 Route::get('payment/success', [PaypalController::class, 'success'])->name('payment.success');
 
 Route::get('/itemform/{id}', [ItemController::class, 'formItem'])->name('itemform');
-Route::post('/storeitem', [ItemFormController::class, 'storeItem'])->name('storeitem');
+Route::post('/storeitem', [ItemFormController::class, 'stoItem'])->name('storeitem');
 
 Route::get('/logout', [ProfileController::class, 'destroy'])->name('logout');
 
@@ -117,10 +116,10 @@ Route::get('/cancel', function () {
     return view('cancel');
 })->name('cancel');
 
-Route::get('/serviceform/{id}', [ServiceController::class, 'joinForm'])->name('serviceform');
-Route::post('/serviceform', [ServiceFormController::class,'store'])->name('service.store');
-Route::get('/service',[ServiceController::class,'index'])->name('Give Services');
-Route::get('/serviceform',[ServiceFormController::class,'index'])->name('Servicesform');
+Route::get('/serviceform/{id}', [ServiceController::class, 'formService'])->name('serviceform');
+Route::post('/serviceform', [ServiceFormController::class,'stoService'])->name('service.store');
+Route::get('/service',[ServiceController::class,'inService'])->name('Give Services');
+Route::get('/serviceform',[ServiceFormController::class,'infoService'])->name('Servicesform');
 
 
 Route::get('/dash', function () {
@@ -152,9 +151,7 @@ Route::get('/DonatedServicesForm', function () {
     return view('dashboardbage.DonatedServicesForm');
 });
 
-// Route::get('/DonationForm', function () {
-//     return view('dashboardbage.DonationForm');
-// });
+
 
 
 
@@ -163,7 +160,7 @@ Route::get('/DonatedServicesForm', function () {
 
 Route::namespace('Admin')->group(function () {
 
-    Route::resource('/donatione', DonationController::class);
+Route::resource('/donatione', DonationController::class);
 Route::resource('/donateditems', ItemController::class);
 Route::resource('/donatedservives', ServiceController::class);
 Route::resource('/user', UsertController::class);

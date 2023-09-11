@@ -28,7 +28,7 @@
         <form action="{{route('storeitem')}}" method="POST" class="bg-light p-5 rounded donation-form" data-aos="fade-up" style="margin: 50px" >
             @csrf
 
-            
+
 
             <div class="form-field mb-3">
                 <input type="name" class="form-control px-4" value="{{ $itemid->id }}" name="item_id" hidden>
@@ -43,12 +43,19 @@
                     <label for="email">Email:</label>
                     <input type="email" class="form-control px-4" id="email" placeholder="Enter your email"
                         value="{{ $user->email }}" name="volunteerEmail" required>
+                        @error('volunteerEmail')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone:</label>
                     <input type="text" class="form-control px-4" id="phone" placeholder="Enter your phone"
                         value="{{ $user->phone }}" name="volunteerPhone" required>
+                        @error('volunteerPhone')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
                 </div>
 
 
@@ -70,7 +77,7 @@
                         <option selected>Choose item status...</option>
                         <option value="Tolerable">Tolerable</option>
                         <option value="Good">Good</option>
-                        <option value="Very Good" >Vary Good</option>
+                        <option value="Very Good" >Very Good</option>
                     </select>
                 </div>
 

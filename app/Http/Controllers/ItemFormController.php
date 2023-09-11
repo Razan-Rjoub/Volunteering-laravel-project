@@ -15,17 +15,20 @@ use Illuminate\Http\Request;
 class ItemFormController extends Controller
 {
 
-    public function storeItem(Request $request)
+    public function stoItem(Request $request)
     {
         $validatedData = $request->validate([
             'volunteerName' => 'required',
-            'volunteerEmail' => 'required',
-            'volunteerPhone' => 'required',
+            'volunteerEmail' => ['required','email', 'ends_with:.com'],
+            'volunteerPhone' => ['required', 'regex:/^07[789]\d{7}$/'],
+
             'volunteerAddress' => 'required',
             'description' => 'required',
             'status' => 'required',
             'image' => 'required|max:2048',
-        ]);
+        ],['phone.regex' => 'The phone  must start with 07 and to be 10number.'
+            ]);
+
 
 
 
@@ -46,7 +49,7 @@ class ItemFormController extends Controller
 
     ]);
 
-    return redirect()->route('home')->with([
+    return redirect()->route('paysuccess')->with([
         'success' => 'Donation successfully
     '
     ]);

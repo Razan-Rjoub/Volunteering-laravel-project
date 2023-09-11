@@ -16,7 +16,7 @@ class ItemSeeder extends Seeder
     public function run()
     {
         Item::create([
-            'name' => 'Living Rooms',
+            'ItemName' => 'Living Rooms',
             'description' => "Your act of donating a bedroom can provide warmth
             and shelter to someone in need. A simple gesture of kindness can make
             a world of difference in someone's life.",
@@ -24,7 +24,7 @@ class ItemSeeder extends Seeder
 
         ]);
         Item::create([
-            'name' => 'Bed Rooms',
+            'ItemName' => 'Bed Rooms',
             'description' => "Transform lives by donating a living room today.
              Your contribution creates a cozy haven, fostering warmth and togetherness
               for those in need. Be the catalyst for positive change and make a house a home.",
@@ -32,7 +32,7 @@ class ItemSeeder extends Seeder
 
         ]);
         Item::create([
-            'name' => 'Kitchens',
+            'ItemName' => 'Kitchens',
             'description' => "Your contribution can change lives and fill hearts with warmth.
              Donate a kitchen today, and empower families to cook up happiness and nourishment
               for a brighter tomorrow.",
@@ -40,7 +40,7 @@ class ItemSeeder extends Seeder
 
         ]);
         Item::create([
-            'name' => 'Others',
+            'ItemName' => 'Others',
             'description' => "When you donate, you empower others and inspire
             a brighter future for those in need. Every contribution, no matter how modest,
              fuels hope and compassion.",

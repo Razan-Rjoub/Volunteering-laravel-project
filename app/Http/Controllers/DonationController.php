@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Request;
 
 class DonationController extends Controller
 {
-    public function indexDonation()
+    public function inDonation()
     {
         $donation = Donation::all();
         $totals = Donation_form::select('donation_id', DB::raw('SUM(price) as total_price'))

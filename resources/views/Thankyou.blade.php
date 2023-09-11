@@ -7,7 +7,7 @@
     <div class="wrapper-1">
       <div class="wrapper-2">
         <h1>Thank you !</h1>
-        <p>Your Payment has been Successful </p>
+        <p>Your Donation has been Successful </p>
         <p> </p>
         <a href="{{route('home')}}"> <button class="go-home">
        go home

@@ -10,7 +10,7 @@ use App\Models\Donation;
 class CategoryController extends Controller
 {
 
-    public function indexCategory()
+    public function inCategory()
     {
         $data= Category::all();
         $donationData = Donation::all();
@@ -20,5 +20,5 @@ class CategoryController extends Controller
         ]);
     }
 
-    
+
 }

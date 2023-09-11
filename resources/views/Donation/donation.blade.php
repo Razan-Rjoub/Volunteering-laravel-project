@@ -48,7 +48,7 @@
                                     class="img-fluid mb-4 rounded"></a>
                             <div class="px-4 pb-5 pt-3">
 
-                                <h3><a href="{{ route('donationform', ['id' => $item->id]) }}">{{$item->name}}</a></h3>
+                                <h3><a href="{{ route('donationform', ['id' => $item->id]) }}">{{$item->DonationName}}</a></h3>
                                 <p>{{$item->description}}</p>
                                 @php
 
