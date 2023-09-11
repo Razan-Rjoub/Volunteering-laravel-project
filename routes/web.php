@@ -136,41 +136,21 @@ Route::get('/cancel', [PaypalController::class, 'cancelview'])->name('cancel');
 Route::get('/cancel', function () {
     return view('cancel');
 })->name('cancel');
-
 Route::get('/serviceform/{id}', [ServiceController::class, 'formService'])->name('serviceform');
 Route::post('/serviceform', [ServiceFormController::class,'stoService'])->name('service.store');
 Route::get('/service',[ServiceController::class,'inService'])->name('Give Services');
 Route::get('/serviceform',[ServiceFormController::class,'infoService'])->name('Servicesform');
 
-
-Route::get('/dash', function () {
-    return view('dashboardbage.home');
-});
-
-
-
-Route::get('/Admins', function () {
-    return view('dashboardbage.Admins');
-});
+Route::get('/servicethanks', function () {
+    return view('service.servicethanks');
+})->name('servicethanks');
 
 
 
 
-Route::get('/Categories', function () {
-    return view('dashboardbage.Categories');
-});
 
 
 
-Route::get('/DonatedItemsForm', function () {
-    return view('dashboardbage.DonatedItemsForm');
-});
-
-
-
-Route::get('/DonatedServicesForm', function () {
-    return view('dashboardbage.DonatedServicesForm');
-});
 
 
 

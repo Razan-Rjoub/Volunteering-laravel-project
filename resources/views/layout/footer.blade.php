@@ -6,12 +6,11 @@
                 <div class="widget">
                     <h3>Navigation</h3>
                     <ul class="list-unstyled float-left links">
+                        <li><a href="#">Donation</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Service</a></li>
                         <li><a href="#">About us</a></li>
-                        <li><a href="#">Donate Now</a></li>
-                        <li><a href="#">Causes</a></li>
-                        <li><a href="#">Volunteer</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Contact us</a></li>
                     </ul>
                 </div> <!-- /.widget -->
             </div> <!-- /.col-lg-3 -->
@@ -44,11 +43,11 @@
             <div class="col-6 col-sm-6 col-md-6 col-lg-3">
                 <div class="widget">
                     <h3>Contact</h3>
-                    <address>43 Raymouth Rd. Baltemoer, London 3910</address>
+                    <address>43 Raymouth Rd, Irbid 3910</address>
                     <ul class="list-unstyled links mb-4">
                         <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
                         <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-                        <li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
+                        <li><a href="mailto:info@mydomain.com">donation@mydomain.com</a></li>
                     </ul>
 
                     <h3>Connect</h3>

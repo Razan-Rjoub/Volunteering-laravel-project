@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateService_formRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\User;
+
 
 class ServiceFormController extends Controller
 {
@@ -25,11 +27,16 @@ class ServiceFormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+    
     public function infoService()
     {
         return view('Service.serviceform');
 
         
+     
     }
     /**
      * Display a listing of the resource.
@@ -39,15 +46,32 @@ class ServiceFormController extends Controller
   
  
   
+  
+     
+         
+
+   
+  
      public function stoService(Request $request)
      {
          $request->validate([
+             'name' => 'required',
+             'email' => ['required', 'email', 'ends_with:.com'],
+             'phone' => ['required', 'regex:/^07[789]\d{7}$/'], 
              'description' => 'required',
              'date' => 'required|date',
              'time' => 'required',
              'service_id' => 'required', // Add validation rule for service_id
-         ]);
-     
+         ],
+           [
+            'phone.regex' => 'The phone  must start with 07 and to be 10 number.'
+            ]);
+         
+         
+        if (Auth::check()) {
+            $userId = Auth::id();
+    $user = User::find($userId);
+          }
          Service_form::create([
              'user_id' => Auth::id(),
              'name' => $request->input('name'),
@@ -58,13 +82,14 @@ class ServiceFormController extends Controller
              'Date' => $request->input('date'),
              'time' => $request->input('time')
          ]);
-     
          // Redirect back with a success message or handle the response as needed
-         return redirect()->back()->with('success', 'Service form submitted successfully');
-     }
+         return redirect()->route('paysuccess')->with([
+            'success' => 'Donation successfully
+        '
+        ]);     }
      
          
-
+   
     /**
      * Show the form for creating a new resource.
      *
@@ -83,6 +108,7 @@ class ServiceFormController extends Controller
      */
 
  
+   
 
 
     public function store(StoreService_formRequest $request)
@@ -138,6 +164,8 @@ class ServiceFormController extends Controller
     }
   
 
+
+  
 }
 
 
