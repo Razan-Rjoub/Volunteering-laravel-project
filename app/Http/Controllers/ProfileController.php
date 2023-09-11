@@ -31,12 +31,13 @@ class ProfileController extends Controller
     public function pdf(){
         $id = Auth::id();
         $user = User::find($id);
-        $donation_form = Donation_form::where('user_id', $id)->get();
-        $Donation = DB::table('donation_forms')
-            ->join('donations', 'donation_forms.donation_id', '=', 'donations.id')
-            ->where('donation_forms.user_id', $id)
-            ->select('donations.DonationName','donation_forms.*')
-            ->get();
+        
+//         $donationForms = $user->donationform->load('donations');
+        
+//         $Donation = $donationForms->donations;
+// dd($Donation);
+$service = Service_form::where('user_id', $id)->with('service')->get();
+
             $service = DB::table('service_forms')
             ->join('services', 'service_forms.service_id', '=', 'services.id')
             ->where('service_forms.user_id', $id)
@@ -48,10 +49,10 @@ class ProfileController extends Controller
             ->select('items.ItemName','item_forms.*')
             ->get();
 
-            $html = view('certificate_template', compact('user', 'Donation','service'));
+            $html = view('certificate_template', compact('user', 'service'));
 
             $pdf = PDF::loadHTML($html);
-            return $pdf->download('participation_certificate.pdf'); 
+            // return $pdf->download('participation_certificate.pdf'); 
     }
     public function edit(Request $request)
     {

@@ -20,11 +20,7 @@ class ServiceFormController extends Controller
         $data= Service_form::all();
         return view('dashboardbage.donatedservicesform')->with('data', $data);
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function infoService()
     {
         return view('Service.serviceform');

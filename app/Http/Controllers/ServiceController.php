@@ -18,11 +18,7 @@ class ServiceController extends Controller
     $user = User::find($userId);
     return view('Service.service',['service'=>$data,'user'=>$user]); 
 }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
 
