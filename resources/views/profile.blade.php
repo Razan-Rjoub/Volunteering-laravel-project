@@ -19,11 +19,12 @@
                                     <h4 class="card-header">Profile Details</h4>
                                     <!-- Account -->
                                     <div class="card-body pt-2 mt-1">
-                                        <form  method="POST"  action="{{route('editprofile')}}" enctype="multipart/form-data">
+                                        <form method="POST" action="{{ route('editprofile') }}"
+                                            enctype="multipart/form-data">
                                             @csrf
                                             <div class="card-body">
                                                 <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                                    <img src="{{$user->image}}" style="width: 150px" alt="user-avatar"
+                                                    <img src="{{ $user->image }}" style="width: 150px" alt="user-avatar"
                                                         class="d-block w-px-120 h-px-120 rounded" id="uploadedAvatar" />
                                                     <div class="button-wrapper">
                                                         <label for="upload" class="btn btn-primary me-2 mb-3"
@@ -31,7 +32,7 @@
                                                             <span class="d-none d-sm-block">Upload new photo</span>
                                                             <i class="mdi mdi-tray-arrow-up d-block d-sm-none"></i>
                                                             <input type="file" id="upload" class="account-file-input"
-                                                                hidden accept="image/png, image/jpeg" />
+                                                                hidden accept="image/png, image/jpg" name="image" />
                                                         </label>
 
                                                         <div class="text-muted small">Allowed JPG, GIF or PNG. Max size of
@@ -51,7 +52,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-floating form-floating-outline">
                                                         <input class="form-control" type="text" id="email"
-                                                            name="email" value="{{$user->email}}"
+                                                            name="email" value="{{ $user->email }}"
                                                             placeholder="john.doe@example.com" />
                                                         <label for="email">E-mail</label>
                                                     </div>
@@ -71,32 +72,17 @@
                                     </div>
                                     <!-- /Account -->
                                 </div>
-                                <div class="card">
-                                    <h5 class="card-header fw-normal">Delete Account</h5>
-                                    <div class="card-body">
-                                        <div class="mb-3 col-12 mb-0">
-                                            <div class="alert alert-warning">
-                                                <h6 class="alert-heading mb-1">Are you sure you want to delete your account?
-                                                </h6>
-                                                <p class="mb-0">Once you delete your account, there is no going back.
-                                                    Please be certain.</p>
-                                            </div>
-                                        </div>
-                                        <form id="formAccountDeactivation" onsubmit="return false">
-                                            <div class="form-check mb-3 ms-3">
-                                                <input class="form-check-input" type="checkbox" name="accountActivation"
-                                                    id="accountActivation" />
-                                                <label class="form-check-label" for="accountActivation">I confirm my
-                                                    account deactivation</label>
-                                            </div>
-                                            <button type="submit" class="btn btn-secondary deactivate-account"
-                                                disabled="disabled">Deactivate Account</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
+
+
+                                <form id="formAccountDeactivation" onsubmit="return false">
+                                    <div class="form-check mb-3 ms-3">
+                                    </div>
+
+                                </form>
+                                <a  href="{{route('pdf')}}"><button class="btn btn-warning mb-5" >download your donations</button> </a>                   </div>
+                        </div>
+ 
 
                     </div>
 

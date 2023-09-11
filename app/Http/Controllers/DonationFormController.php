@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class DonationFormController extends Controller
 {
 
-    public function storeDonation(Request $request)
+    public function stoDonation(Request $request)
     {
         $request->validate([
             'price' => 'required|numeric',

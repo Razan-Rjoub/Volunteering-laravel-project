@@ -14,10 +14,12 @@ use Illuminate\Support\Facades\Request;
 class ItemController extends Controller
 {
 
-    public function indexItem()
+    public function inItem()
     {
         $data= Item::all();
-        return view('Item.item',['item'=>$data]);
+        $userId = Auth::id();
+        $user = User::find($userId);
+        return view('Item.item',['item'=>$data,'user'=>$user]);
     }
 
 

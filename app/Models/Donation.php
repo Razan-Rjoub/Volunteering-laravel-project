@@ -11,7 +11,7 @@ class Donation extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
+        'DonationName',
         'description',
         'image',
         'amount_needed',
@@ -23,6 +23,6 @@ class Donation extends Model
     }
     public function donationform()
     {
-        return $this->hasMany(Donation_form::class);
+        return $this->belongsTo(Donation_form::class);
     }
 }

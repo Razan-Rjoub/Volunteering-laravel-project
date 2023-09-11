@@ -44,11 +44,11 @@
                 @foreach ($donation as $item)
                     <div class="item">
                         <div class="causes-item bg-white">
-                            <a href="{{ route('donationform', ['id' => $item->id]) }}"><img src="style/images/{{$item->image}}" alt="Image"
+                            <a href="{{ route('donationform', ['id' => $item->id]) }}"><img src="{{$item->image}}" alt="Image"
                                     class="img-fluid mb-4 rounded"></a>
                             <div class="px-4 pb-5 pt-3">
 
-                                <h3><a href="{{ route('donationform', ['id' => $item->id]) }}">{{$item->name}}</a></h3>
+                                <h3><a href="{{ route('donationform', ['id' => $item->id]) }}">{{$item->DonationName}}</a></h3>
                                 <p>{{$item->description}}</p>
                                 @php
 

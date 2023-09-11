@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Donation;
+use App\Models\Donation_form;
+use App\Models\Item_form;
+use App\Models\Service_form;
 use App\Models\User;
+use DB;
+use PDF;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +22,36 @@ class ProfileController extends Controller
     {
         $id = Auth::id();
         $user = User::find($id);
-        return view('profile', ['user' => $user]); 
+    
+
+        return view('profile', [
+            'user' => $user,
+        ]);
+    }
+    public function pdf(){
+        $id = Auth::id();
+        $user = User::find($id);
+        $donation_form = Donation_form::where('user_id', $id)->get();
+        $Donation = DB::table('donation_forms')
+            ->join('donations', 'donation_forms.donation_id', '=', 'donations.id')
+            ->where('donation_forms.user_id', $id)
+            ->select('donations.DonationName','donation_forms.*')
+            ->get();
+            $service = DB::table('service_forms')
+            ->join('services', 'service_forms.service_id', '=', 'services.id')
+            ->where('service_forms.user_id', $id)
+            ->select('services.ServiceName','service_forms.*')
+            ->get();
+            $items = DB::table('item_forms')
+            ->join('items', 'item_forms.item_id', '=', 'items.id')
+            ->where('item_forms.user_id', $id)
+            ->select('items.ItemName','item_forms.*')
+            ->get();
+
+            $html = view('certificate_template', compact('user', 'Donation','service'));
+
+            $pdf = PDF::loadHTML($html);
+            return $pdf->download('participation_certificate.pdf'); 
     }
     public function edit(Request $request)
     {
@@ -25,10 +60,10 @@ class ProfileController extends Controller
         $data['phone'] = $request->phone;
 
         $filename = '';
-
+        // dd($request->image);
         if ($request->hasFile('image')) {
-            $filename = $request->getSchemeAndHttpHost() . '/style/images/' . time() . '.' . $request->image->extension();
-            $request->image->move(public_path('/style/images/'), $filename);
+            $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/assets/img/'), $filename);
             $data['image'] = $filename;
         } else {
             unset($data['image']);
@@ -43,7 +78,7 @@ class ProfileController extends Controller
     {
         $id = Auth::id();
         $user = User::find($id);
-        return view('layout.nav', ['user' => $user]); 
+        return view('layout.nav', ['user' => $user]);
     }
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
@@ -66,4 +101,5 @@ class ProfileController extends Controller
         Auth::logout();
         return Redirect::to('/');
     }
+
 }

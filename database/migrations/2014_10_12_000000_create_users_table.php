@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('phone');
-            $table->mediumText('image')->default('http://127.0.0.1:8000/style/images/1694002163.jpg');
+            $table->mediumText('image')->default('http://127.0.0.1:8000/style/images/1694359962.jpg
+            ');
             $table->timestamps();
         });
     }

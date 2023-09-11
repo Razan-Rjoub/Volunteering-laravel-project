@@ -53,9 +53,9 @@
                 @foreach ($service as $index => $item)
                     <div class="item">
                         <div class="causes-item bg-white">
-                            <a href="#"><img src="style/images/{{ $item->image }}" alt="Image" class="img-fluid mb-4 rounded" style="height: 350px; width: 500px;"></a>
+                            <a href="#"><img src="{{ $item->image }}" alt="Image" class="img-fluid mb-4 rounded" style="height: 350px; width: 500px;"></a>
                             <div class="pb-5 pt-3">
-                                <h3><a href="#" class="join-button">{{ $item->name }}</a></h3>
+                                <h3><a href="#" class="join-button">{{ $item->ServiceName }}</a></h3>
                                 <div class="content-wrapper">
                                     <p>{{ $item->description }}</p>
                                 </div>
