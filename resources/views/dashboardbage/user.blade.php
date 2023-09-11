@@ -49,7 +49,7 @@ User
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-
+                <a href=" {{ url('/user/create') }}" > <button class="btn btn-primary mb-2">Add New User</button></a>
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>

@@ -26,7 +26,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open" >
-            <a href="#" class="nav-link active" style="background-color:black">
+            <a href="#" class="nav-link active" style="background-color:white;color:#59886b">
 
               <p>
                 Dashboard
@@ -35,7 +35,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ asset('/dash') }}" class="nav-link active" style="background-color:black">
+                <a href="{{ asset('/dash') }}" class="nav-link active" style="background-color:white;color:#59886b">
 
                   <h5 style="text-align:center">
                   home
@@ -88,7 +88,7 @@
 
     <ul class="nav nav-treeview">
       <li class="nav-item">
-        <a href="#" class="nav-link active" style="background-color:black">
+        <a href="#" class="nav-link active" style="background-color:white;color:#59886b">
 
           <h5 style="text-align:center">Form
           </h5>
