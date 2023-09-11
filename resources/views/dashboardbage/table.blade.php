@@ -13,7 +13,7 @@ Home
 
 
 @section('title-bage2')
-dashboard
+Dashboard
 @endsection
 
 
@@ -56,9 +56,9 @@ dashboard
                   <th> 	id</th>
                   <th>name</th>
                   <th>email </th>
-                  <th>email_verified_at</th>
-                  <th>password </th>
-                  <th>remember_token </th>
+                  <th>email verified Time</th>
+                  <th>Password </th>
+                  <th>Remember_token </th>
                   <th>created_at</th>
                   <th>updated_at</th>
                 </tr>

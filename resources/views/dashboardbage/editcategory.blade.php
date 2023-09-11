@@ -110,4 +110,8 @@ Category
     });
   });
 </script>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> 7dbb6e444a4c75cfcc8d73a94d882586b6dae1e9

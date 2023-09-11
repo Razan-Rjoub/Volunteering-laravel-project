@@ -7,13 +7,13 @@ donated services form
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
 
 @section('title-bage2')
-donatedservicesform
+Donated services form
 @endsection
 
 
@@ -54,12 +54,13 @@ donatedservicesform
                 <thead>
                 <tr>
 
-                  <th>name</th>
-                  <th>email</th>
-                  <th>phone</th>
-                  <th>description</th>
-                  <th>time</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Description</th>
+                  <th>Time</th>
                   <th>Date</th>
+                  <th>Action</th>
 
                 </tr>
                 </thead>

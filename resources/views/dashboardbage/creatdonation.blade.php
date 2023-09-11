@@ -38,7 +38,7 @@ Admins
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-        creat new Admin
+        Add new Donation
     </div>
     <div class="card-body">
       <form action="{{ url('/admin') }}" method="POST" enctype="multipart/form-data">
@@ -47,7 +47,7 @@ Admins
         <label>Name</label><br>
         <input type="text" name="DonationName" id="DonationName" class="form-control">
         <span>@error('DonationName'){{$message}} @enderror</span><br>
-        <label>email</label><br>
+        <label>Email</label><br>
         <input type="email" name="email" id="email" class="form-control">
         <span>@error('email'){{$message}} @enderror</span><br>
         <label>Password</label><br>

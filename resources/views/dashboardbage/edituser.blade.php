@@ -6,13 +6,13 @@ table
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
 
 @section('title-bage2')
-user
+User
 @endsection
 
 
@@ -38,7 +38,7 @@ user
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-        user Profile
+        User Profile
     </div>
     <div class="card" style="margin: 20px">
         <div class="card-body">
@@ -79,11 +79,11 @@ user
                             <input type="text" name="email" value="{{ $data->email }}" id="email" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="password">password</label>
+                            <label for="password">Password</label>
                             <input type="password" name="password"  value="{{ $data->password }}" id="password" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="phone">phone</label>
+                            <label for="phone">Phone</label>
                             <input type="number" name="phone"  value="{{ $data->phone }}" id="phone" class="form-control">
                         </div>
                         <div class="form-group">
