@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('title','Contactus')
 	@section('content')
-	<div class="hero overlay" style="background-image: url('style/images/img_v_5-min.jpg')">
+	<div class="hero overlay" style="background-image: url('style/images/donation.jpeg')">
 		<div class="container">
 			<div class="row align-items-center justify-content-center">
 				<div class="col-lg-6 text-center">
@@ -57,17 +57,17 @@
 					<div class="row">
 						<div class="col-6 col-lg-6 mb-4">
 							<h3 class="h6 fw-bold text-secondary">Address</h3>
-							<p>43 Raymouth Rd. Baltemoer, London 3910</p>
+							<p>jordan.irbid</p>
 						</div>
 						<div class="col-6 col-lg-6 mb-4">
 							<h3 class="h6 fw-bold text-secondary">Phone</h3>
 							<p>
-								+1 939 3839 399 <br>
-								+1 492 5991 203
+								009627999999 <br>
+								009627888888
 							</p>
 						</div>
 
-						<div class="col-6 col-lg-6 mb-4">
+						{{-- <div class="col-6 col-lg-6 mb-4">
 							<h3 class="h6 fw-bold text-secondary">Follow</h3>
 							<ul class="list-unstyled social-custom">
 								<li><a href="#"><span class="icon-instagram"></span></a></li>
@@ -77,11 +77,11 @@
 								<li><a href="#"><span class="icon-pinterest"></span></a></li>
 								<li><a href="#"><span class="icon-dribbble"></span></a></li>
 							</ul>
-						</div>
+						</div> --}}
 						<div class="col-6 col-lg-6 mb-4">
 							<h3 class="h6 fw-bold text-secondary">Email</h3>
 							<p>
-								<a href="#">info@mydomain.com</a>
+								<a href="#">volunteering@mydomain.com</a>
 							</p>
 						</div>
 
@@ -97,71 +97,82 @@
 		<div class="container mb-5">
 			<div class="row align-items-center">
 				<div class="col-lg-3" data-aos="fade-up">
-					<span class="subheading mb-3">Instagram</span>
-					<h2 class="heading">We Are In Instagram</h2>
+					<span class="subheading mb-3">Social Media</span>
+					<h2 class="heading">We Are In Social Media</h2>
 				</div>
 				<div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
 					<p>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, aperiam sint voluptatum? Molestiae debitis, ipsum, rem ipsa voluptatum cupiditate quaerat!</p>
+						Social media is one of the main ways to interact with our amazing audience. We are proud to be part of this diverse and engaged digital community. Here is an overview of our social media presence:</p>
 				</div>
 			</div>
+			<div class="col-6 col-lg-6 mb-4">
+				<h3 class="h6 fw-bold text-secondary">Follow</h3>
+				<ul class="list-unstyled social-custom">
+					<li><a href="#"><span class="icon-instagram"></span></a></li>
+					<li><a href="#"><span class="icon-twitter"></span></a></li>
+					<li><a href="#"><span class="icon-facebook"></span></a></li>
+					<li><a href="#"><span class="icon-linkedin"></span></a></li>
+					<li><a href="#"><span class="icon-pinterest"></span></a></li>
+					<li><a href="#"><span class="icon-dribbble"></span></a></li>
+				</ul>
+			</div>
 		</div>
-
-		<div class="instagram-slider-wrap" data-aos="fade-up" data-aos-delay="200">
+		
+		{{-- <div class="instagram-slider-wrap" data-aos="fade-up" data-aos-delay="200">
 			<div class="instagram-slider" id="instagram-slider">
 
 				<div class="item">
 					<a class="instagram-item">
 						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_8-min.jpg" alt="Image" class="img-fluid">		
+						<img src="" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
 						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_2-min.jpg" alt="Image" class="img-fluid">		
+						<img src="" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
 						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_3-min.jpg" alt="Image" class="img-fluid">		
+						<img src="" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
 						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_4-min.jpg" alt="Image" class="img-fluid">		
+						<img src="" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
 						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_5-min.jpg" alt="Image" class="img-fluid">		
+						<img src="" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
 						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_6-min.jpg" alt="Image" class="img-fluid">		
+						<img src="" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item">
 						<span class="icon-instagram"></span>
-						<img src="style/images/img_v_7-min.jpg" alt="Image" class="img-fluid">		
+						<img src="" alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
 
 			</div>
-		</div>
+		</div> --}}
 
 	</div>
 
