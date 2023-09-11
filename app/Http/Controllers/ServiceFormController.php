@@ -11,9 +11,24 @@ use App\Models\Service;
 
 class ServiceFormController extends Controller
 {
-    
+
+
+
+
+    public function index()
+    {
+        $data= Service_form::all();
+        return view('dashboardbage.donatedservicesform')->with('data', $data);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function infoService()
     {
+        return view('Service.serviceform');
+
         $data= Service_form::all();
         return view('dashboardbage.donatedservicesform')->with('data', $data);
     }
@@ -34,16 +49,38 @@ class ServiceFormController extends Controller
      * @param  \App\Http\Requests\StoreService_formRequest  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function stoService(Request $request)
+    {
+        $request->validate([
+            'description' => 'required',
+            'date' => 'required|date',
+            'time' => 'required',
+            'service_id' => 'required', // Add validation rule for service_id
+        ]);
+
+        Service_form::create([
+            'user_id' => Auth::id(),
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'phone' => $request->input('phone'),
+            'service_id' => $request->input('service_id'),
+            // Retrieve service_id from the form
+            'description' => $request->input('description'),
+            'Date' => $request->input('date'),
+            'time' => $request->input('time')
+        ]);
+
+        // Redirect back with a success message or handle the response as needed
+        return redirect()->back()->with('success', 'Service form submitted successfully');
+    }
+
+
     public function store(StoreService_formRequest $request)
     {
         //
     }
 
-    public function index()
-    {
-        $data= Service_form::all();
-        return view('dashboardbage.donatedservicesform')->with('data', $data);
-    }
 
     /**
      * Display the specified resource.
@@ -91,28 +128,6 @@ class ServiceFormController extends Controller
         Service_form::destroy($id);
     return redirect('donatedservicesform')->with('flash_message','donated services form deleted!');
     }
-    public function stoService(Request $request)
-    {
-        $request->validate([
-            'description' => 'required',
-            'date' => 'required|date',
-            'time' => 'required',
-            'service_id' => 'required', // Add validation rule for service_id
-        ]);
-
-        Service_form::create([
-            'user_id' => Auth::id(),
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'phone' => $request->input('phone'),
-            'service_id' => $request->input('service_id'), // Retrieve service_id from the form
-            'description' => $request->input('description'),
-            'Date' => $request->input('date'),
-            'time' => $request->input('time')
-        ]);
-
-        // Redirect back with a success message or handle the response as needed
-        return redirect()->back()->with('success', 'Service form submitted successfully');
-    }
-
 }
+
+

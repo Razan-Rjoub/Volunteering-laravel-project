@@ -6,7 +6,7 @@
  {{-- logout Button --}}
        @if (session('loginname'))
           <a href="{{ route('adminLogout') }}">
-  <button type="submit" class="btn btn-danger" style="width: 150px;">Log out</button>
+  <button type="submit" class="btn btn-warning" style="width: 150px;">Log out</button>
 </a>
  @endif
 

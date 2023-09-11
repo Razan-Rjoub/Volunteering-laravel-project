@@ -1,12 +1,12 @@
 <aside class="main-sidebar elevation-4" style="background-color:#59886b; color:black">
   <!-- Brand Logo -->
-  <a href="{{ asset('/admin') }}" class="brand-link">
-    <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">AdminLTE 3</span>
-  </a>
-
+    <div class="logo">
+    <img src="{{ asset('assets/img/logoV.png') }}" alt="Logo" style="width: 230px;">
+  </div>
   <!-- Sidebar Menu -->
   <nav class="mt-2">
+  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+   
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
       <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
       <li class="nav-item has-treeview menu-open">

@@ -18,7 +18,7 @@
                             <div class="front">
                                 <!-- front content -->
                                 <div class="flip-content-wrap">
-                                    <span class=""><img src="style/images/{{ $item->image }}" alt="" style="width: 50px"></span>
+                                    <span class=""><img src="{{ $item->image }}" alt="" style="width: 50px"></span>
                                     <h3>{{ $item->name }}</h3>
                                 </div>
                             </div>

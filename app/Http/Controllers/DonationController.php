@@ -71,32 +71,22 @@ class DonationController extends Controller
     {
 
         $data = Donation::find($id);
-
-
         if ($request->hasFile('image')) {
 
             if (file_exists(public_path($data->image))) {
                 unlink(public_path($data->image));
             }
-
-
             $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
             $request->image->move(public_path('/assets/img/'), $filename);
-
-
             $data->update(['image' => $filename]);
         }
-
-
         $data->update([
             'DonationName' => $request->DonationName,
             'description' => $request->description,
             'amount_needed' => $request->amount_needed,
         ]);
-
         return redirect('donatione')->with('flash_message', 'Donation Update!');
     }
-
     public function destroy($id)
     {
         Donation::find($id)->delete();
@@ -112,8 +102,9 @@ class DonationController extends Controller
         $totals = Donation_form::select('donation_id', DB::raw('SUM(price) as total_price'))
         ->groupBy('donation_id')
         ->get();
-
-        return view('Donation.donation',compact('donation','totals'));
+        $userId = Auth::id();
+        $user = User::find($userId);
+        return view('Donation.donation',compact('donation','totals','user'));
     }
 
 
