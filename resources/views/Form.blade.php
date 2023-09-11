@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','Home')
+@section('title','Form')
 	@section('content')
     <div class="hero overlay" style="background-image: url('style/images/hero_2.jpg')">
         <div class="container">
@@ -9,12 +9,12 @@
                     <h1 class="heading text-white mb-2" data-aos="fade-up">Give a helping hand to those who need it!</h1>
                     <p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum minima dignissimos hic mollitia eius et quam ducimus maiores eos magni.</p>
                     <p data-aos="fade-up"  data-aos-delay="100">
-                        <a href="#" class="btn btn-primary me-4 d-inline-flex align-items-center"> <span class="icon-attach_money me-2"></span><span>Donate Now</span></a> 
+                        <a href="#" class="btn btn-primary me-4 d-inline-flex align-items-center"> <span class="icon-attach_money me-2"></span><span>Donate Now</span></a>
                         <a href="https://www.youtube.com/watch?v=mwtbEGNABWU" class="text-white glightbox d-inline-flex align-items-center"><span class="icon-play me-2"></span><span>Watch the video</span></a>
-                    </p>		
-                    
+                    </p>
+
                 </div>
-            </div>   </div>
+            </div>
         </div>
                 <div class="col-lg-12 container">
                     <form action="#" class="bg-white p-5 rounded donation-form" data-aos="fade-up">
@@ -24,7 +24,7 @@
                                 <input type="radio" id="amount-1" name="radio-amount" checked="true">
                                 <span>$1</span>
                             </label>
-    
+
                             <label for="amount-2" class="amount js-amount" data-value="5.00">
                                 <input type="radio" id="amount-2" name="radio-amount">
                                 <span>$5</span>
@@ -37,7 +37,7 @@
                                 <input type="radio" id="amount-4" name="radio-amount">
                                 <span>$100</span>
                             </label>
-    
+
                         </div>
                         <div class="field-icon">
                             <span>$</span>
@@ -47,10 +47,10 @@
                             <input type="text" placeholder="Name" class="form-control px-4">
                             <input type="email" placeholder="Email" class="form-control px-4">
                         </div>
-    
+
                         <input type="submit" value="Donate now" class="btn btn-secondary w-100">
                     </form>
                 </div>
-         
- 
+
+
 @endsection

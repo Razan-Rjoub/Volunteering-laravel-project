@@ -39,22 +39,27 @@ class ServiceController extends Controller
     public function store(StoreServiceRequest $request)
     {
 
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',
+
+        ]);
+
         $filename = '';
         if ($request->hasFile('image')) {
             $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
             $request->image->move(public_path('/assets/img/'), $filename);
         }
 
-        $input =$request->all();
-
         Service::create([
             'name' => $request->name,
             'description' => $request->description,
             'image' => $filename,
 
-
         ]);
-       return redirect('donatedservives')->with('flash_message','donated servives Added!');
+
+        return redirect('donatedservives')->with('flash_message', 'Category Added!');
     }
 
     /**
@@ -112,7 +117,7 @@ class ServiceController extends Controller
         $data->update([
             'name' => $request->name,
             'description' => $request->description,
-            
+
         ]);
 
         return redirect('donatedservives')->with('flash_message', 'Donation Update!');
@@ -138,4 +143,22 @@ class ServiceController extends Controller
     return redirect('donatedservives')->with('flash_message','donated servives deleted!');
 
     }
+
+
+
+    public function inService()
+{
+    $data= Service::all();
+    return view('Service.service',['service'=>$data]);
+}
+
+
+public function formService($id) {
+    // Use the $id parameter to retrieve the specific service data
+    $service = Service::find($id);
+
+    // Your logic here...
+
+    return view('service.serviceform', compact('service'));
+}
 }

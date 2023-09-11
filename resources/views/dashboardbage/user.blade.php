@@ -58,7 +58,6 @@ User
                   <th>email</th>
                   <th>phone</th>
 
-
                 </tr>
                 </thead>
                 <tbody>
@@ -70,7 +69,6 @@ User
                   <td>{{ $item->email }}</td>
 
                   <td>{{ $item->phone }}</td>
-                  
 
                 <td>
 

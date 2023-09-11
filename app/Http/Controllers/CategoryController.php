@@ -16,6 +16,15 @@ class CategoryController extends Controller
         return view('dashboardbage.Categories')->with('data', $data);
     }
 
+    public function inCategory()
+    {
+        $data= Category::all();
+        $donationData = Donation::all();
+        return view('Home.index', [
+            'category' => $data,
+            'donation' => $donationData,
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -36,20 +45,27 @@ class CategoryController extends Controller
 
      public function store(StoreCategoryRequest $request)
      {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',
 
-         $filename = '';
-         if ($request->hasFile('image')) {
-             $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
-             $request->image->move(public_path('/assets/img/'), $filename);
-         }
 
-         $input =$request->all();
-         Category::create([
-             'name' => $request->name,
-             'description' => $request->description,
-             'image' => $filename,
-         ]);
-        return redirect('category')->with('flash_message','Category Added!');
+        ]);
+
+        $filename = '';
+        if ($request->hasFile('image')) {
+            $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/assets/img/'), $filename);
+        }
+
+        Category::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $filename,
+        ]);
+
+        return redirect('category')->with('flash_message', 'Category Added!');
      }
     /**
      * Display the specified resource.

@@ -6,7 +6,10 @@ use App\Models\Donation;
 use App\Http\Requests\StoreDonationRequest;
 use App\Http\Requests\UpdateDonationRequest;
 
-
+use App\Models\Donation_form;
+use App\Models\User;
+use DB;
+use Illuminate\Support\Facades\Auth;
 
 class DonationController extends Controller
 {
@@ -27,22 +30,28 @@ class DonationController extends Controller
     public function store(StoreDonationRequest $request)
     {
 
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',
+            'amount_needed' => 'required',
+
+        ]);
+
         $filename = '';
         if ($request->hasFile('image')) {
             $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
             $request->image->move(public_path('/assets/img/'), $filename);
         }
 
-        $input =$request->all();
-
         Donation::create([
             'name' => $request->name,
             'description' => $request->description,
             'image' => $filename,
-            'amount_needed'=>$request->amount_needed,
-
+            'amount_needed' => $request->amount_needed,
         ]);
-       return redirect('donatione')->with('flash_message','donatione Added!');
+
+        return redirect('donatione')->with('flash_message', 'Category Added!');
     }
 
 
@@ -92,6 +101,32 @@ class DonationController extends Controller
         Donation::find($id)->delete();
         Donation::destroy($id);
     return redirect('admin')->with('flash_message','Donation deleted!');
+
+    }
+
+
+    public function inDonation()
+    {
+        $donation = Donation::all();
+        $totals = Donation_form::select('donation_id', DB::raw('SUM(price) as total_price'))
+        ->groupBy('donation_id')
+        ->get();
+
+        return view('Donation.donation',compact('donation','totals'));
+    }
+
+
+    public function formDonation($id)
+    {
+        $donation = Donation::find($id);
+
+
+        if (Auth::check()) {
+            $userId = Auth::id();
+            $user = User::find($userId);
+            return view('Donation.donationform', compact('user', 'donation'));
+        }
+        return redirect()->route('login');
 
     }
 

@@ -1,9 +1,11 @@
 <aside class="main-sidebar  elevation-4" style="background-color:#59886b ; color:white">
     <!-- Brand Logo -->
     {{-- <a href="index3.html" class="brand-link">
+    {{-- <a href="index3.html" class="brand-link">
       <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a> --}}
     </a> --}}
 
     <!-- Sidebar -->
@@ -33,7 +35,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link active" style="background-color:black">
+                <a href="{{ asset('/dash') }}" class="nav-link active" style="background-color:black">
 
                   <h5 style="text-align:center">
                   home

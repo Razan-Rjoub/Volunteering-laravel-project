@@ -15,6 +15,7 @@ class Donation extends Model
         'description',
         'image',
         'amount_needed',
+        'amount_donated'
     ];
     public function category()
     {

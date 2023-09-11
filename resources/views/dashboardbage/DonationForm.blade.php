@@ -53,7 +53,7 @@ Donation form
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                
+
                   <th>price</th>
                   <th>phone</th>
                   <th>name</th>
@@ -66,7 +66,6 @@ Donation form
 
                     @foreach ( $data as $item )
                 <tr>
-
 
 
                   <td>{{ $item->price }}</td>

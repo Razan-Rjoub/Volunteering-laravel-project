@@ -12,10 +12,12 @@ class Donation_form extends Model
     protected $fillable = [
 
         'price',
+        'donation_id',
+        'user_id',
         'phone',
         'name',
         'email',
-        'password',
+        
     ];
 
     // public function donations()

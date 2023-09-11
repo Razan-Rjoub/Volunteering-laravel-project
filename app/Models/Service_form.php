@@ -13,6 +13,8 @@ class Service_form extends Model
         'email',
         'phone',
         'description',
+        'service_id',
+        'user_id',
         'time',
         'Date',
     ];

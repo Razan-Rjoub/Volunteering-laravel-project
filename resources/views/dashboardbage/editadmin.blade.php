@@ -54,16 +54,22 @@ Admins
                             <p>No image available.</p>
                         @endif
                     </div>
-                    <div class="form-group">
-                        <label for="image">Update Profile Image</label>
-                        <input type="file" name="image" id="image" accept="image/*" class="form-control">
-                    </div>
+
                 </div>
                 <div class="col-md-8">
                     <form action="{{ url('admin/' .$data->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method("PATCH")
                         <input type="hidden" name="id" value="{{ $data->id }}" id="id">
+                        <input type="hidden" name="id" value="{{ $data->id }}" id="id">
+                        <div class="form-group">
+                        @if ($data->image)
+                        <img src="{{ asset('assets/img/' . $data->image) }}" alt="Existing Image" width="100"><br>
+                        @endif
+
+                    <!-- Allow uploading a new image -->
+                        <input type="file" name="image" id="image" accept="image/*" class="form-control"><br>
+                    </div>
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" name="name" value="{{ $data->name }}" id="name" class="form-control">

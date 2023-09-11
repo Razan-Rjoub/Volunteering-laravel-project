@@ -10,7 +10,10 @@ class Item_form extends Model
 
 use HasFactory;
 protected $fillable = [
+    'user_id',
+    'item_id',
     'volunteerName',
+    'volunteerEmail',
     'volunteerPhone',
     'volunteerAddress',
     'description',

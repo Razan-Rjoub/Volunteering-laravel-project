@@ -6,6 +6,9 @@ namespace App\Http\Controllers;
 use App\Models\Item;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 
 class ItemController extends Controller
 {
@@ -40,22 +43,27 @@ class ItemController extends Controller
     public function store(StoreItemRequest $request)
     {
 
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',
+
+        ]);
+
         $filename = '';
         if ($request->hasFile('image')) {
             $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
             $request->image->move(public_path('/assets/img/'), $filename);
         }
 
-        $input =$request->all();
-
         Item::create([
             'name' => $request->name,
             'description' => $request->description,
             'image' => $filename,
-
-
+            
         ]);
-       return redirect('donateditems')->with('flash_message','donated items Added!');
+
+        return redirect('donateditems')->with('flash_message', 'Category Added!');
     }
 
     /**
@@ -89,7 +97,7 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    
+
 
      public function update(UpdateItemRequest $request, $id)
      {
@@ -136,6 +144,28 @@ class ItemController extends Controller
 
         Item::destroy($id);
     return redirect('donateditems')->with('flash_message','donated items deleted!');
+
+    }
+
+
+
+    public function inItem()
+    {
+        $data= Item::all();
+        return view('Item.item',['item'=>$data]);
+    }
+
+
+    public function formItem($id)
+    {
+        $itemid = Item::find($id);
+
+        if (Auth::check()) {
+            $userId = Auth::id();
+            $user = User::find($userId);
+            return view('Item.itemform', compact('user', 'itemid'));
+        }
+        return redirect()->route('login');
 
     }
 }

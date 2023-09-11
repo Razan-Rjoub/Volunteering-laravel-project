@@ -76,7 +76,6 @@ Donations
                     No Image
                     @endif
                   </td>
-
                   <td>{{ $item->amount_needed }}</td>
 
 
