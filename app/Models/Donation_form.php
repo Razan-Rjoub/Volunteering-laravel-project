@@ -19,7 +19,7 @@ class Donation_form extends Model
         'email',
         
     ];
-    public function donations()
+    public function donation()
     {
         return $this->belongsTo(Donation::class);
     }

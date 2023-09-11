@@ -85,22 +85,24 @@ Route::get('/item', [ItemController::class, 'inItem'])->name('Give Items');
 
 
 
-Route::get('/donationform/{id}', [DonationController::class, 'formDonation'])->name('donationform');
+Route::get('/donationform/{id}', [DonationController::class, 'formDonation'])->middleware(['auth', 'verified'])->name('donationform');
 Route::post('/submitdonation', [DonationFormController::class, 'stoDonation'])->name('submitdonate');
 
 Route::get('payment/{price}', [PaypalController::class, 'payment'])->name('payment');
 Route::get('cancel', [PaypalController::class, 'cancel'])->name('payment.cancel');
 Route::get('payment/success', [PaypalController::class, 'success'])->name('payment.success');
 
-Route::get('/itemform/{id}', [ItemController::class, 'formItem'])->name('itemform');
+Route::get('/itemform/{id}', [ItemController::class, 'formItem'])->middleware(['auth', 'verified'])->name('itemform');
 Route::post('/storeitem', [ItemFormController::class, 'stoItem'])->name('storeitem');
 
-Route::get('/logout', [ProfileController::class, 'destroy'])->name('logout');
+// Route::get('/logout', [ProfileController::class, 'destroy'])->name('logout');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::post('/editprofile', [ProfileController::class, 'edit'])->name('editprofile');
 
 Route::get('/pdf', [ProfileController::class, 'pdf'])->name('pdf');
+Route::get('/pdfservice', [ProfileController::class, 'pdfService'])->name('pdfService');
+Route::get('/pdfitem', [ProfileController::class, 'pdfItem'])->name('pdfItem');
 Route::get('/success', [PaypalController::class, 'successview'])->name('paysuccess');
 Route::get('/cancel', [PaypalController::class, 'cancelview'])->name('cancel');
 // Route::get('/success', function () {
@@ -114,7 +116,7 @@ Route::get('/cancel', [PaypalController::class, 'cancelview'])->name('cancel');
 Route::get('/cancel', function () {
     return view('cancel');
 })->name('cancel');
-Route::get('/serviceform/{id}', [ServiceController::class, 'formService'])->name('serviceform');
+Route::get('/serviceform/{id}', [ServiceController::class, 'formService'])->middleware(['auth', 'verified'])->name('serviceform');
 Route::post('/serviceform', [ServiceFormController::class,'stoService'])->name('service.store');
 Route::get('/service',[ServiceController::class,'inService'])->name('Give Services');
 Route::get('/serviceform',[ServiceFormController::class,'infoService'])->name('Servicesform');

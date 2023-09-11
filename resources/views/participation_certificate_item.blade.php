@@ -10,41 +10,43 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <div class="mt-5 container">
-        @if ($Donation->count() >0)
-    <h3>Donations</h3>
+      <div class="mt-5 container">
+    @if ($items->count() >0) <h3>Items</h3>
     <table class="table">
         <thead class="thead bg-dark" style="color:white">
             <tr>
-                <th scope="col">Donation Name</th>
+                <th scope="col">ItemName</th>
                 <th scope="col">name</th>
                 <th scope="col">email</th>
                 <th scope="col">phone</th>
-                <th scope="col">price</th>
+                <th scope="col">address</th>
+                <th scope="col">description</th>
+                <th scope="col">status</th>
+                <th scope="col">image</th>
 
 
             </tr>
         </thead>
-        <tbody>
-            @foreach ($Donation as $item)
+        <tbody> 
+             @foreach ($items as $item)
                 <tr>
-                    <td>{{ $item->donation->DonationName }}</td>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->email }}</td>
-                    <td>{{ $item->phone }}</td>
-                    <td>{{ $item->price }}</td>
+                    <td>{{ $item->item->ItemName}}</td>
+                    <td>{{ $item->volunteerName }}</td>
+                    <td>{{ $item->volunteerEmail }}</td>
+                    <td>{{ $item->volunteerPhone }}</td>
+                    <td>{{ $item->volunteerAddress }}</td>
+                    <td>{{ $item->description }}</td>
+                    <td>{{ $item->status }}</td>
+                    {{-- <td> <img src="{{$item->image}}" alt="" style="width:120px"> </td> --}} --}}
 
 
                 </tr>
             @endforeach
 
 
-        </tbody>
-      
-    </table>
-    @endif
-
-
+</tbody>
+</table>
+@endif
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

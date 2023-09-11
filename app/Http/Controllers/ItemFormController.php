@@ -95,7 +95,7 @@ class ItemFormController extends Controller
 
 
     public function stoItem(Request $request)
-    {
+    { 
         $validatedData = $request->validate([
             'volunteerName' => 'required',
             'volunteerEmail' => 'required',
@@ -129,7 +129,7 @@ $filename='';
 
     ]);
 
-    return redirect()->route('home')->with([
+    return redirect()->route('paysuccess')->with([
         'success' => 'Donation successfully
     '
     ]);
