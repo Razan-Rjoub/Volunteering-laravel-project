@@ -19,17 +19,17 @@ class CategorySeeder extends Seeder
         Category::create([
             'name' => 'Give Donation',
             'description' => 'Support important causes by donating today',
-            'image' => 'heart.png',
+            'image' => 'http://127.0.0.1:8000/assets/img/heart.png',
         ]);
         Category::create([
             'name' => 'Give Services',
             'description' => 'Your support helps us continue our mission and make a positive impact on the community',
-            'image' => 'group.png',
+            'image' => 'http://127.0.0.1:8000/assets/img/group.png',
         ]);
         Category::create([
             'name' => 'Give Items',
             'description' => 'Join our volunteer efforts by donating items that can make a difference',
-            'image' => 'product.png',
+            'image' => 'http://127.0.0.1:8000/assets/img/product.png',
         ]);
     }
 }

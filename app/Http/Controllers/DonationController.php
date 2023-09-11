@@ -112,8 +112,9 @@ class DonationController extends Controller
         $totals = Donation_form::select('donation_id', DB::raw('SUM(price) as total_price'))
         ->groupBy('donation_id')
         ->get();
-
-        return view('Donation.donation',compact('donation','totals'));
+        $userId = Auth::id();
+        $user = User::find($userId);
+        return view('Donation.donation',compact('donation','totals','user'));
     }
 
 

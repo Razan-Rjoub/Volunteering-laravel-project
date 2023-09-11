@@ -11,8 +11,14 @@ use App\Models\Service;
 
 class ServiceFormController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
+
         $data= Service_form::all();
         return view('dashboardbage.donatedservicesform')->with('data', $data);
     }
@@ -23,8 +29,7 @@ class ServiceFormController extends Controller
     {
         return view('Service.serviceform');
 
-        $data= Service_form::all();
-        return view('dashboardbage.donatedservicesform')->with('data', $data);
+
     }
 
 
@@ -58,6 +63,10 @@ class ServiceFormController extends Controller
      * @param  \App\Http\Requests\StoreService_formRequest  $request
      * @return \Illuminate\Http\Response
      */
+
+
+
+
     public function store(StoreService_formRequest $request)
     {
         //
@@ -88,6 +97,7 @@ class ServiceFormController extends Controller
         Service_form::destroy($id);
     return redirect('donatedservicesform')->with('flash_message','donated services form deleted!');
     }
+   
 
 
 }

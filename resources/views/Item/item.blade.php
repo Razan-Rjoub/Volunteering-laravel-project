@@ -59,7 +59,7 @@
                 @foreach ($item as $key)
                     <div class="item">
                         <div class="causes-item bg-white">
-                            <a href="{{ route('itemform', ['id' => $key->id]) }}"><img src="style/images/{{ $key->image }}" alt="Image"
+                            <a href="{{ route('itemform', ['id' => $key->id]) }}"><img src="{{ $key->image }}" alt="Image"
                                     class="img-fluid mb-4 rounded"></a>
                             <div class="px-4 pb-5 pt-3">
 

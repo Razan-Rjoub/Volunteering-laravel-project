@@ -115,7 +115,11 @@ class ItemFormController extends Controller
     if (Auth::check()) {
         $userId = Auth::id();
     }
-
+$filename='';
+    if ($request->hasFile('image')) {
+        $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+        $request->image->move(public_path('/assets/img/'), $filename);     
+    }
      Item_form::create([
         'user_id' =>$userId,
         'item_id'=>$request->item_id,
@@ -125,7 +129,7 @@ class ItemFormController extends Controller
         'volunteerAddress' => $request->volunteerAddress,
         'description' => $request->description,
         'status' => $request->status,
-        'image' => $request->image,
+        'image' => $filename,
 
     ]);
 
