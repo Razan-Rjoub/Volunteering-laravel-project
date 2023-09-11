@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Controllers;
 namespace App\Models;
 
 use App\Models\Category;
@@ -12,7 +12,7 @@ class Item extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'ItemName',
         'description',
         'image',
     ];

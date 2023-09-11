@@ -47,7 +47,7 @@ Donations
             @method("PATCH")
             <input type="hidden" name="id" value="{{ $data->id }}" id="id">
             <label>Name</label><br>
-            <input type="text" name="name" value="{{ $data->name}}" id="address" class="form-control"><br>
+            <input type="text" name="ItemName" value="{{ $data->ItemName}}" id="ItemName" class="form-control"><br>
             <label>Description</label><br>
             <input type="text" name="description" value="{{ $data->description}}"   id="description" class="form-control"><br>
             @if ($data->image)

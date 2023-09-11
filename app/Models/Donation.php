@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Controllers;
 namespace App\Models;
 
 use App\Models\Category;
@@ -11,7 +11,7 @@ class Donation extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
+        'DonationName',
         'description',
         'image',
         'amount_needed',

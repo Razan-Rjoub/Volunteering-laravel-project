@@ -19,11 +19,12 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->string('google_id')->nullable();
             $table->rememberToken();
-            $table->string('phone')->nullable();
-            $table->mediumText('image')->default('http://127.0.0.1:8000/style/images/1694002163.jpg');
+            $table->string('phone');
+            $table->mediumText('image')->default('http://127.0.0.1:8000/style/images/1694359962.jpg');
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
+
         });
     }
 
@@ -33,5 +34,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
+
     }
 };

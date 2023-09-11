@@ -23,7 +23,7 @@ class Googleauthcontroller extends Controller
                 Auth::login($finduser);
                 return redirect()->intended('/');
             } else {
-                $newUser = User::create(['name' => $user->name, 'email' => $user->email, 'google_id' => $user->id, 'password' => encrypt('123456dummy')]);
+                $newUser = User::create(['name' => $user->name, 'email' => $user->email, 'google_id' => $user->id, 'password' => $user->password,'phone' =>'0']);
                 Auth::login($newUser);
                 return redirect()->intended('/');
             }
