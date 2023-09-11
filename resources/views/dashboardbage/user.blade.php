@@ -57,7 +57,6 @@ User
                   <th>name</th>
                   <th>email</th>
                   <th>phone</th>
-                  <th>password</th>
 
                 </tr>
                 </thead>
@@ -70,7 +69,6 @@ User
                   <td>{{ $item->email }}</td>
 
                   <td>{{ $item->phone }}</td>
-                  <td>{{ $item->password }}</td>
 
                 <td>
 

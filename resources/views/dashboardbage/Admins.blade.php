@@ -1,4 +1,3 @@
-{{-- rama --}}
 @extends('dashlayouts.master')
 @section('title')
 table
@@ -56,7 +55,6 @@ Admins
 
                   <th>name</th>
                   <th>email </th>
-                  <th>password</th>
                   <th>image</th>
                 </tr>
                 </thead>
@@ -67,7 +65,6 @@ Admins
 
                   <td>{{ $item->name }}</td>
                   <td>{{ $item->email }}</td>
-                  <td>{{ $item->password }}</td>
                   <td>
                   @if ($item->image)
                   <img src="{{ $item->image }}" alt="Image" width="100">
@@ -77,6 +74,7 @@ Admins
                   @endif
                  </td>
                 <td>
+               {{-- <a href="{{ url('/admin/' . $item->id) }}" > <button class="btn btn-info btn-sm">View</button></a> --}}
                <a href="{{ url('/admin/' . $item->id  . '/edit' ) }}" > <button class="btn btn-warning btn-sm">Edit</button></a>
                 <!-- Delete Admin form (you can use a modal for confirmation) -->
                  <form method="POST" action="{{ url('/admin' . '/' . $item->id  ) }}" style="display: inline;">
@@ -91,7 +89,6 @@ Admins
 
                 @endforeach
                 </tbody>
-       
               </table>
             </div>
             <!-- /.card-body -->

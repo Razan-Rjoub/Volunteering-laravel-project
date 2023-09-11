@@ -23,8 +23,6 @@ class StoreAdminRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+       
     }
 }

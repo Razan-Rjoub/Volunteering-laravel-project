@@ -1,42 +1,34 @@
 <?php
 
+use App\Http\Controllers\adminLoginController;
 use App\Http\Controllers\DonationFormController;
 use App\Http\Controllers\PaypalController;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonationController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\adminLoginController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceFormController;
 
+
+
 use App\Http\Controllers\ItemController;
+
+
 use App\Http\Controllers\UsertController;
+
+
 use App\Http\Controllers\ItemFormController;
+
+use App\Http\Controllers\AdminController;
+
+use App\Http\Controllers\ShowController;
+
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -66,6 +58,10 @@ Route::get('/profile', function () {
 Route::get('/thankyou', function () {
     return view('Thankyou');
 })->name('thankyou');
+// Route::get('/', function () {
+//     return view('Home.index');
+// });
+
 Route::get('/form', function () {
     return view('Form');
 });
@@ -80,20 +76,12 @@ Route::get('/contactus', function () {
 
 
 
+
 Route::get('/', [CategoryController::class, 'inCategory'])->name('home');
 
 Route::get('/donation', [DonationController::class, 'inDonation'])->name('Give Donation');
 Route::get('/service', [ServiceController::class, 'index'])->name('Give Services');
 Route::get('/item', [ItemController::class, 'inItem'])->name('Give Items');
-
-//Route::get('/',[CategoryController::class,'index'])->name('home');
-
-//Route::get('/item',[ItemController::class,'index'])->name('Give Items');
-
-
-
-
-
 
 Route::get('/donationform/{id}', [DonationController::class, 'formDonation'])->name('donationform');
 Route::post('/submitdonation', [DonationFormController::class, 'stoDonation'])->name('submitdonate');
@@ -131,19 +119,16 @@ Route::get('/dash', function () {
 
 
 
-// Route::get('/Admins', function () {
-//     return view('dashboardbage.Admins');
-// });
-Route::resource('/admin',AdminController::class);
+Route::get('/Admins', function () {
+    return view('dashboardbage.Admins');
+});
 
 
 
 
-// Route::get('/Categories', function () {
-//     return view('dashboardbage.Categories');
-// });
-
-Route::resource('/category',CategoryController::class);
+Route::get('/Categories', function () {
+    return view('dashboardbage.Categories');
+});
 
 
 
@@ -157,27 +142,46 @@ Route::get('/DonatedServicesForm', function () {
     return view('dashboardbage.DonatedServicesForm');
 });
 
-// Route::get('/DonationForm', function () {
-//     return view('dashboardbage.DonationForm');
-// });
-
-
-
-// adminlogin
-
-Route::get('/adminLogin', [adminLoginController::class, 'adminLogin'])->name('adminLogin');
-Route::post('/adminLogin', [adminLoginController::class, 'adminLoginPost'])->name('adminLogin');
-Route::get('/home', [AdminController::class, 'adminIndex']);
 
 
 
 
 
-Route::namespace('Admin')->group(function () {
+
+
+
+Route::get('/dash', function () {
+    return view('dashboardbage.home');
+});
+
+
+
+
+
 
 Route::resource('/donatione', DonationController::class);
 Route::resource('/donateditems', ItemController::class);
 Route::resource('/donatedservives', ServiceController::class);
 Route::resource('/user', UsertController::class);
 Route::resource('/donationform', DonationFormController::class);
-});
+Route::resource('/donationitemform', ItemFormController::class);
+Route::resource('/donatedservicesform', ServiceFormController::class);
+Route::resource('/admin', AdminController::class);
+Route::resource('/category',CategoryController::class);
+
+
+
+
+
+// adminlogin
+Route::get('/adminLogin', [adminLoginController::class, 'adminLogin'])->name('adminLogin');
+Route::post('/adminLogin', [adminLoginController::class, 'adminLoginPost'])->name('adminLogin');
+Route::get('/home', [AdminController::class, 'adminIndex']);
+
+// adminLogout
+Route::get('/home', [AdminController::class, 'adminIndex']);
+Route::get('/adminLogout', [adminLoginController::class, 'adminLogout'])->name('adminLogout');
+
+
+
+
