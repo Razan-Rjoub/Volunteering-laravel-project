@@ -22,6 +22,7 @@ return new class extends Migration
             $table->mediumText('image')->default('http://127.0.0.1:8000/style/images/1694359962.jpg
             ');
             $table->timestamps();
+
         });
     }
 
@@ -31,5 +32,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
+
     }
 };

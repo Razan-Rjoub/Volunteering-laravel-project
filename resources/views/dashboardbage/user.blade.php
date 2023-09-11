@@ -49,7 +49,7 @@ User
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-
+                <a href=" {{ url('/user/create') }}" > <button class="btn btn-primary mb-2">Add New User</button></a>
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
@@ -57,7 +57,6 @@ User
                   <th>name</th>
                   <th>email</th>
                   <th>phone</th>
-                  <th>password</th>
 
                 </tr>
                 </thead>
@@ -70,7 +69,6 @@ User
                   <td>{{ $item->email }}</td>
 
                   <td>{{ $item->phone }}</td>
-                  <td>{{ $item->password }}</td>
 
                 <td>
 

@@ -18,7 +18,17 @@ class ServiceController extends Controller
     $user = User::find($userId);
     return view('Service.service',['service'=>$data,'user'=>$user]); 
 }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
 
+        $data=Service::all();
+        return view('dashboardbage.DonatedServices')->with('data', $data);
+    }
 
 public function formService($id) {
     // Use the $id parameter to retrieve the specific service data
@@ -36,7 +46,7 @@ public function formService($id) {
      */
     public function create()
     {
-        //
+        return view('dashboardbage.creatservices');
     }
 
     /**
@@ -47,7 +57,28 @@ public function formService($id) {
      */
     public function store(StoreServiceRequest $request)
     {
-        //
+
+        $request->validate([
+            'ServiceName' => 'required',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',]
+
+        );
+
+        $filename = '';
+        if ($request->hasFile('image')) {
+            $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/assets/img/'), $filename);
+        }
+
+        Service::create([
+            'ServiceName' => $request->ServiceName,
+            'description' => $request->description,
+            'image' => $filename,
+
+        ]);
+
+        return redirect('donatedservives')->with('flash_message', 'Category Added!');
     }
 
     /**
@@ -67,11 +98,11 @@ public function formService($id) {
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit($id)
     {
-        //
+        $data= Service::find($id);
+        return view('dashboardbage.editservices')->with('data',$data);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -79,10 +110,44 @@ public function formService($id) {
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateServiceRequest $request, Service $service)
+
+
+    public function update(UpdateServiceRequest $request, $id)
     {
-        //
+
+        $data = Service::find($id);
+
+
+        if ($request->hasFile('image')) {
+
+            if (file_exists(public_path($data->image))) {
+                unlink(public_path($data->image));
+            }
+
+
+            $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/assets/img/'), $filename);
+
+
+            $data->update(['image' => $filename]);
+        }
+
+
+        $data->update([
+            'ServiceName' => $request->ServiceName,
+            'description' => $request->description,
+
+        ]);
+
+        return redirect('donatedservives')->with('flash_message', 'Donation Update!');
     }
+
+
+
+
+
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -90,8 +155,15 @@ public function formService($id) {
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy($id)
     {
-        //
+
+        Service::destroy($id);
+    return redirect('donatedservives')->with('flash_message','donated servives deleted!');
+
     }
+
+
+
+ 
 }
