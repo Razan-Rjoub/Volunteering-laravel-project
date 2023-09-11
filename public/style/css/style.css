@@ -8670,14 +8670,15 @@ textarea.form-control-lg {
 .logo {
   font-size: 24px;
   color: #fff;
-  font-weight: 700; }
+  font-weight: 700;
+ }
   .logo:hover {
     color: #fff;
     opacity: .8; }
 
 .site-nav {
   position: absolute;
-  top: 40px;
+  top: 4px;
   z-index: 9;
   width: 100%; }
 
@@ -8686,14 +8687,14 @@ textarea.form-control-lg {
   .site-nav h1, .site-nav .h1 {
     margin: 0;
     padding: 0;
-    font-size: 24px; }
+    font-size: 34px; }
   .site-nav .site-navigation .site-menu {
     display: inline-block;
     margin-bottom: 0; }
     .site-nav .site-navigation .site-menu > li {
       display: inline-block; }
       .site-nav .site-navigation .site-menu > li > a {
-        font-size: 14px;
+        font-size: 16px;
         padding: 10px 10px;
         display: inline-block;
         text-decoration: none !important;
@@ -9485,6 +9486,8 @@ textarea {
   .instagram-item img {
     position: relative;
     z-index: -1;
+    height: 150px;
+    margin-left: 80px;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);

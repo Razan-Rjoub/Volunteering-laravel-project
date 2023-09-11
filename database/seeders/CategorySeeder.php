@@ -19,7 +19,7 @@ class CategorySeeder extends Seeder
         Category::create([
             'name' => 'Give Donation',
             'description' => 'Support important causes by donating today',
-            'image' => '/assets/img/heart.png',
+            'image' => 'http://127.0.0.1:8000/assets/img/heart.png',
         ]);
         Category::create([
             'name' => 'Give Services',

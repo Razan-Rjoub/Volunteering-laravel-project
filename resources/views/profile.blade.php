@@ -55,7 +55,7 @@
                                                             name="email" value="{{ $user->email }}"
                                                             placeholder="john.doe@example.com" />
                                                         <label for="email">E-mail</label>
-                                                    </div>
+                                                 </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-floating form-floating-outline">

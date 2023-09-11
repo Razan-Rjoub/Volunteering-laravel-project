@@ -36,23 +36,16 @@ class ProfileController extends Controller
         
 //         $Donation = $donationForms->donations;
 // dd($Donation);
+$Donation=Donation_form::where('user_id', $id)->with('donations')->get();
 $service = Service_form::where('user_id', $id)->with('service')->get();
+$items = Item_form::where('user_id', $id)->with('item')->get();
+dd($Donation);
+         
 
-            $service = DB::table('service_forms')
-            ->join('services', 'service_forms.service_id', '=', 'services.id')
-            ->where('service_forms.user_id', $id)
-            ->select('services.ServiceName','service_forms.*')
-            ->get();
-            $items = DB::table('item_forms')
-            ->join('items', 'item_forms.item_id', '=', 'items.id')
-            ->where('item_forms.user_id', $id)
-            ->select('items.ItemName','item_forms.*')
-            ->get();
-
-            $html = view('certificate_template', compact('user', 'service'));
+            $html = view('certificate_template', compact('user', 'service','items','Donation'));
 
             $pdf = PDF::loadHTML($html);
-            // return $pdf->download('participation_certificate.pdf'); 
+            return $pdf->download('participation_certificate.pdf'); 
     }
     public function edit(Request $request)
     {

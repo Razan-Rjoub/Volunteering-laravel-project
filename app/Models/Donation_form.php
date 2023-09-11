@@ -21,10 +21,10 @@ class Donation_form extends Model
     ];
     public function donations()
     {
-        return $this->hasMany(Donation::class);
+        return $this->belongsTo(Donation::class);
     }
     public function users()
     {
-        return $this->belongsTo(Donation::class);
+        return $this->belongsTo(Donation_form::class);
     }
 }

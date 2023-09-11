@@ -47,31 +47,32 @@
 
 
 
-    <div class="container mb-5">
-        <div class="features-slider-wrap position-relative" data-aos="fade-up" data-aos-delay="200">
-            <div class="features-slider" id="features-slider">
-                @foreach ($service as $index => $item)
-                    <div class="item">
-                        <div class="causes-item bg-white">
-                            <a href="#"><img src="{{ $item->image }}" alt="Image" class="img-fluid mb-4 rounded" style="height: 350px; width: 500px;"></a>
-                            <div class="pb-5 pt-3">
-                                <h3><a href="#" class="join-button">{{ $item->ServiceName }}</a></h3>
-                                <div class="content-wrapper">
-                                    <p>{{ $item->description }}</p>
-                                </div>
-                                <div>
-                                    <a href="{{ route('serviceform', ['id' => $item->id]) }}" class="btn btn-primary join-button">Join us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
+        <div class="container mb-5">
+    <div class="features-slider-wrap position-relative" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+        @foreach ($service as $index => $item)
+    <div class="col-lg-4 mx-auto">
+        <div class="causes-item bg-white">
+        <a href="#"><img src="{{ $item->image }}" alt="Image" class="img-fluid mb-4 rounded" style="height: 350px; width: 500px;"></a>
+            <div class="pb-5 pt-3">
+                <h3><a href="#" class="join-button">{{ $item->ServiceName }}</a></h3>
+                <div class="content-wrapper">
+                    <p>{{ $item->description }}</p>
+                </div>
+                <div>
+                    <a href="{{ route('serviceform', ['id' => $item->id]) }}" class="btn btn-primary join-button">Join us</a>
+                </div>
             </div>
+        </div>
+    </div>
+@endforeach
+
         </div>
     </div>
 </div>
 
 
 
+
+<br><br><br><br><br><br><br><br><br>
 @endsection

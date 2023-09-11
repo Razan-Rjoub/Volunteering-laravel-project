@@ -28,7 +28,7 @@
         <tbody>
             @foreach ($Donation as $item)
                 <tr>
-                    <td>{{ $item->DonationName }}</td>
+                    <td>{{ $item->donations->DonationName }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->phone }}</td>
@@ -62,7 +62,7 @@
         <tbody>
             @foreach ($service as $item)
                 <tr>
-                    <td>{{ $item->ServiceName }}</td>
+                    <td>{{ $item->service->ServiceName}}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->phone }}</td>
@@ -80,12 +80,12 @@
     </table>
  @endif
 </div> 
-{{-- <div class="mt-5 container">
+<div class="mt-5 container">
     @if ($items->count() >0) <h3>Items</h3>
     <table class="table">
         <thead class="thead bg-dark" style="color:white">
             <tr>
-                <th scope="col">Item Name</th>
+                <th scope="col">$item->item->ItemName</th>
                 <th scope="col">name</th>
                 <th scope="col">email</th>
                 <th scope="col">phone</th>
@@ -117,7 +117,7 @@
         </tbody>
     </table>
     @endif
-</div> --}}
+</div>
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
