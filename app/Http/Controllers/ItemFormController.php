@@ -21,13 +21,14 @@ class ItemFormController extends Controller
             'volunteerName' => 'required',
             'volunteerEmail' => ['required','email', 'ends_with:.com'],
             'volunteerPhone' => ['required', 'regex:/^07[789]\d{7}$/'],
-
             'volunteerAddress' => 'required',
             'description' => 'required',
             'status' => 'required',
-            'image' => 'required|max:2048',
-        ],['phone.regex' => 'The phone  must start with 07 and to be 10number.'
-            ]);
+            'image' => ['required','regex:/\.(jpg|jpeg|png|gif)$/','max:2048'],
+        ],['volunteerPhone.regex' => 'The phone  must start with 07 and to be 10number.'
+        ,'image.regex' => 'The image  extention must  be jpg or jpeg or png or gif .'
+            ]
+        );
 
 
 

@@ -85,6 +85,9 @@
                     <label for="Image">Image:</label>
                     <input type="file" class="form-control px-4" id="Image"
                         placeholder="Enter a clear image for the item" name="image" required>
+                        @error('image')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                 </div>
 
             </div>
