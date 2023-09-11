@@ -95,18 +95,19 @@ class ItemFormController extends Controller
 
 
     public function stoItem(Request $request)
-    {
+    { 
         $validatedData = $request->validate([
             'volunteerName' => 'required',
-            'volunteerEmail' => 'required',
-            'volunteerPhone' => 'required',
+            'volunteerEmail' => ['required','email', 'ends_with:.com'],
+            'volunteerPhone' => ['required', 'regex:/^07[789]\d{7}$/'],
             'volunteerAddress' => 'required',
             'description' => 'required',
             'status' => 'required',
-            'image' => 'required|max:2048',
-        ]);
-
-
+            'image' => ['required','max:2048'],
+        ],['volunteerPhone.regex' => 'The phone  must start with 07 and to be 10number.'
+        ,'image.regex' => 'The image  extention must  be jpg or jpeg or png or gif .'
+            ]
+        );
 
     if (Auth::check()) {
         $userId = Auth::id();
@@ -114,7 +115,7 @@ class ItemFormController extends Controller
 $filename='';
     if ($request->hasFile('image')) {
         $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
-        $request->image->move(public_path('/assets/img/'), $filename);     
+        $request->image->move(public_path('/assets/img/'), $filename);
     }
      Item_form::create([
         'user_id' =>$userId,
@@ -129,9 +130,10 @@ $filename='';
 
     ]);
 
-    return redirect()->route('home')->with([
+    return redirect()->route('paysuccess')->with([
         'success' => 'Donation successfully
     '
     ]);
     }
+
 }

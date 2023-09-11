@@ -21,8 +21,8 @@
     </div>
 </div>
 
-    <div class="col-lg-12 container" style="margin-top: 100px">
-        <form action="{{ route('submitdonate') }}" class="bg-white p-5 rounded donation-form" data-aos="fade-up" method="post">
+    <div class="col-lg-8 container" style="margin-top: 100px">
+        <form action="{{ route('submitdonate') }}" class="bg-light p-5 rounded donation-form" data-aos="fade-up" method="post">
             @csrf
             <div class="form-field mb-4">
                 <label for="amount-1" class="amount js-amount" data-value="1.00">

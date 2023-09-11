@@ -62,7 +62,7 @@
                                         <i class="bi bi-facebook" style="color: white"></i>
                                     </button>
 
-                                    <a href="{{route('google-auth')}}">Google <button type="button" class="btn btn-warning btn-floating mx-1">
+                                    <a href="{{route('google-auth')}}"> <button type="button" class="btn btn-warning btn-floating mx-1">
                                         <i class="bi bi-google" style="color: white"></i>
                                     </button></a>
 
