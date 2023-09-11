@@ -41,12 +41,6 @@ class AdminController extends Controller
     }
 
 
-    public function show(Admin $donation)
-    {
-        //
-    }
-
-
     public function edit($id)
     {
         $data=Admin::find($id);
@@ -62,11 +56,6 @@ class AdminController extends Controller
          return redirect('admin')->with('flash_message','Admin Updated!');
     }
 
-
-    public function destroy(Admin $donation)
-    {
-        //
-    }
 
      public function adminIndex()
     {

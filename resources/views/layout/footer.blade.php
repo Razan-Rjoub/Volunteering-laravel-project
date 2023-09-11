@@ -90,16 +90,23 @@
     </div>
 </div>
 
-<script src="style/js/bootstrap.bundle.min.js"></script>
-<script src="style/js/tiny-slider.js"></script>
+<script src="{{asset('style/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('style/js/tiny-slider.js')}}"></script>
+<script src="{{asset('style/js/flatpickr.min.js')}}"></script>
+<script src="{{asset('style/js/glightbox.min.js')}}"></script>
+<script src="{{asset('style/js/aos.js')}}"></script>
+<script src="{{asset('style/js/navbar.js')}}"></script>
+<script src="{{asset('style/js/counter.js')}}"></script>
+<script src="{{asset('style/js/custom.js')}}"></script>
 
-<script src="style/js/flatpickr.min.js"></script>
-<script src="style/js/glightbox.min.js"></script>
+<script src="{{asset('../assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js')}}"></script>
+<script src="{{asset('../assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js')}}"></script>
+<script src="{{asset('../assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js')}}"></script>
+<script src="{{asset('../assets/vendor/libs/cleavejs/cleave.js')}}"></script>
+<script src="{{asset('../assets/vendor/libs/cleavejs/cleave-phone.js')}}"></script>
 
+<script src="{{asset('../assets/js/main.js')}}"></script>
 
-<script src="style/js/aos.js"></script>
-<script src="style/js/navbar.js"></script>
-<script src="style/js/counter.js"></script>
-<script src="style/js/custom.js"></script>
+<script src="{{asset('../assets/js/pages-account-settings-account.js')}}"></script>
 </body>
 </html>

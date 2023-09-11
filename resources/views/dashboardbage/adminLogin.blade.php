@@ -16,7 +16,7 @@
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card shadow-2-strong" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
-            <h3 class="mb-5">Admin Sign in</h3>
+            <h3 class="mb-5"> Sign in</h3>
 
             @if (Session::has('error'))
                 <div class="alert alert-danger" role="alert">
@@ -34,8 +34,9 @@
 
               <div class="form-outline mb-4">
                 <label class="form-label" for="password">Password</label>
-                <input type="text" name="password"  class="form-control form-control-lg" id="password" placeholder="Password" required/>
-              </div>
+                <!-- Update the password input type to "password" -->
+                <input type="password" name="password" class="form-control form-control-lg" id="password" placeholder="Password" required />
+             </div>
 
               <!-- You can add any additional form elements here -->
 

@@ -9,6 +9,14 @@ use Illuminate\Database\Eloquent\Model;
 class Donation_form extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'price',
+        'donation_id',
+        'user_id',
+        'phone',
+        'name',
+        'email',
+    ];
     public function donations()
     {
         return $this->belongsTo(Donation::class);
