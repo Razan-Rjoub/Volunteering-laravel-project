@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('phone');
             $table->bigInteger('service_id')->unsigned();
             $table->string('description');
-            $table->timestamp('time');
+            $table->time('time');
             $table->date('Date');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');

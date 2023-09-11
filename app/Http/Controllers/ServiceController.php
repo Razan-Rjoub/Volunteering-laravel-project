@@ -6,6 +6,9 @@ use App\Models\Service;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
 use App\Models\User;
+
+use Illuminate\Support\Facades\Request;
+
 use Auth;
 
 class ServiceController extends Controller
@@ -31,21 +34,20 @@ class ServiceController extends Controller
         return view('dashboardbage.DonatedServices')->with('data', $data);
     }
 
+
 public function formService($id) {
-    // Use the $id parameter to retrieve the specific service data
     $service = Service::find($id);
 
-    // Your logic here...
-    $userId = Auth::id();
-    $user = User::find($userId);
-    // Your logic here...
-   return view('service.serviceform', compact('service','user'));
-}
+    if (Auth::check()) {
+        $userId = Auth::id();
+        $user = User::find($userId);
+        return view('service.serviceform', compact('user','service'));
+    }
+        return redirect()->route('login');
+    }
 
-  
-
-   
-
+    
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -169,6 +171,7 @@ public function formService($id) {
     return redirect('donatedservives')->with('flash_message','donated servives deleted!');
 
     }
+
 
 
 

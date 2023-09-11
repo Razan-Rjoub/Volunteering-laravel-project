@@ -54,7 +54,8 @@
 				<div class="site-navigation">
 					<div class="row g-0 align-items-center">
 						<div class="col-2">
-							<a href="Home.index" class="logo m-0 float-start text-white">Volunteer</a>
+							<a href="Home.index" class="logo m-0 float-start text-white">    <img src="{{asset('style/images/logo4.png')  }}" alt="Volunteer" class="text-white" width="120" height="40">
+                           </a>
 						</div>
 						<div class="col-6 text-center">
 							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">

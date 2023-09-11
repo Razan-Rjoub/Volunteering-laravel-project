@@ -22,7 +22,7 @@ class UsertController extends Controller
     {
         $request->validate([
             'name' => 'required',
-
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',
             'email' => 'required|email|unique:users',
             'password' => [
                 'required',
@@ -32,11 +32,8 @@ class UsertController extends Controller
             'phone' => [
                 'required',
 
-            ],
-            'image' => ['required','regex:/.(jpg|jpeg|png|gif)$/','max:2048'],
-        ],['volunteerPhone.regex' => 'The phone  must start with 07 and to be 10number.'
-        ,'image.regex' => 'The image  extention must  be jpg or jpeg or png or gif .'
-    ],
+            ]]
+            
 
         );
 
