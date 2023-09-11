@@ -66,7 +66,7 @@ Donations Services
                     @foreach ( $data as $item )
                 <tr>
 
-                  <td>{{ $item->name }}</td>
+                  <td>{{ $item->ServiceName }}</td>
                   <td>{{ $item->description }}</td>
                   <td>
                     @if ($item->image)
