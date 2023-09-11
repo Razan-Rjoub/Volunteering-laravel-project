@@ -6,7 +6,7 @@
            style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a> --}}
-    </a> --}}
+
 
     <!-- Sidebar -->
     <div class="sidebar">
