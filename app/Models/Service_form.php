@@ -15,7 +15,7 @@ class Service_form extends Model
         'description',
         'service_id',
         'user_id',
+        'time',
         'Date',
-        'time'
     ];
 }

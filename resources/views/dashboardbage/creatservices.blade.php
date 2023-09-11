@@ -39,19 +39,21 @@ Donations
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-        creat new students
+        creat new service
     </div>
     <div class="card-body">
       <form action="{{ url('/donatedservives') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <label>Name</label><br>
-        <input type="text" name="name" id="name" class="form-control"><br>
+        <input type="text" name="ServiceName" id="ServiceName" class="form-control"><br>
+        <span>@error('ServiceName'){{$message}} @enderror</span><br><br>
         <label>description</label><br>
         <input type="text" name="description" id="description" class="form-control"><br>
+        <span>@error('description'){{$message}} @enderror</span><br><br>
         <label for="image">Upload Image:</label>
         <input type="file" id="image" name="image" accept="image/*" ><br>
-
+        <span>@error('image'){{$message}} @enderror</span><br><br>
         <input type="submit" value="Save" class="btn btn-success"><br>
       </form>
 
