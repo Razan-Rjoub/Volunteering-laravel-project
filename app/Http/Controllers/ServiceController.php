@@ -7,22 +7,25 @@ use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
 use App\Models\User;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 
+use Auth;
 
 class ServiceController extends Controller
 {
+   
+  public function inService()
+{
+    $data= Service::all();
+    $userId = Auth::id();
+    $user = User::find($userId);
+    return view('Service.service',['service'=>$data,'user'=>$user]); 
+}
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-  public function inService()
-{
-    $data= Service::all();
-    return view('Service.service',['service'=>$data]); 
-}
 
     public function index()
     {
@@ -172,4 +175,5 @@ public function formService($id) {
 
 
 
+ 
 }

@@ -57,8 +57,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="overlap-imgs">
-						<img src="style/images/livingroom.jpeg" alt="Image" class="img-fluid rounded" data-aos="fade-up" data-aos="100">
-						<img src="style/images/v1.jpg" alt="Image" class="img-fluid rounded" data-aos="fade-up" data-aos="200">
+						<img src="http://127.0.0.1:8000/assets/img/livingroom.jpeg" alt="Image" class="img-fluid rounded" data-aos="fade-up" data-aos="100">
+						<img src="http://127.0.0.1:8000/assets/img/v1.jpg" alt="Image" class="img-fluid rounded" data-aos="fade-up" data-aos="200">
 					</div>
 				</div>		
 			</div>		

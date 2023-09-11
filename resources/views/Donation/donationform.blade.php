@@ -2,16 +2,16 @@
 @section('title', 'donation form')
 @section('content')
 
-<div class="hero overlay" style="background-image: url({{asset('style/images/vo55.png')}})">
+<div class="hero overlay" style="background-image: url({{asset('style/images/vo55.png')}})" >
     <div class="container">
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 text-center">
-                <h1 class="heading text-white mb-2" data-aos="fade-up">Item Form</h1>
-                <p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">
+                <h1 class="heading text-white mb-2" data-aos="fade-up">Donation Form</h1>
+                <!-- <p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">
                     Furniture donations provide a meaningful way to give back to the community
                      while helping those in need create comfortable and welcoming living spaces.
                       Your unwanted furniture can bring comfort and a sense of home to families
-                      and individuals facing challenging circumstances.</p>
+                      and individuals facing challenging circumstances.</p> -->
 
 
             </div>
@@ -43,11 +43,12 @@
                     <span>$100</span>
                 </label>
 
-            </div>
-            <div class="field-icon mb-4">
-                <span>$</span>
-                <input type="number" placeholder="0.00" class="form-control px-4" name="price" value="1.00">
-            </div>
+             </div>
+             <div class="field-icon mb-4">
+             <input type="number" placeholder="0.00" class="form-control px-4" name="price" value="1.00" style="position: relative;">
+             <span style="position: absolute; left: 5px; top: 50%;">$</span>
+             </div>
+
             @error('price')
             <div class="text-danger">{{ $message }}</div>
             @enderror

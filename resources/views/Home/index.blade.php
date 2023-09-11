@@ -74,62 +74,19 @@
 		</div>		
 	</div>
 
-	<!-- <div class="section bg-light pt-0">
-		<div class="container">
-			<div class="row justify-content-center text-center">
-				<div class="col-lg-5 mb-5" data-aos="fade-up">
-					<span class="subheading mb-1">News Update</span>
-					<h2 class="heading mb-1">Our News</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta labore eligendi tempora laudantium voluptate, amet ad libero facilis nihil officiis.</p>
-				</div>		
+	
+	<div class="section sec-instagram pb-0">
+		<div class="container mb-5">
+			<div class="row align-items-center">
+				<div class="col-lg-3" data-aos="fade-up">
+					<span class="subheading mb-3">Our Partners</span>
+				</div>
+				<div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+					<p>
+					We're honored to partner with like-minded organizations who share our mission of furnishing hope and comfort in homes. Together, we make a bigger difference.</p>
+				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="causes-item bg-white">
-						<a href="#"><img src="style/images/img_v_1-min.jpg" alt="Image" class="img-fluid mb-4 rounded"></a>
-						<div class="px-4 pb-3 pt-3">
-							<span class="date">May 11, 2020</span>
-							<h3><a href="#">Food for the Hungry</a></h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta labore eligendi tempora laudantium voluptate, amet ad libero facilis nihil officiis.</p>
-							<p><a href="#" class="d-flex align-items-center more2"><span>Read More</span> <span class="icon-chevron-right"></span></a></p>
-
-							
-						</div>
-					</div>
-				</div>		
-				<div class="col-lg-4 col-md-6">
-					<div class="causes-item bg-white">
-						<a href="#"><img src="style/images/img_v_2-min.jpg" alt="Image" class="img-fluid mb-4 rounded"></a>
-						<div class="px-4 pb-3 pt-3">
-							<span class="date">May 11, 2020</span>
-							<h3><a href="#">Education for Children</a></h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta labore eligendi tempora laudantium voluptate, amet ad libero facilis nihil officiis.</p>
-							<p><a href="#" class="d-flex align-items-center more2"><span>Read More</span> <span class="icon-chevron-right"></span></a></p>
-							
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6">
-					<div class="causes-item bg-white">
-						<a href="#"><img src="style/images/img_v_3-min.jpg" alt="Image" class="img-fluid mb-4 rounded"></a>
-						<span class="date">May 11, 2020</span>
-						<div class="px-4 pb-3 pt-3">
-							<h3><a href="#">Support Livelihood</a></h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta labore eligendi tempora laudantium voluptate, amet ad libero facilis nihil officiis.</p>
-							<p><a href="#" class="d-flex align-items-center more2"><span>Read More</span> <span class="icon-chevron-right"></span></a></p>
-							
-						</div>
-					</div>
-				</div>
-
-				
-
-			</div>	
-
-			
-		</div>		
-	</div> -->
+		</div>
 	<div class="instagram-slider-wrap" data-aos="fade-up" data-aos-delay="200">
 			<div class="instagram-slider" id="instagram-slider">
 
@@ -173,5 +130,6 @@
 				
 			</div>
 		</div>
+		<br><br><br><br>
 
 	@endsection

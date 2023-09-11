@@ -8,9 +8,20 @@ use App\Http\Requests\UpdateService_formRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\User;
+
 
 class ServiceFormController extends Controller
 {
+
+
+
+
+    public function index()
+    {
+        $data= Service_form::all();
+        return view('dashboardbage.donatedservicesform')->with('data', $data);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,16 +29,13 @@ class ServiceFormController extends Controller
      */
 
 
-     public function index()
-    {
-        $data= Service_form::all();
-        return view('dashboardbage.donatedservicesform')->with('data', $data);
-    }
+
     
     public function infoService()
     {
-        $data= Service_form::all();
-        return view('dashboardbage.donatedservicesform')->with('data', $data);
+        return view('Service.serviceform');
+
+     
     }
 
    
@@ -50,6 +58,7 @@ class ServiceFormController extends Controller
          
         if (Auth::check()) {
             $userId = Auth::id();
+    $user = User::find($userId);
           }
          Service_form::create([
              'user_id' => Auth::id(),
@@ -61,10 +70,11 @@ class ServiceFormController extends Controller
              'Date' => $request->input('date'),
              'time' => $request->input('time')
          ]);
-     
          // Redirect back with a success message or handle the response as needed
-         return redirect()->route('servicethanks')->with('success', 'Service form submitted successfully');
-     }
+         return redirect()->route('paysuccess')->with([
+            'success' => 'Donation successfully
+        '
+        ]);     }
      
          
    
@@ -84,6 +94,10 @@ class ServiceFormController extends Controller
      * @param  \App\Http\Requests\StoreService_formRequest  $request
      * @return \Illuminate\Http\Response
      */
+
+   
+
+
     public function store(StoreService_formRequest $request)
     {
         //
@@ -138,3 +152,5 @@ class ServiceFormController extends Controller
 
   
 }
+
+

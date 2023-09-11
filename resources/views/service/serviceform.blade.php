@@ -7,8 +7,8 @@
 			<div class="row align-items-center justify-content-center">
 				<div class="col-lg-6 text-center">
 					<h1 class="heading text-white mb-2" data-aos="fade-up">Service Form</h1>
-					<p data-aos="fade-up" class=" mb-5 text-white ">Volunteering is a wonderful way to make a positive impact on our community. If you're ready to make a difference and give back, all you need to do is fill out our volunteer form. Your time and effort can truly make a meaningful change in the lives of those in need. Join us in spreading kindness and compassion through volunteering today!
-					</p>		
+					<!-- <p data-aos="fade-up" class=" mb-5 text-white ">Volunteering is a wonderful way to make a positive impact on our community. If you're ready to make a difference and give back, all you need to do is fill out our volunteer form. Your time and effort can truly make a meaningful change in the lives of those in need. Join us in spreading kindness and compassion through volunteering today!
+					</p>		 -->
 					
 				</div>
 			</div>

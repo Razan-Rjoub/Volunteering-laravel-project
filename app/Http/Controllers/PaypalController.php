@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Auth;
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\ExpressCheckout;
 
@@ -51,5 +53,15 @@ class PaypalController extends Controller
     {
         return redirect()->route('cancel');
     }
-
+public function cancelview(){
+    $id = Auth::id();
+    $user = User::find($id);
+    return view('cancel',compact('user'));
 }
+public function successview(){
+    $id = Auth::id();
+    $user = User::find($id);
+    return view('Thankyou',compact('user'));
+}
+}
+
