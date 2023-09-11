@@ -98,17 +98,13 @@ class ItemFormController extends Controller
     {
         $validatedData = $request->validate([
             'volunteerName' => 'required',
-            'volunteerEmail' => ['required','email', 'ends_with:.com'],
-            'volunteerPhone' => ['required', 'regex:/^07[789]\d{7}$/'],
+            'volunteerEmail' => 'required',
+            'volunteerPhone' => 'required',
             'volunteerAddress' => 'required',
             'description' => 'required',
             'status' => 'required',
-            'image' => ['required','regex:/\.(jpg|jpeg|png|gif)$/','max:2048'],
-        ],['volunteerPhone.regex' => 'The phone  must start with 07 and to be 10number.'
-        ,'image.regex' => 'The image  extention must  be jpg or jpeg or png or gif .'
-            ]
-        );
-
+            'image' => 'required|max:2048',
+        ]);
 
 
 
@@ -118,7 +114,7 @@ class ItemFormController extends Controller
 $filename='';
     if ($request->hasFile('image')) {
         $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
-        $request->image->move(public_path('/assets/img/'), $filename);     
+        $request->image->move(public_path('/assets/img/'), $filename);
     }
      Item_form::create([
         'user_id' =>$userId,

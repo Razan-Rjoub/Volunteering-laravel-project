@@ -130,9 +130,9 @@ Route::get('/dash', function () {
 // Route::get('/Admins', function () {
 //     return view('dashboardbage.Admins');
 // });
-Route::get('/servicethanks', function () {
-    return view('service.servicethanks');
-})->name('servicethanks');
+// Route::get('/servicethanks', function () {
+//     return view('service.servicethanks');
+// })->name('servicethanks');
 
 
 

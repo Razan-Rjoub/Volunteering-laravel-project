@@ -13,24 +13,25 @@ use App\Models\User;
 
 class ServiceFormController extends Controller
 {
+
+
+
+
+    public function index()
+    {
+        $data= Service_form::all();
+        return view('dashboardbage.donatedservicesform')->with('data', $data);
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+
     public function infoService()
-    {
-
-        $data= Service_form::all();
-        return view('dashboardbage.donatedservicesform')->with('data', $data);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
     {
         return view('Service.serviceform');
 
@@ -39,30 +40,64 @@ class ServiceFormController extends Controller
 
 
 
-    public function stoService(Request $request)
+     public function stoService(Request $request)
+     {
+         $request->validate([
+             'name' => 'required',
+             'email' => ['required', 'email', 'ends_with:.com'],
+             'phone' => ['required', 'regex:/^07[789]\d{7}$/'],
+             'description' => 'required',
+             'date' => 'required|date',
+             'time' => 'required',
+             'service_id' => 'required', // Add validation rule for service_id
+         ],
+           [
+            'phone.regex' => 'The phone  must start with 07 and to be 10 number.'
+            ]);
+
+
+        if (Auth::check()) {
+            $userId = Auth::id();
+    $user = User::find($userId);
+          }
+
+         Service_form::create([
+             'user_id' => Auth::id(),
+             'name' => $request->input('name'),
+             'email' => $request->input('email'),
+             'phone' => $request->input('phone'),
+             'service_id' => $request->input('service_id'), // Retrieve service_id from the form
+             'description' => $request->input('description'),
+             'Date' => $request->input('date'),
+             'time' => $request->input('time')
+         ]);
+
+
+         return redirect()->route('paysuccess')->with([
+            'success' => 'Donation successfully'
+        ]);
+       }
+
+
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        $request->validate([
-            'description' => 'required',
-            'date' => 'required|date',
-            'time' => 'required',
-            'service_id' => 'required', // Add validation rule for service_id
-        ]);
-
-        Service_form::create([
-            'user_id' => Auth::id(),
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'phone' => $request->input('phone'),
-            'service_id' => $request->input('service_id'),
-            // Retrieve service_id from the form
-            'description' => $request->input('description'),
-            'Date' => $request->input('date'),
-            'time' => $request->input('time')
-        ]);
-
-        // Redirect back with a success message or handle the response as needed
-        return redirect()->back()->with('success', 'Service form submitted successfully');
+        //
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\StoreService_formRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+
+
 
 
     public function store(StoreService_formRequest $request)
@@ -82,7 +117,28 @@ class ServiceFormController extends Controller
         //
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Service_form  $service_form
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Service_form $service_form)
+    {
+        //
+    }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \App\Http\Requests\UpdateService_formRequest  $request
+     * @param  \App\Models\Service_form  $service_form
+     * @return \Illuminate\Http\Response
+     */
+    public function update(UpdateService_formRequest $request, Service_form $service_form)
+    {
+        //
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -96,8 +152,8 @@ class ServiceFormController extends Controller
         Service_form::destroy($id);
     return redirect('donatedservicesform')->with('flash_message','donated services form deleted!');
     }
+
+
 }
-
-
 
 
