@@ -1,2 +1,8 @@
+
 # Volunteering-laravel-project
-Think about real web site for a Volunteering (products or service with financial donation) that can be implemented as a web application. In this project, you will work as a group using bootstrap, HTML, CSS, JS and Laravel. All the tasks should be organized and tracked using Trello, you should deliver all the required pages.
+Donation website is a dynamic online platform that welcomes various forms of giving. Whether you want to contribute money, provide your services, or donate items, we provide a convenient and secure space for you to make a positive impact. Join us in supporting individuals, causes, and organizations in need, and be part of a community that cares.
+
+<a href="https://miro.com/welcomeonboard/V0RDT2pKdGtKcldIV3dqQndFWmUyNWlva0FadWx3N25TTTFJRjA2bFRpMFRKWHJWZ2VSSlM5S3lzOFhsWGVjZ3wzNDU4NzY0NTU2NDE0OTEyOTMxfDI=?share_link_id=410799198250" style="color:yellow">Miro</a>
+
+https://trello.com/invite/accept-board
+https://drawsql.app/teams/razan-3/diagrams/volunteering-web-application
