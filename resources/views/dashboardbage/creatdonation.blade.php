@@ -45,8 +45,8 @@ Admins
         @csrf
 
         <label>Name</label><br>
-        <input type="text" name="name" id="name" class="form-control">
-        <span>@error('name'){{$message}} @enderror</span><br>
+        <input type="text" name="DonationName" id="DonationName" class="form-control">
+        <span>@error('DonationName'){{$message}} @enderror</span><br>
         <label>email</label><br>
         <input type="email" name="email" id="email" class="form-control">
         <span>@error('email'){{$message}} @enderror</span><br>

@@ -46,8 +46,8 @@ Donations
         @csrf
 
         <label>Name</label><br>
-        <input type="text" name="name" id="name" class="form-control"><br>
-        <span>@error('name'){{$message}} @enderror</span><br><br>
+        <input type="text" name="ServiceName" id="ServiceName" class="form-control"><br>
+        <span>@error('ServiceName'){{$message}} @enderror</span><br><br>
         <label>description</label><br>
         <input type="text" name="description" id="description" class="form-control"><br>
         <span>@error('description'){{$message}} @enderror</span><br><br>

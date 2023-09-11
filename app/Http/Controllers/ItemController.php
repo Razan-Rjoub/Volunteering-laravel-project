@@ -44,13 +44,9 @@ class ItemController extends Controller
     {
 
         $request->validate([
-            'name' => 'required',
+            'ItemName' => 'required',
             'description' => 'required',
-            'image' => ['required','regex:/.(jpg|jpeg|png|gif)$/','max:2048'],
-        ],['volunteerPhone.regex' => 'The phone  must start with 07 and to be 10number.'
-        ,'image.regex' => 'The image  extention must  be jpg or jpeg or png or gif .'
-    ],
-
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',]
         );
 
         $filename = '';
@@ -60,7 +56,7 @@ class ItemController extends Controller
         }
 
         Item::create([
-            'name' => $request->name,
+            'ItemName' => $request->ServiceName,
             'description' => $request->description,
             'image' => $filename,
 
@@ -124,7 +120,7 @@ class ItemController extends Controller
 
 
          $data->update([
-             'name' => $request->name,
+             'ItemName' => $request->ServiceName,
              'description' => $request->description,
              'amount_needed' => $request->amount_needed,
          ]);
