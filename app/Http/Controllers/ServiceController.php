@@ -18,7 +18,7 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  public function indexService()
+  public function inService()
 {
     $data= Service::all();
     return view('Service.service',['service'=>$data]); 

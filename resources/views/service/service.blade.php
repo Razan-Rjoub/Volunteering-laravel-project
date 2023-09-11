@@ -2,54 +2,52 @@
 @section('title','services')
 	@section('content')
 
-    <div class="hero overlay" style="background-image: url('style/images/donation2.jpeg')"> 
+    <div class="hero overlay" style="background-image: url('style/images/donation2.jpeg')">
 		<div class="container">
 			<div class="row align-items-center justify-content-center">
 				<div class="col-lg-6 text-center">
 					<h1 class="heading text-white mb-2" data-aos="fade-up">Service</h1>
 					<p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">If you have a heart to help people and a passion for making a positive impact, join us as a volunteer and put your skills and knowledge to good use.</p>
 					<p data-aos="fade-up"  data-aos-delay="100">
-					</p>		
-					
+					</p>
+
 				</div>
 
-				
+
 			</div>
 		</div>
 	</div>
-    <br><br><br><br>
-    <div class="container">
-<div class="row justify-content-between mt-4">
-    <div class="col-lg-5 pe-lg-5" data-aos="fade-up" data-aos-delay="200">
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-mission" role="tabpanel" aria-labelledby="pills-mission-tab">
-                <h2 class="mb-3 text-primary fw-bold">About Services</h2>
-                <p>
-                    Welcome to our volunteer services platform, where we connect passionate individuals with opportunities to make a positive impact. We're dedicated to helping you find meaningful volunteer roles that align with your interests and skills. Our user-friendly website simplifies the process of discovering, signing up for, and tracking your volunteer hours. Join us in our mission to create a more compassionate world through the power of volunteering. Whether you're looking to lend a hand in your local community, share your expertise, or engage in virtual volunteerism, we're here to support your journey in helping others and making a difference. Together, we can inspire change and build a brighter future for all.
-                </p>			
+
+
+
+
+<div class="section cause-section bg-light">
+
+
+
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <span class="subheading mb-3">Causes</span>
+                    <h2 class="heading">Service</h2>
+
+
+                    <div id="features-slider-nav" class="mt-5 d-flex justify-content-center">
+                        <button class="btn btn-primary prev d-flex align-items-center me-2" data-controls="prev"> <span
+                                class="icon-chevron-left"></span> <span class="ms-3">Prev</span></button>
+                        <button class="btn btn-primary next d-flex align-items-center" data-controls="next"><span
+                                class="me-3">Next</span> <span class="icon-chevron-right"></span></button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-6">
-        <div class="overlap-imgs">
-            <img src="style/images/service2.jpg" alt="Image" class="img-fluid rounded" data-aos="fade-up" data-aos-delay="100">
-            <img src="style/images/maintenance-transformed.jpeg" alt="Image" class="img-fluid rounded" data-aos="fade-up" data-aos-delay="200">
-        </div>
-    </div>		
-</div>
-</div>
 
 
-<br><br><br><br><br>
 
-<div class="container">
-    <div class="row justify-content-center mb-5">
-        <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
-            <h1 class="heading">Services</h1>
-        </div>
-    </div>	
-</div>
-<div class="container mb-5">
+
+
+    
+        <div class="container mb-5">
     <div class="features-slider-wrap position-relative" data-aos="fade-up" data-aos-delay="200">
         <div class="row">
         @foreach ($service as $index => $item)
@@ -74,5 +72,7 @@
 </div>
 
 
-<br><br><br><br><br><br><br><br>
+
+
+<br><br><br><br><br><br><br><br><br>
 @endsection

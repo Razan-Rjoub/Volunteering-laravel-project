@@ -16,21 +16,21 @@ class DonationSeeder extends Seeder
     public function run()
     {
         Donation::create([
-            'name' => 'Providing Beds for 50 Needy Families',
+            'DonationName' => 'Providing Beds for 50 Needy Families',
             'description' => "We're committed to supplying 50 families with new beds, mattresses, and bedding for a better night's sleep and added warmth and comfort in their homes. Your support can make a difference.",
-            'image' => 'img_v_2-min.jpg',
+            'image' => 'don.png',
             'amount_needed' => 2000,
         ]);
         Donation::create([
-            'name' => 'Providing Seating for a Community Center',
+            'DonationName' => 'Providing Seating for a Community Center',
             'description' => "provide 100 sturdy and comfortable chairs for the community center. These chairs will enhance the center's capacity to host diverse events, from educational seminars to cultural celebrations",
-            'image' => 'img_v_3-min.jpg',
+            'image' => 'old.jpg',
             'amount_needed' => 4000,
         ]);
         Donation::create([
-            'name' => 'Providing Lamps to Light Up Lives',
+            'DonationName' => 'Providing Lamps to Light Up Lives',
             'description' => "We'll give 200 energy-efficient lamps to homes without proper lighting, improving studying conditions for children and enhancing family activities",
-            'image' => 'img_v_4-min.jpg',
+            'image' => 'don3.jpg',
             'amount_needed' => 1000,
         ]);
     }

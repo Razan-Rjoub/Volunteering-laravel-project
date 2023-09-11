@@ -16,13 +16,13 @@ class ServiceSeeder extends Seeder
     public function run()
     {
         Service::create([
-            'name' => 'Delivery Volunteer',
+            'ServiceName' => 'Delivery Volunteer',
             'description' => 'Make a difference as a Delivery Volunteer, ensuring essential items reach those who need them. Your efforts can bring comfort and support to those in our community.',
             'image' => 'v1.jpg',
         ]);
 
         Service::create([
-            'name' => 'Maintenance Volunteer',
+            'ServiceName' => 'Maintenance Volunteer',
             'description' => 'Make a difference as a Maintenance Volunteer, ensuring essential items reach those who need them. Your efforts can bring comfort and support to those in our community.',
             'image' => 'v2.jpg',
         ]);

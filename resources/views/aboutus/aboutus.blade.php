@@ -44,10 +44,9 @@
 					<div class="item">
 
 						<div class="feature bg-color-1">
-							<img src="style/images/hasan.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+							<img src="style/images/hasan.jpg" style="height:150px" alt="Image" class="img-fluid  mb-4">
 
 							<h3 class="mb-0">Hasan refaie</h3><br>
-							<!-- <span class="text-black-50 mb-3 d-block">CEO, Co-Founder</span> -->
 							<p class="text-black-50">Lend a hand, lend a heart. Together, we furnish hope.</p>
 
 						</div>
@@ -57,7 +56,7 @@
 					<div class="item">
 
 						<div class="feature bg-color-2">
-							<img src="style/images/razan.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+							<img src="style/images/razan1.png"style="height:150px" alt="Image" class="img-fluid  mb-4">
 
 							<h3 class="mb-0">Razan ALRjoob</h3><br>
 							<p class="text-black-50">Turning houses into homes, one act of kindness at a time.</p>
@@ -69,7 +68,7 @@
 					<div class="item">
 
 						<div class="feature bg-color-3">
-							<img src="style/images/razan_alkateeb.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+							<img src="style/images/razan_alkateeb1.png" style="height:150px" alt="Image" class="img-fluid  mb-4">
 
 							<h3 class="mb-0">Razan ALkhateeb</h3><br>
 							<p class="text-black-50">When you give furniture, you give the gift of home.</p>
@@ -80,7 +79,7 @@
 					<div class="item">
 
 						<div class="feature bg-color-4">
-							<img src="style/images/person_4.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+							<img src="style/images/ramez1.png"style="height:150px" alt="Image" class="img-fluid  mb-4">
 
 							<h3 class="mb-0">Ramez alrijjal</h3><br>
 							<p class="text-black-50">Helping others isn't just about what you give, but the difference you make.</p>
@@ -92,7 +91,7 @@
 					<div class="item">
 
 						<div class="feature bg-color-5">
-							<img src="style/images/person_2.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+							<img src="style/images/rama1.png"style="height:150px" alt="Image" class="img-fluid  mb-4">
 
 							<h3 class="mb-0">Rama Ababneh</h3><br>
 							<p class="text-black-50">Volunteering is not about giving away what you have, but sharing who you are.</p>
@@ -104,7 +103,7 @@
 					<div class="item">
 
 						<div class="feature bg-color-6">
-							<img src="style/images/person_3.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+							<img src="style/images/anfal.png"style="height:150px" alt="Image" class="img-fluid mb-4">
 
 							<h3 class="mb-0">Anfal dherat</h3><br>
 							<p class="text-black-50">Together, we furnish not just homes but also the promise of a better tomorrow.</p>
@@ -168,15 +167,15 @@
 		<div class="instagram-slider-wrap" data-aos="fade-up" data-aos-delay="200">
 			<div class="instagram-slider" id="instagram-slider">
 
-				<div class="item">
-					<a class="instagram-item">
-						<img src="style/images/about.png" alt="Image" class="img-fluid">		
+				<div class="item" >
+					<a class="instagram-item" >
+						<img src="style/images/about.png" alt="Image"  class="img-fluid">		
 					</a>
 				</div>
 
 				<div class="item">
 					<a class="instagram-item"> 
-						<img src="style/images/about2.png"  alt="Image" class="img-fluid">		
+						<img src="style/images/about22.png"  alt="Image" class="img-fluid">		
 					</a>
 				</div>
 
@@ -199,15 +198,27 @@
 						<img src="style/images/about6.png" alt="Image" class="img-fluid">		
 					</a>
 				</div>
-
 				<div class="item">
 					<a class="instagram-item">
-						<img src="style/images/about30.png" alt="Image" class="img-fluid">		
+						<img src="style/images/uni.png" alt="Image" class="img-fluid">		
 					</a>
 				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<img src="style/images/about7.png" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<img src="style/images/about8.png" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+
+				
 			</div>
 		</div>
 
 	</div>
+	<br><br><br>
 
 	@endsection
