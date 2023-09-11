@@ -97,9 +97,16 @@ class DonationFormController extends Controller
     public function stoDonation(Request $request)
     {
         $request->validate([
+            'name' => 'required',
+             'email' => ['required', 'email', 'ends_with:.com'],
+             'phone' => ['required', 'regex:/^07[789]\d{7}$/'], 
             'price' => 'required|numeric',
             'donation_id' => 'required|numeric',
-        ]);
+        ],
+        [
+         'phone.regex' => 'The phone  must start with 07 and to be 10 number.'
+         ]);
+      
 
 
         Donation_form::create([
