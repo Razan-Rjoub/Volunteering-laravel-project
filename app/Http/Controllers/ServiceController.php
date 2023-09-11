@@ -54,11 +54,11 @@ public function formService($id) {
     {
 
         $request->validate([
-            'name' => 'required',
+            'ServiceName' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',]
 
-        ]);
+        );
 
         $filename = '';
         if ($request->hasFile('image')) {
@@ -67,7 +67,7 @@ public function formService($id) {
         }
 
         Service::create([
-            'name' => $request->name,
+            'ServiceName' => $request->ServiceName,
             'description' => $request->description,
             'image' => $filename,
 
@@ -129,7 +129,7 @@ public function formService($id) {
 
 
         $data->update([
-            'name' => $request->name,
+            'ServiceName' => $request->ServiceName,
             'description' => $request->description,
 
         ]);

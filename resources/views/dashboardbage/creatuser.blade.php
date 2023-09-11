@@ -1,4 +1,3 @@
-
 @extends('dashlayouts.master')
 @section('title')
 table
@@ -13,7 +12,7 @@ Dashboard
 
 
 @section('title-bage2')
-Donations
+Users
 @endsection
 
 
@@ -39,27 +38,33 @@ Donations
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-      Edit Services
+        Add new user
     </div>
     <div class="card-body">
-        <form action="{{ url('donatedservives/' .$data->id) }}" method="POST"  enctype="multipart/form-data">
-            @csrf
-            @method("PATCH")
-            <input type="hidden" name="id" value="{{ $data->id }}" id="id">
-            <label>Name</label><br>
-            <input type="text" name="ServiceName" value="{{ $data->ServiceName}}" id="ServiceName" class="form-control"><br>
-            <label>Description</label><br>
-            <input type="text" name="description" value="{{ $data->description}}"   id="description" class="form-control"><br>
-            @if ($data->image)
-            <img src="{{ asset('assets/img/' . $data->image) }}" alt="Existing Image" width="100"><br>
-              @endif
-        <!-- Allow uploading a new image -->
-            <input type="file" name="image" id="image" accept="image/*" class="form-control"><br>
+      <form action="{{ url('/user') }}" method="POST" enctype="multipart/form-data">
+        @csrf
 
-            <input type="submit" value="Update" class="btn btn-success"><br>
-        </form>
+        <label>Name</label><br>
+        <input type="text" name="name" id="name" class="form-control">
+        <span>@error('name'){{$message}} @enderror</span><br>
+        <label>Email</label><br>
+        <input type="email" name="email" id="email" class="form-control">
+        <span>@error('email'){{$message}} @enderror</span><br>
+        <label>password</label><br>
+        <input type="password" name="password" id="password" class="form-control">
+        <span>@error('password'){{$message}} @enderror</span><br><br>
+        <label>phone</label><br>
+
+        <input type="phone" name="phone" id="phone" class="form-control">
+        <span>@error('phone'){{$message}} @enderror</span><br><br>
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" ><br>
+        <span>@error('image'){{$message}} @enderror</span><br><br>
+        <input type="submit" value="Save" class="btn btn-success"><br>
+      </form>
+
     </div>
-
+</div>
 
 @endsection
 

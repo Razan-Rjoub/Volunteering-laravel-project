@@ -8,24 +8,34 @@ use App\Http\Requests\UpdateAdminRequest;
 use Illuminate\Http\Request;
 class AdminController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $data= Admin::all();
         return view('dashboardbage.Admins')->with('data', $data);
     }
 
-
-   
-
-    
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         return view('dashboardbage.createadmin');
 
     }
 
-
-    
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\StoreAdminRequest  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $request->validate([
@@ -45,48 +55,15 @@ class AdminController extends Controller
             $request->image->move(public_path('/assets/img/'), $filename);
         }
 
-        $input =$request->all();
         Admin::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password), // Hash the password
             'image' => $filename,
         ]);
-       return redirect('admin')->with('flash_message','Admin Added!');
+
+        return redirect('admin')->with('flash_message', 'Admin Added!');
     }
-
-
-    public function edit($id)
-    {
-        $data=Admin::find($id);
-        return view('dashboardbage.editadmin')->with('data',$data);
-    }
-
-
-    // public function update(UpdateAdminRequest $request, $id)
-    // {
-    //     $data=Admin::find($id);
-    //     $input=$request->all();
-    //     $data->update($input);
-    //      return redirect('admin')->with('flash_message','Admin Updated!');
-    // }
-
- public function adminIndex()
-    {
-        return view('home');
-    }
-    //  public function adminIndex(Request $request)
-    // {
-    //     return view('home');
-    //     Admin::create([
-    //         'name' => $request->name,
-    //         'email' => $request->email,
-    //         'password' => bcrypt($request->password), 
-    //         'image' => $filename,
-    //     ]);
-
-    //     return redirect('admin')->with('flash_message', 'Category Added!');
-    // }
 
     /**
      * Display the specified resource.
@@ -100,7 +77,24 @@ class AdminController extends Controller
         return view('dashboardbage.show')->with('data',$data);
     }
 
-   
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Admin  $admin
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $data=Admin::find($id);
+        return view('dashboardbage.editadmin')->with('data',$data);
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \App\Http\Requests\UpdateAdminRequest  $request
+     * @param  \App\Models\Admin  $admin
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)
     {
         $data['name'] = $request->name;
@@ -121,12 +115,11 @@ class AdminController extends Controller
         return redirect('admin')->with('flash_message','admin Update!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Admin  $admin
-     * @return \Illuminate\Http\Response
-     */
+    public function adminIndex()
+    {
+        return view('home');
+    }
+    
     public function destroy($id)
     {
         Admin::find($id)->delete();

@@ -39,19 +39,15 @@ Donations
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-      Edit Donation
+      Edit user info
     </div>
     <div class="card-body">
-<<<<<<< HEAD
         <form action="{{ url('donatione/' .$data->id) }}" method="POST"  enctype="multipart/form-data"  enctype="multipart/form-data">
-=======
-        <form action="{{ url('donation/' .$data->id) }}" method="POST" enctype="multipart/form-data" >
->>>>>>> 70cca07d8dd4ecffe587ca13fc4c3c9f8328d771
             @csrf
             @method("PATCH")
             <input type="hidden" name="id" value="{{ $data->id }}" id="id">
             <label>Name</label><br>
-            <input type="text" name="name" value="{{ $data->name}}" id="address" class="form-control"><br>
+            <input type="text" name="DonationName" value="{{ $data->DonationName}}" id="DonationName" class="form-control"><br>
             <label>Description</label><br>
             <input type="text" name="description" value="{{ $data->description}}"   id="description" class="form-control"><br>
             @if ($data->image)
@@ -59,7 +55,7 @@ Donations
               @endif
         <!-- Allow uploading a new image -->
             <input type="file" name="image" id="image" accept="image/*" class="form-control"><br>
-            <label>amount_needed</label><br>
+            <label>Amount</label><br>
             <input type="number" name="amount_needed" value="{{ $data->amount_needed }}" id="amount_needed" class="form-control"><br>
             <input type="submit" value="Update" class="btn btn-success"><br>
         </form>

@@ -7,7 +7,7 @@ table
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
@@ -39,16 +39,16 @@ Donations
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-        creat new students
+        Add new items donation
     </div>
     <div class="card-body">
       <form action="{{ url('/donateditems') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <label>Name</label><br>
-        <input type="text" name="name" id="name" class="form-control">
-        <span>@error('name'){{$message}} @enderror</span><br><br>
-        <label>description</label><br>
+        <input type="text" name="ItemName" id="ItemName" class="form-control">
+        <span>@error('ItemName'){{$message}} @enderror</span><br><br>
+        <label>Description</label><br>
         <input type="text" name="description" id="description" class="form-control">
         <span>@error('description'){{$message}} @enderror</span><br><br>
         <label for="image">Upload Image:</label>

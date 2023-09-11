@@ -1,7 +1,7 @@
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
   {{-- logout --}}
       <div class="container">
-        <h1>   Welcome , {{ session('loginname')}}</h1>
+        <h1 style="font-style: italic;">   Welcome , {{ session('loginname')}}</h1>
       </div>
  {{-- logout Button --}}
        @if (session('loginname'))

@@ -7,7 +7,7 @@ User
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
@@ -45,18 +45,19 @@ User
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Donations</h3>
+              <h3 class="card-title">Users</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-
+                <a href=" {{ url('/user/create') }}" > <button class="btn btn-primary mb-2">Add New User</button></a>
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
 
-                  <th>name</th>
-                  <th>email</th>
-                  <th>phone</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Action</th>
 
                 </tr>
                 </thead>

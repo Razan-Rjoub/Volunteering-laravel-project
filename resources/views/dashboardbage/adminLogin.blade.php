@@ -10,13 +10,13 @@
   </head>
   <body>
     <!-- Pills navs -->
-<section class="vh-100" style="background-color: #ffc107;">
+<section class="vh-100" style="background-color: rgba(89, 136, 107, 0.8);">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card shadow-2-strong" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
-            <h3 class="mb-5"> Sign in</h3>
+            <h3 class="mb-5" > Sign in</h3>
 
             @if (Session::has('error'))
                 <div class="alert alert-danger" role="alert">
@@ -40,8 +40,8 @@
 
               <!-- You can add any additional form elements here -->
 
-              <button class="btn btn-warning btn-lg btn-block" type="submit">Log in</button>
-            </form>
+             <button class="btn btn-lg btn-block text-white" type="submit" style="background-color: #59886b;">Log in</button>
+</form>
             <!-- End of the form -->
 
             <hr class="my-4">
@@ -51,7 +51,5 @@
     </div>
   </div>
 </section>
-
-
   </body>
 </html>

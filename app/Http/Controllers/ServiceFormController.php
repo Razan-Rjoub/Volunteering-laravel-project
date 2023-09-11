@@ -39,6 +39,12 @@ class ServiceFormController extends Controller
         //
     }
 
+    public function index()
+    {
+        $data= Service_form::all();
+        return view('dashboardbage.donatedservicesform')->with('data', $data);
+    }
+
     /**
      * Display the specified resource.
      *

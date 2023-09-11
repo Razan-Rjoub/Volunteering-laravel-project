@@ -6,7 +6,7 @@ table
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
@@ -38,30 +38,22 @@ Category
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-        creat new Category
+        Add new Category
     </div>
     <div class="card-body">
       <form action="{{ url('/category') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <label>Name</label><br>
-<<<<<<< HEAD
         <input type="text" name="name" id="name" class="form-control"><br>
-        <label>description</label><br>
-        <input type="text" name="description" id="description" class="form-control"><br>
-        <label for="image">Upload Image:</label>
-        <input type="file" id="image" name="image" accept="image/*" ><br>
-=======
-        <input type="text" name="name" id="name" class="form-control">
+        
         <span>@error('name'){{$message}} @enderror</span><br><br>
         <label>description</label><br>
         <input type="text" name="description" id="description" class="form-control">
         <span>@error('description'){{$message}} @enderror</span><br><br>
         <label for="image">Upload Image:</label>
         <input type="file" id="image" name="image" accept="image/*" ><br>
-
         <span>@error('image'){{$message}} @enderror</span><br><br>
->>>>>>> 7dbb6e444a4c75cfcc8d73a94d882586b6dae1e9
         <input type="submit" value="Save" class="btn btn-success"><br>
       </form>
 
@@ -119,8 +111,4 @@ Category
     });
   });
 </script>
-<<<<<<< HEAD
 @endsection
-=======
-@endsection
->>>>>>> 7dbb6e444a4c75cfcc8d73a94d882586b6dae1e9

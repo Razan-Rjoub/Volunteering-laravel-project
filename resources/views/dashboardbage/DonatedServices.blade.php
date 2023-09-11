@@ -7,7 +7,7 @@ table
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
@@ -45,18 +45,19 @@ Donations Services
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Donations Items</h3>
+              <h3 class="card-title">Services Donations</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <a href=" {{ url('/donatedservives/create') }}" > <button class="btn btn-primary mb-2">Add Donations</button></a>
+                <a href=" {{ url('/donatedservives/create') }}" > <button class="btn btn-primary mb-2">Add Services</button></a>
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
 
-                  <th>name</th>
-                  <th>description </th>
-                  <th>image</th>
+                  <th>Name</th>
+                  <th>Description </th>
+                  <th>Image</th>
+                  <th>Action</th>
 
 
                 </tr>
@@ -66,7 +67,7 @@ Donations Services
                     @foreach ( $data as $item )
                 <tr>
 
-                  <td>{{ $item->name }}</td>
+                  <td>{{ $item->ServiceName }}</td>
                   <td>{{ $item->description }}</td>
                   <td>
                     @if ($item->image)

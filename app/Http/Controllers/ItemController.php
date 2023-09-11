@@ -44,11 +44,10 @@ class ItemController extends Controller
     {
 
         $request->validate([
-            'name' => 'required',
+            'ItemName' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',
-
-        ]);
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',]
+        );
 
         $filename = '';
         if ($request->hasFile('image')) {
@@ -57,10 +56,10 @@ class ItemController extends Controller
         }
 
         Item::create([
-            'name' => $request->name,
+            'ItemName' => $request->ServiceName,
             'description' => $request->description,
             'image' => $filename,
-            
+
         ]);
 
         return redirect('donateditems')->with('flash_message', 'Category Added!');
@@ -121,7 +120,7 @@ class ItemController extends Controller
 
 
          $data->update([
-             'name' => $request->name,
+             'ItemName' => $request->ServiceName,
              'description' => $request->description,
              'amount_needed' => $request->amount_needed,
          ]);

@@ -31,10 +31,11 @@ class DonationController extends Controller
     {
 
         $request->validate([
-            'name' => 'required',
+            'DonationName' => 'required',
             'description' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',
             'amount_needed' => 'required',
+
 
         ]);
 
@@ -45,7 +46,7 @@ class DonationController extends Controller
         }
 
         Donation::create([
-            'name' => $request->name,
+            'DonationName' => $request->DonationName,
             'description' => $request->description,
             'image' => $filename,
             'amount_needed' => $request->amount_needed,
@@ -88,7 +89,7 @@ class DonationController extends Controller
 
 
         $data->update([
-            'name' => $request->name,
+            'DonationName' => $request->DonationName,
             'description' => $request->description,
             'amount_needed' => $request->amount_needed,
         ]);

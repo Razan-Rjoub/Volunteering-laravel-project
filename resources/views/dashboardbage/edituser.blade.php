@@ -12,7 +12,7 @@ Dashboard
 
 
 @section('title-bage2')
-Admins
+User
 @endsection
 
 
@@ -38,54 +38,62 @@ Admins
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-        Edit Profile
+        User Profile
     </div>
-    <div class="card-body">
-        <form action="{{ url('show/' .$data->id) }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method("PATCH")
+    <div class="card" style="margin: 20px">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="current_image">Current Profile Image</label>
+                        @if ($data->image)
+                            <div>
+                                <img src="{{ $data->image }}" width="100">
+                            </div>
+                        @else
+                            <p>No image available.</p>
+                        @endif
+                    </div>
 
-            <!-- Display profile image -->
+                </div>
+                <div class="col-md-8">
+                    <form action="{{ url('admin/' .$data->id) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method("PATCH")
+                        <input type="hidden" name="id" value="{{ $data->id }}" id="id">
+                        <input type="hidden" name="id" value="{{ $data->id }}" id="id">
+                        <div class="form-group">
+                        @if ($data->image)
+                        <img src="{{ asset('assets/img/' . $data->image) }}" alt="Existing Image" width="100"><br>
+                        @endif
 
-            <input type="hidden" name="id" value="{{ $data->id }}" id="id">
-            <label>Name</label><br>
-            @if ($data->image)
-            <img src="{{ asset('assets/img/' . $data->image) }}" alt="Existing Image" width="100"><br>
-              @endif
-        <!-- Allow uploading a new image -->
-            <input type="file" name="image" id="image" accept="image/*" class="form-control"><br>
-            @if ($errors->has('name'))
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('name') }}</strong>
-            </span>
-        @endif
-
-
-
-            <input type="text" name="name" value="{{ $data->name}}" id="address" class="form-control"><br>
-            <label>Email</label><br>
-
-            @if ($errors->has('email'))
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $errors->first('email') }}</strong>
-        </span>
-    @endif
-
-            <input type="text" name="email" value="{{ $data->email}}"   id="email" class="form-control"><br>
-            <label>Password</label><br>
-
-            @if ($errors->has('password'))
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('password') }}</strong>
-            </span>
-        @endif
-
-            <input type="password" name="password"  id="password" class="form-control"><br>
-
-            <input type="submit" value="Update" class="btn btn-success"><br>
-        </form>
+                    <!-- Allow uploading a new image -->
+                        <input type="file" name="image" id="image" accept="image/*" class="form-control"><br>
+                    </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" value="{{ $data->name }}" id="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" value="{{ $data->email }}" id="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password"  value="{{ $data->password }}" id="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="number" name="phone"  value="{{ $data->phone }}" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Update Profile</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 @endsection
 
 @section('scripts')
