@@ -39,7 +39,7 @@ Donations
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-      Edit Donation
+      Edit user info
     </div>
     <div class="card-body">
         <form action="{{ url('donatione/' .$data->id) }}" method="POST"  enctype="multipart/form-data"  enctype="multipart/form-data">
@@ -55,7 +55,7 @@ Donations
               @endif
         <!-- Allow uploading a new image -->
             <input type="file" name="image" id="image" accept="image/*" class="form-control"><br>
-            <label>amount_needed</label><br>
+            <label>Amount</label><br>
             <input type="number" name="amount_needed" value="{{ $data->amount_needed }}" id="amount_needed" class="form-control"><br>
             <input type="submit" value="Update" class="btn btn-success"><br>
         </form>

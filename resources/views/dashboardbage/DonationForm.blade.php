@@ -1,13 +1,13 @@
 
 @extends('dashlayouts.master')
 @section('title')
-User
+Admin
 @endsection
 
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
@@ -54,10 +54,11 @@ Donation form
                 <thead>
                 <tr>
 
-                  <th>price</th>
-                  <th>phone</th>
-                  <th>name</th>
-                  <th>email</th>
+                  <th>Price</th>
+                  <th>Phone</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Action</th>
 
 
                 </tr>

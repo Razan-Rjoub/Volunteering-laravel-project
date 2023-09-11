@@ -6,7 +6,7 @@ table
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 

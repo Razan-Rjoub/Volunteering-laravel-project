@@ -7,13 +7,13 @@ table
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
 
 @section('title-bage2')
-Donations Iteam
+Donated iteams
 @endsection
 
 
@@ -45,18 +45,19 @@ Donations Iteam
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Donations Items</h3>
+              <h3 class="card-title">Donated items</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <a href=" {{ url('/donateditems/create') }}" > <button class="btn btn-primary mb-2">Add Donations</button></a>
+                <a href=" {{ url('/donateditems/create') }}" > <button class="btn btn-primary mb-2">Add Items Donations</button></a>
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
 
-                  <th>name</th>
-                  <th>description </th>
-                  <th>image</th>
+                  <th>Name</th>
+                  <th>Description </th>
+                  <th>Image</th>
+                  <th>Action</th>
 
 
                 </tr>
@@ -95,15 +96,6 @@ Donations Iteam
 
                 @endforeach
                 </tbody>
-                {{-- <tfoot>
-                <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
-                </tr>
-                </tfoot> --}}
               </table>
             </div>
             <!-- /.card-body -->

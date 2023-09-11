@@ -6,13 +6,13 @@ table
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
 
 @section('title-bage2')
-users
+Users
 @endsection
 
 
@@ -38,7 +38,7 @@ users
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-        creat new user
+        Add new user
     </div>
     <div class="card-body">
       <form action="{{ url('/user') }}" method="POST" enctype="multipart/form-data">
@@ -47,7 +47,7 @@ users
         <label>Name</label><br>
         <input type="text" name="name" id="name" class="form-control">
         <span>@error('name'){{$message}} @enderror</span><br>
-        <label>email</label><br>
+        <label>Email</label><br>
         <input type="email" name="email" id="email" class="form-control">
         <span>@error('email'){{$message}} @enderror</span><br>
         <label>password</label><br>

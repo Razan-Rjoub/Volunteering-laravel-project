@@ -7,7 +7,7 @@ table
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
@@ -39,7 +39,7 @@ Donations
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-      Edit Donation
+      Edit donated item
     </div>
     <div class="card-body">
         <form action="{{ url('donateditems/' .$data->id) }}" method="POST" enctype="multipart/form-data">
