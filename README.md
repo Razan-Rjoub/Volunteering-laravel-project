@@ -4,7 +4,7 @@ Donation website is a dynamic online platform that welcomes various forms of giv
 
 <a href="https://miro.com/welcomeonboard/V0RDT2pKdGtKcldIV3dqQndFWmUyNWlva0FadWx3N25TTTFJRjA2bFRpMFRKWHJWZ2VSSlM5S3lzOFhsWGVjZ3wzNDU4NzY0NTU2NDE0OTEyOTMxfDI=?share_link_id=410799198250">Miro</a>
 
-<a href="https://trello.com/invite/accept-board">Trello</a>
+<a href="https://trello.com/b/dTSgWHvY/laravel-project">Trello</a>
 
 <a href="https://drawsql.app/teams/razan-3/diagrams/volunteering-web-application
 ">Schema SQL</a>
