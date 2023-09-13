@@ -6,11 +6,12 @@
                 <div class="widget">
                     <h3>Navigation</h3>
                     <ul class="list-unstyled float-left links">
-                        <li><a href="#">Donation</a></li>
-                        <li><a href="#">Item</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact us</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="{{route('Give Donation')}}">Donation</a></li>
+                        <li><a href="{{route('Give Items')}}">Item</a></li>
+                        <li><a href="{{route('Give Services')}}">Service</a></li>
+                        <li><a href="{{route('aboutus')}}">About us</a></li>
+                        <li><a href="{{route('contact')}}">Contact us</a></li>
                     </ul>
                 </div> <!-- /.widget -->
             </div> <!-- /.col-lg-3 -->
@@ -107,5 +108,13 @@
 <script src="{{asset('../assets/js/main.js')}}"></script>
 
 <script src="{{asset('../assets/js/pages-account-settings-account.js')}}"></script>
+
+
+<script src="{{asset('hero/js/jquery.min.js')}}"></script>
+    <script src="{{asset('hero/js/popper.js')}}"></script>
+    <script src="{{asset('hero/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('hero/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('hero/js/main.js')}}"></script>
+
 </body>
 </html>

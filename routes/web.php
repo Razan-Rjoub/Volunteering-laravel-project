@@ -10,6 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceFormController;
+use App\Http\Controllers\ContactController;
 
 
 
@@ -20,6 +21,7 @@ use App\Http\Controllers\UsertController;
 
 
 use App\Http\Controllers\ItemFormController;
+use App\Http\Controllers\Googleauthcontroller;
 
 use App\Http\Controllers\AdminController;
 
@@ -29,6 +31,27 @@ use App\Http\Controllers\ShowController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('contactus', [ContactController::class, 'index']);
+Route::post('contact-store', [ContactController::class, 'store'])->name('store.contactus');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -58,9 +81,7 @@ Route::get('/profile', function () {
 Route::get('/thankyou', function () {
     return view('Thankyou');
 })->name('thankyou');
-// Route::get('/', function () {
-//     return view('Home.index');
-// });
+
 
 Route::get('/form', function () {
     return view('Form');
@@ -76,26 +97,17 @@ Route::get('/donation', [DonationController::class, 'inDonation'])->name('Give D
 Route::get('/service', [ServiceController::class, 'inService'])->name('Give Services');
 Route::get('/item', [ItemController::class, 'inItem'])->name('Give Items');
 
-//Route::get('/',[CategoryController::class,'index'])->name('home');
-
-//Route::get('/item',[ItemController::class,'index'])->name('Give Items');
-
-
-
-
 
 
 Route::get('/donationform/{id}', [DonationController::class, 'formDonation'])->middleware(['auth', 'verified'])->name('donationform');
 Route::post('/submitdonation', [DonationFormController::class, 'stoDonation'])->name('submitdonate');
-
+Route::get('/showdonation', [DonationFormController::class, 'showdonation']);
 Route::get('payment/{price}', [PaypalController::class, 'payment'])->name('payment');
 Route::get('cancel', [PaypalController::class, 'cancel'])->name('payment.cancel');
 Route::get('payment/success', [PaypalController::class, 'success'])->name('payment.success');
 
 Route::get('/itemform/{id}', [ItemController::class, 'formItem'])->middleware(['auth', 'verified'])->name('itemform');
 Route::post('/storeitem', [ItemFormController::class, 'stoItem'])->name('storeitem');
-
-// Route::get('/logout', [ProfileController::class, 'destroy'])->name('logout');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::post('/editprofile', [ProfileController::class, 'edit'])->name('editprofile');
@@ -154,6 +166,11 @@ Route::resource('/donateditems', ItemController::class);
 Route::resource('/donatedservives', ServiceController::class);
 Route::resource('/user', UsertController::class);
 Route::resource('/donationform', DonationFormController::class);
+
+
+Route::get('auth/google',[Googleauthcontroller::class, 'redirect'])->name('google-auth');
+Route::get('auth/google/call-back',[Googleauthcontroller::class, 'callbackGoogle']);
+
 Route::resource('/donationitemform', ItemFormController::class);
 Route::resource('/donatedservicesform', ServiceFormController::class);
 Route::resource('/admin', AdminController::class);

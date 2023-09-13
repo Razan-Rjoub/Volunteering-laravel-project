@@ -17,14 +17,15 @@ class Donation_form extends Model
         'phone',
         'name',
         'email',
+        'showdonation'
         
     ];
     public function donation()
     {
         return $this->belongsTo(Donation::class);
     }
-    public function users()
+    public function user()
     {
-        return $this->belongsTo(Donation_form::class);
+        return $this->belongsTo(User::class);
     }
 }

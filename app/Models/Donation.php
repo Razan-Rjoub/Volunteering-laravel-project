@@ -24,6 +24,5 @@ class Donation extends Model
     public function donationform()
     {
         return $this->hasMany(Donation_form::class);
-       
     }
 }

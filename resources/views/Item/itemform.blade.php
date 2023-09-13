@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="hero overlay" style="background-image: url({{asset('style/images/img_v_5-min.jpg')  }})" >
+<div class="hero overlay" style="background-image: url({{asset('style/images/vo55.png')}})" >
     <div class="container">
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 text-center">
@@ -43,12 +43,20 @@
                     <label for="email">Email:</label>
                     <input type="email" class="form-control px-4" id="email" placeholder="Enter your email"
                         value="{{ $user->email }}" name="volunteerEmail" required>
+                        @error('volunteerEmail')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                       
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone:</label>
                     <input type="text" class="form-control px-4" id="phone" placeholder="Enter your phone"
                         value="{{ $user->phone }}" name="volunteerPhone" required>
+                        @error('volunteerPhone')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    
                 </div>
 
 
@@ -78,6 +86,10 @@
                     <label for="Image">Image:</label>
                     <input type="file" class="form-control px-4" id="Image"
                         placeholder="Enter a clear image for the item" name="image" required>
+                        @error('image')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                       
                 </div>
 
             </div>

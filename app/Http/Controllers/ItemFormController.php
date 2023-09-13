@@ -24,67 +24,6 @@ class ItemFormController extends Controller
         return view('dashboardbage.DonatedItemsForm')->with('data', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreItem_formRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreItem_formRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Item_form  $item_form
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Item_form $item_form)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Item_form  $item_form
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Item_form $item_form)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateItem_formRequest  $request
-     * @param  \App\Models\Item_form  $item_form
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateItem_formRequest $request, Item_form $item_form)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Item_form  $item_form
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
 
@@ -98,15 +37,16 @@ class ItemFormController extends Controller
     { 
         $validatedData = $request->validate([
             'volunteerName' => 'required',
-            'volunteerEmail' => 'required',
-            'volunteerPhone' => 'required',
+            'volunteerEmail' => ['required','email', 'ends_with:.com'],
+            'volunteerPhone' => ['required', 'regex:/^07[789]\d{7}$/'],
             'volunteerAddress' => 'required',
             'description' => 'required',
             'status' => 'required',
-            'image' => 'required|max:2048',
-        ]);
-
-
+            'image' => ['required','max:2048'],
+        ],['volunteerPhone.regex' => 'The phone  must start with 07 and to be 10number.'
+        ,'image.regex' => 'The image  extention must  be jpg or jpeg or png or gif .'
+            ]
+        );
 
     if (Auth::check()) {
         $userId = Auth::id();
@@ -114,7 +54,7 @@ class ItemFormController extends Controller
 $filename='';
     if ($request->hasFile('image')) {
         $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
-        $request->image->move(public_path('/assets/img/'), $filename);     
+        $request->image->move(public_path('/assets/img/'), $filename);
     }
      Item_form::create([
         'user_id' =>$userId,
@@ -134,4 +74,5 @@ $filename='';
     '
     ]);
     }
+
 }

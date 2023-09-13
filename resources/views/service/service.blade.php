@@ -7,9 +7,7 @@
 			<div class="row align-items-center justify-content-center">
 				<div class="col-lg-6 text-center">
 					<h1 class="heading text-white mb-2" data-aos="fade-up">Service</h1>
-					<p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">If you have a heart to help people and a passion for making a positive impact, join us as a volunteer and put your skills and knowledge to good use.</p>
-					<p data-aos="fade-up"  data-aos-delay="100">
-					</p>
+					
 
 				</div>
 

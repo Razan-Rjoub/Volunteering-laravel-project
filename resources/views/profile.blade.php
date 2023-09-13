@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.masterdark')
 @section('title', 'Profile')
 
 @section('content')

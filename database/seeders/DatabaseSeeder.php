@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Database\Seeders\CategorySeeder;
 use Database\Seeders\DonationSeeder;
 use Database\Seeders\ItemSeeder;
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+       User::factory(10)->create();
         $this->call([
             CategorySeeder::class,
             DonationSeeder::class,

@@ -112,7 +112,6 @@ class DonationController extends Controller
     {
         $donation = Donation::find($id);
 
-
         if (Auth::check()) {
             $userId = Auth::id();
             $user = User::find($userId);

@@ -100,9 +100,6 @@ $service = Service_form::where('user_id', $id)->with('service')->get();
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
-    /**
-     * Delete the user's account.
-     */
     public function destroy(): RedirectResponse
     {
         Auth::logout();

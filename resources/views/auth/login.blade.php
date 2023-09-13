@@ -61,9 +61,9 @@ height: 100%;
                     <i class="bi bi-facebook" style="color: white"></i>
                   </button>
       
-                  <button type="button" class="btn btn-warning btn-floating mx-1">
+                  <a href="{{route('google-auth')}}"> <button type="button" class="btn btn-warning btn-floating mx-1">
                     <i class="bi bi-google" style="color: white"></i>
-                  </button>
+                </button></a>
       
                   <button type="button" class="btn btn-warning btn-floating mx-1">
                     <i class="bi bi-linkedin" style="color: white"></i>

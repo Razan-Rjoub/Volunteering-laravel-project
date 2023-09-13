@@ -22,6 +22,7 @@ return new class extends Migration
             $table->String('phone');
             $table->String('name');
             $table->string('email');
+            $table->String('showdonation')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->foreign('donation_id')->references('id')->on('donations')->onDelete('CASCADE');

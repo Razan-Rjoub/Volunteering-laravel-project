@@ -5,13 +5,15 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <style type="text/css">
+        @page {    size: 21cm 29.7cm; margin: 30mm 45mm 30mm 45mm; }
+    </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
          @if ($service->count() >0)
-    <div class="mt-5 container"><h3>Services</h3>
+    <div class="mt-5 "><h3>Services</h3>
     <table class="table" >
         <thead class="thead bg-dark" style="color:white">
             <tr>

@@ -49,7 +49,20 @@
                             <div class="px-4 pb-5 pt-3">
 
                                 <h3><a href="{{ route('donationform', ['id' => $item->id]) }}">{{$item->DonationName}}</a></h3>
-                                <p>{{$item->description}}</p>
+                                <p>
+                                    @php
+                                        $description = $item->description;
+                                        $words = explode(' ', $description, 11); // Split into words (up to 11 words)
+                                        $limitedDescription = implode(' ', array_slice($words, 0, 10)); // Join the first 10 words
+                                        $remainingWords = implode(' ', array_slice($words, 10)); // Join the remaining words
+                                    @endphp
+                                
+                                    {{ $limitedDescription }}
+                                    @if (count($words) > 10)
+                                        <span id="more{{ $item->id }}" style="display: none;">{{ $remainingWords}}</span>
+                                        <a href="#" id="link_{{ $item->id }}" onclick="toggleDescription(event, {{ $item->id }}); return false;">Read More...</a>
+                                    @endif
+                                </p>
                                 @php
 
                                 $percentage = ($item->amount_donated / $item->amount_needed) * 100;
@@ -78,4 +91,19 @@
 
 
 </div>
+<script>
+    function toggleDescription(event, itemId) {
+        event.preventDefault(); // Prevent the default behavior (scroll to top)
+
+        var moreText = document.getElementById('more' + itemId);
+        var linkText = document.getElementById('link' + itemId);
+
+        if (moreText.style.display === 'none') {
+            moreText.style.display = 'inline';
+            linkText.innerHTML = 'View Less';
+        } else {
+            moreText.style.display = 'none';
+            linkText.innerHTML = 'View More';
+        }
+    } </script>
 @endsection

@@ -6,8 +6,9 @@
 
         <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('password.update') }}">
+        <form method="POST" action="{{ route('password.Reset') }}">
             @csrf
+            @method('PUT')
 
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
