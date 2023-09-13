@@ -8709,7 +8709,8 @@ textarea.form-control-lg {
         padding: 10px 10px;
         display: inline-block;
         text-decoration: none !important;
-        color:white; }
+        color:white;
+    }
         .site-nav .site-navigation .site-menu > li > a:hover {
           color:#ffc85c; }
       .site-nav .site-navigation .site-menu > li.active > a {

@@ -170,7 +170,7 @@ Route::resource('/donationitemform', ItemFormController::class);
 Route::resource('/donatedservicesform', ServiceFormController::class);
 Route::resource('/admin', AdminController::class);
 Route::resource('/category',CategoryController::class);
-//Route::resource('/dash',CountController::class);
+Route::get('/count',[CountController::class, 'index']);
 
 
 
@@ -178,20 +178,10 @@ Route::resource('/category',CategoryController::class);
 //adminlogin
 Route::get('/adminLogin', [adminLoginController::class, 'adminLogin'])->name('adminLogin');
 Route::post('/adminLoginPost', [adminLoginController::class, 'adminLoginPost'])->name('adminLogin');
-//Route::get('/home', [AdminController::class, 'adminIndex']);
-//Route::get('/homeAdmin', [AdminController::class, 'adminIndex'])->name('home-admin');
 Route::get('/homeAdmin',[CountController::class, 'index'])->name('homeAdmin')->middleware('isLogedin');
 //adminLogout
 Route::get('/adminLogout', [adminLoginController::class, 'adminLogout'])->name('adminLogout');
 Route::get('/dash', [adminLoginController::class, 'adminLogout']);
 
 
-// // adminlogin
-// Route::get('/adminLogin', [adminLoginController::class, 'adminLogin']);
-// Route::post('/adminLoginPost', [adminLoginController::class, 'adminLoginPost'])->name('adminLogin');
-// Route::get('/homeAdmin', [AdminController::class, 'adminIndex'])->name('home-admin')->middleware('isLogedin');
-
-// // adminLogout
-// Route::get('/adminLogout', [adminLoginController::class, 'adminLogout'])->name('adminLogout');
-// Route::get('/dash', [adminLoginController::class, 'adminLogout']);
 

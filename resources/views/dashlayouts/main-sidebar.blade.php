@@ -1,7 +1,7 @@
 <aside class="main-sidebar elevation-4" style="background-color:#59886b; color:black">
     <!-- Brand Logo -->
       <div class="logo">
-      <img src="{{ asset('assets/img/logoV.png') }}" alt="Logo" style="width: 230px;">
+      <img src="{{ asset('assets/img/furnishareyellow.png') }}" alt="Logo"  style="margin: 3% 30%  ; width:100px">
     </div>
     <!-- Sidebar Menu -->
     <nav class="mt-2">
