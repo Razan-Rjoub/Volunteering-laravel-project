@@ -55,7 +55,7 @@
                                                             name="email" value="{{ $user->email }}"
                                                             placeholder="john.doe@example.com" />
                                                         <label for="email">E-mail</label>
-                                                    </div>
+                                                 </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-floating form-floating-outline">
@@ -80,9 +80,13 @@
                                     </div>
 
                                 </form>
-                                <a  href="{{route('pdf')}}"><button class="btn btn-warning mb-5" >download your donations</button> </a>                   </div>
+                                <a  href="{{route('pdf')}}"><button class="btn btn-warning mb-5" >download your donations</button> </a>
+
+                                <a  href="{{route('pdfService')}}"><button class="btn btn-warning mb-5" >download your services donation</button> </a>
+
+                                <a  href="{{route('pdfItem')}}"><button class="btn btn-warning mb-5" >download your items donation</button> </a>                       </div>
                         </div>
- 
+
 
                     </div>
 

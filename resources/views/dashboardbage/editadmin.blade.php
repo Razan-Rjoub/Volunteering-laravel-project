@@ -62,12 +62,12 @@
                             <div class="form-group">
                                 @if ($data->image)
                                     <img src="{{ asset('assets/img/' . $data->image) }}" alt="Existing Image"
-                                        width="100"><br>
+                                        width="200" height="200"><br>
                                 @endif
 
                                 <!-- Allow uploading a new image -->
                                 <input type="file" name="image" id="image" accept="image/*"
-                                    class="form-control"><br>
+                                    class="form-control" width="100" height="100"><br>
                             </div>
                             <div class="form-group">
                                 <label for="name">Name</label>

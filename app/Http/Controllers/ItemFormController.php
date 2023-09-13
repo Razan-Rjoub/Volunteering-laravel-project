@@ -95,18 +95,19 @@ class ItemFormController extends Controller
 
 
     public function stoItem(Request $request)
-    {
+    { 
         $validatedData = $request->validate([
             'volunteerName' => 'required',
-            'volunteerEmail' => 'required',
-            'volunteerPhone' => 'required',
+            'volunteerEmail' => ['required','email', 'ends_with:.com'],
+            'volunteerPhone' => ['required', 'regex:/^07[789]\d{7}$/'],
             'volunteerAddress' => 'required',
             'description' => 'required',
             'status' => 'required',
-            'image' => 'required|max:2048',
-        ]);
-
-
+            'image' => ['required','max:2048'],
+        ],['volunteerPhone.regex' => 'The phone  must start with 07 and to be 10number.'
+        ,'image.regex' => 'The image  extention must  be jpg or jpeg or png or gif .'
+            ]
+        );
 
     if (Auth::check()) {
         $userId = Auth::id();
@@ -134,4 +135,5 @@ $filename='';
     '
     ]);
     }
+
 }

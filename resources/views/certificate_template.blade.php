@@ -28,7 +28,7 @@
         <tbody>
             @foreach ($Donation as $item)
                 <tr>
-                    <td>{{ $item->DonationName }}</td>
+                    <td>{{ $item->donation->DonationName }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->phone }}</td>
@@ -40,84 +40,11 @@
 
 
         </tbody>
-      
+
     </table>
     @endif
-    @if ($service->count() >0)
-    <div class="mt-5 container"><h3>Services</h3>
-    <table class="table" >
-        <thead class="thead bg-dark" style="color:white">
-            <tr>
-                <th scope="col">Service Name</th>
-                <th scope="col">name</th>
-                <th scope="col">email</th>
-                <th scope="col">phone</th>
-                <th scope="col">description</th>
-                <th scope="col">time</th>
-                <th scope="col">Date</th>
 
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($service as $item)
-                <tr>
-                    <td>{{ $item->ServiceName }}</td>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->email }}</td>
-                    <td>{{ $item->phone }}</td>
-                    <td>{{ $item->description }}</td>
-                    <td>{{ $item->time }}</td>
-                    <td>{{ $item->Date }}</td>
-
-
-                </tr>
-            @endforeach
-
-
-        </tbody>
-        
-    </table>
- @endif
-</div> 
-{{-- <div class="mt-5 container">
-    @if ($items->count() >0) <h3>Items</h3>
-    <table class="table">
-        <thead class="thead bg-dark" style="color:white">
-            <tr>
-                <th scope="col">Item Name</th>
-                <th scope="col">name</th>
-                <th scope="col">email</th>
-                <th scope="col">phone</th>
-                <th scope="col">address</th>
-                <th scope="col">description</th>
-                <th scope="col">status</th>
-                <th scope="col">image</th>
-
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($items as $item)
-                <tr>
-                    <td>{{ $item->ItemName}}</td>
-                    <td>{{ $item->volunteerName }}</td>
-                    <td>{{ $item->volunteerEmail }}</td>
-                    <td>{{ $item->volunteerPhone }}</td>
-                    <td>{{ $item->volunteerAddress }}</td>
-                    <td>{{ $item->description }}</td>
-                    <td>{{ $item->status }}</td>
-                    <td> <img src="{{$item->image}}" alt="" style="width:120px"> </td>
-
-
-                </tr>
-            @endforeach
-
-
-        </tbody>
-    </table>
-    @endif
-</div> --}}
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

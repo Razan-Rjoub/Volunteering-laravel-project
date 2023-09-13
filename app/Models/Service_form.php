@@ -18,4 +18,8 @@ class Service_form extends Model
         'time',
         'Date',
     ];
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
 }

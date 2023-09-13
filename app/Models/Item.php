@@ -25,6 +25,10 @@ class Item extends Model
     // {
     //     return $this->hasMany(Donation_form::class);
     // }
+    public function itemform()
+    {
+        return $this->hasMany(Item_form::class);
 
+    }
 
 }

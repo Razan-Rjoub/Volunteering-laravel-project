@@ -99,7 +99,7 @@ class AdminController extends Controller
     {
         $data['name'] = $request->name;
         $data['email'] = $request->email;
-        $data['password'] = $request->password;
+        $data['password'] = bcrypt($request->password);
         $filename = '';
 
         if ($request->hasFile('image')) {
@@ -117,9 +117,10 @@ class AdminController extends Controller
 
     public function adminIndex()
     {
-        return view('home');
+        return view('dashboardbage.home');
     }
-    
+
+
     public function destroy($id)
     {
         Admin::find($id)->delete();
@@ -127,4 +128,6 @@ class AdminController extends Controller
     return redirect('admin')->with('flash_message','Admindeleted!');
 
     }
+
+
 }

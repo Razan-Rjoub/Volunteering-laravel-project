@@ -22,7 +22,7 @@ class ProfileController extends Controller
     {
         $id = Auth::id();
         $user = User::find($id);
-    
+
 
         return view('profile', [
             'user' => $user,
@@ -31,27 +31,34 @@ class ProfileController extends Controller
     public function pdf(){
         $id = Auth::id();
         $user = User::find($id);
-        $donation_form = Donation_form::where('user_id', $id)->get();
-        $Donation = DB::table('donation_forms')
-            ->join('donations', 'donation_forms.donation_id', '=', 'donations.id')
-            ->where('donation_forms.user_id', $id)
-            ->select('donations.DonationName','donation_forms.*')
-            ->get();
-            $service = DB::table('service_forms')
-            ->join('services', 'service_forms.service_id', '=', 'services.id')
-            ->where('service_forms.user_id', $id)
-            ->select('services.ServiceName','service_forms.*')
-            ->get();
-            $items = DB::table('item_forms')
-            ->join('items', 'item_forms.item_id', '=', 'items.id')
-            ->where('item_forms.user_id', $id)
-            ->select('items.ItemName','item_forms.*')
-            ->get();
 
-            $html = view('certificate_template', compact('user', 'Donation','service'));
+$Donation=Donation_form::where('user_id', $id)->with('donation')->get();
 
+
+
+            $html = view('certificate_template', compact('user','Donation'));
             $pdf = PDF::loadHTML($html);
-            return $pdf->download('participation_certificate.pdf'); 
+            return $pdf->download('participation_certificate.pdf');
+    }
+    public function pdfService(){
+        $id = Auth::id();
+        $user = User::find($id);
+
+$service = Service_form::where('user_id', $id)->with('service')->get();
+
+            $html = view('participation_certificate_service', compact('user', 'service'));
+            $pdf = PDF::loadHTML($html);
+            return $pdf->download('participation_certificate_service.pdf');
+    }
+    public function pdfItem(){
+        $id = Auth::id();
+        $user = User::find($id);
+
+        $items = Item_form::where('user_id', $id)->with('item')->get();
+
+            $html = view('participation_certificate_item', compact('user', 'items'));
+            $pdf = PDF::loadHTML($html);
+            return $pdf->download('participation_certificate_item.pdf');
     }
     public function edit(Request $request)
     {

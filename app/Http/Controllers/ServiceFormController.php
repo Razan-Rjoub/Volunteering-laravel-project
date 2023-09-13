@@ -36,7 +36,19 @@ class ServiceFormController extends Controller
         return view('Service.serviceform');
 
 
+
     }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+
+
+
+
+
 
 
 
@@ -100,6 +112,7 @@ class ServiceFormController extends Controller
 
 
 
+
     public function store(StoreService_formRequest $request)
     {
         //
@@ -152,6 +165,8 @@ class ServiceFormController extends Controller
         Service_form::destroy($id);
     return redirect('donatedservicesform')->with('flash_message','donated services form deleted!');
     }
+
+
 
 
 }

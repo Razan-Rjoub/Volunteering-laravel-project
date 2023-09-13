@@ -6,13 +6,13 @@ table
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
 
 @section('title-bage2')
-Admins
+Donation
 @endsection
 
 
@@ -38,24 +38,24 @@ Admins
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-        Add new Donation
+        Add new service
     </div>
     <div class="card-body">
-      <form action="{{ url('/admin') }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ url('/donatione') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <label>Name</label><br>
-        <input type="text" name="DonationName" id="DonationName" class="form-control">
-        <span>@error('DonationName'){{$message}} @enderror</span><br>
-        <label>Email</label><br>
-        <input type="email" name="email" id="email" class="form-control">
-        <span>@error('email'){{$message}} @enderror</span><br>
-        <label>Password</label><br>
-        <input type="password" name="password" id="password" class="form-control">
-        <span>@error('password'){{$message}} @enderror</span><br><br>
+        <input type="text" name="DonationName" id="DonationName" class="form-control"><br>
+        <span>@error('DonationName'){{$message}} @enderror</span><br><br>
+        <label>Description</label><br>
+        <input type="text" name="description" id="description" class="form-control"><br>
+        <span>@error('description'){{$message}} @enderror</span><br><br>
         <label for="image">Upload Image:</label>
-        <input type="file" id="image" name="image" accept="image/*" ><br>
+        <input type="file" id="image" name="image" accept="image/*" width="100" height="100"><br>
         <span>@error('image'){{$message}} @enderror</span><br><br>
+        <label>amount_needed</label><br>
+        <input type="text" name="amount_needed" id="amount_needed" class="form-control"><br>
+        <span>@error('amount_needed'){{$message}} @enderror</span><br><br>
         <input type="submit" value="Save" class="btn btn-success"><br>
       </form>
 

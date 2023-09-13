@@ -33,16 +33,10 @@ class CategoryController extends Controller
             'user'=>$user,
         ]);
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function create()
     {
         return view('dashboardbage.createcategory');
-
-
     }
 
     public function aboutus(){
@@ -58,12 +52,6 @@ class CategoryController extends Controller
     }
 
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreCategoryRequest  $request
-     * @return \Illuminate\Http\Response
-     */
 
      public function store(StoreCategoryRequest $request)
     {
@@ -89,23 +77,9 @@ class CategoryController extends Controller
 
         return redirect('category')->with('flash_message', 'Category Added!');
      }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Category $category)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function edit($id)
     {
         $data=Category::find($id);
@@ -113,13 +87,7 @@ class CategoryController extends Controller
     }
 
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateCategoryRequest  $request
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(UpdateCategoryRequest $request, $id)
     {
         $data['name'] = $request->name;
@@ -140,12 +108,7 @@ class CategoryController extends Controller
         return redirect('category')->with('flash_message','Category Update!');
 
     }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
 

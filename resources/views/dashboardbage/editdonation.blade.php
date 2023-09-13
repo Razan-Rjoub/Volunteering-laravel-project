@@ -1,4 +1,3 @@
-
 @extends('dashlayouts.master')
 @section('title')
 table
@@ -7,7 +6,7 @@ table
 
 @section('title-bage1')
 
-dashboard
+Dashboard
 
 @endsection
 
@@ -39,10 +38,10 @@ Donations
 @section('content')
 <div class="card" style="margin: 20px">
     <div class="card-header">
-      Edit user info
+      Edit donation
     </div>
     <div class="card-body">
-        <form action="{{ url('donatione/' .$data->id) }}" method="POST"  enctype="multipart/form-data"  enctype="multipart/form-data">
+        <form action="{{ url('donatione/' .$data->id) }}" method="POST"  enctype="multipart/form-data">
             @csrf
             @method("PATCH")
             <input type="hidden" name="id" value="{{ $data->id }}" id="id">
@@ -54,9 +53,11 @@ Donations
             <img src="{{ asset('assets/img/' . $data->image) }}" alt="Existing Image" width="100"><br>
               @endif
         <!-- Allow uploading a new image -->
-            <input type="file" name="image" id="image" accept="image/*" class="form-control"><br>
-            <label>Amount</label><br>
-            <input type="number" name="amount_needed" value="{{ $data->amount_needed }}" id="amount_needed" class="form-control"><br>
+            <input type="file" name="image" id="image" accept="image/*" class="form-control" width="100" height="100"><br>
+
+            <label>amount_needed</label><br>
+            <input type="text" name="amount_needed" value="{{ $data->amount_needed}}"   id="amount_needed" class="form-control"><br>
+
             <input type="submit" value="Update" class="btn btn-success"><br>
         </form>
     </div>

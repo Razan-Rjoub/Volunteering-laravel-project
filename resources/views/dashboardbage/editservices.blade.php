@@ -51,7 +51,7 @@ Donations
             <label>Description</label><br>
             <input type="text" name="description" value="{{ $data->description}}"   id="description" class="form-control"><br>
             @if ($data->image)
-            <img src="{{ asset('assets/img/' . $data->image) }}" alt="Existing Image" width="100"><br>
+            <img src="{{ asset('assets/img/' . $data->image) }}" alt="Existing Image" width="100" height="100"><br>
               @endif
         <!-- Allow uploading a new image -->
             <input type="file" name="image" id="image" accept="image/*" class="form-control"><br>

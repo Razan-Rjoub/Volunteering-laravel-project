@@ -53,11 +53,10 @@ Donation form
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-
-                  <th>Price</th>
+                    <th>Name</th>
+                    <th>Email</th>
                   <th>Phone</th>
-                  <th>Name</th>
-                  <th>Email</th>
+                  <th>Donation Amount</th>
                   <th>Action</th>
 
 
@@ -68,11 +67,14 @@ Donation form
                     @foreach ( $data as $item )
                 <tr>
 
+                    <td>{{ $item->name}}</td>
 
+                    <td><a href="mailto:{{ $item->email }}">{{ $item->email}}</a></td>
+                    <td>{{ $item->phone }}</td>
                   <td>{{ $item->price }}</td>
-                  <td>{{ $item->phone }}</td>
-                  <td>{{ $item->name}}</td>
-                  <td>{{ $item->email}}</td>
+
+
+
 
 
                 <td>

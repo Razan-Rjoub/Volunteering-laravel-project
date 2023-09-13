@@ -20,4 +20,8 @@ protected $fillable = [
     'status',
     'image',
 ];
+public function item()
+{
+    return $this->belongsTo(Item::class);
+}
 }
