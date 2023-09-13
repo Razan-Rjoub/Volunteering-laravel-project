@@ -17,7 +17,7 @@
 
 		{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css"> --}}
 		<link rel="stylesheet" href="{{ asset('hero/css/style.css') }}">
-
+		<link href='{{ asset('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css')}}' rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -66,6 +66,14 @@
 			font-size: 15px
 		}
    }
+
+
+
+
+
+
+
+
     </style>
 </head>
 
@@ -95,6 +103,7 @@
 								<li class="{{ request()->routeIs('Give Donation') ? 'active' : '' }}"><a href="{{ route('Give Donation') }}">Donation</a></li>
 								<li class="{{ request()->routeIs('Give Services') ? 'active' : '' }}"><a href="{{ route('Give Services') }}">Services</a></li>
 								<li class="{{ request()->routeIs('Give Items') ? 'active' : '' }}"><a href="{{ route('Give Items') }}">Item</a></li>
+								<li class="{{ request()->routeIs('volunteer') ? 'active' : '' }}"><a href="{{ route('volunteer') }}">Volunteer</a></li>
 								<li class="{{ request()->routeIs('aboutus') ? 'active' : '' }}"><a href="{{ route('aboutus') }}">About</a></li>
 								<li class="{{ request()->routeIs('contact') ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
 							</ul>

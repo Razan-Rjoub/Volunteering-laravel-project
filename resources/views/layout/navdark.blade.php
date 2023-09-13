@@ -74,7 +74,7 @@
             padding-bottom: 0px;
         }
         .site-nav .site-navigation .site-menu > li > a{
-            color:rgb(0 0 0 / 67%)
+            color:#222;
             
         }
 		
@@ -84,7 +84,7 @@
 
 <body>
 
-    <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu site-navbar-target" style="color:rgb(0 0 0 / 67%)">
         <div class="site-mobile-menu-header">
             <div class="site-mobile-menu-close">
                 <span class="icofont-close js-menu-toggle"></span>
@@ -108,6 +108,7 @@
 								<li class="{{ request()->routeIs('Give Donation') ? 'active' : '' }}"><a href="{{ route('Give Donation') }}">Donation</a></li>
 								<li class="{{ request()->routeIs('Give Services') ? 'active' : '' }}"><a href="{{ route('Give Services') }}">Services</a></li>
 								<li class="{{ request()->routeIs('Give Items') ? 'active' : '' }}"><a href="{{ route('Give Items') }}">Item</a></li>
+								<li class="{{ request()->routeIs('volunteer') ? 'active' : '' }}"><a href="{{ route('volunteer') }}">Volunteer</a></li>
 								<li class="{{ request()->routeIs('aboutus') ? 'active' : '' }}"><a href="{{ route('aboutus') }}">About</a></li>
 								<li class="{{ request()->routeIs('contact') ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
 							</ul>

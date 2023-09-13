@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use App\Models\Service;
@@ -13,13 +14,16 @@ use Auth;
 
 class ServiceController extends Controller
 {
-   
+
+
+
   public function inService()
 {
     $data= Service::all();
     $userId = Auth::id();
     $user = User::find($userId);
-    return view('Service.service',['service'=>$data,'user'=>$user]); 
+    return view('Service.service',['service'=>$data,'user'=>$user]);
+
 }
 
 
@@ -31,6 +35,7 @@ class ServiceController extends Controller
     }
 
 
+  
 public function formService($id) {
     $service = Service::find($id);
 
@@ -42,8 +47,8 @@ public function formService($id) {
         return redirect()->route('login');
     }
 
-    
- 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -171,5 +176,5 @@ public function formService($id) {
 
 
 
- 
+
 }

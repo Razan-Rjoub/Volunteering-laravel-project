@@ -9,7 +9,7 @@
             <div class="item" style="margin-bottom: 20px; margin-top: 20px">
                 <div class="feature bg-color-1">
                     <img src="{{ $users->where('id', $form->user_id)->first()->image }}" alt="Image"
-                        class="img-fluid mb-4 " style="height: 300px; width:450px">
+                        class="img-fluid mb-4 " style="height: 300px; width:345px">
                     <div class="row">
                         <div class="col-xl-6">
                             <h3 class="mb-0">{{ $users->where('id', $form->user_id)->first()->name }}</h3>

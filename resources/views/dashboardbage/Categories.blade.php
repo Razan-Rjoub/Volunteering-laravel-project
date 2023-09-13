@@ -46,7 +46,7 @@ Donations
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <a href=" {{ url('/category/create') }}" > <button class="btn btn-primary mb-2">Add New Category</button></a>
+
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
@@ -67,7 +67,7 @@ Donations
                   <td>{{ $item->description }}</td>
                  <td>
                   @if ($item->image)
-                  <img src="{{ $item->image }}" alt="Image" width="100">
+                  <img src="{{ $item->image }}" alt="Image" width="100" height="100">
 
                   @else
                   No Image

@@ -17,8 +17,6 @@ class Donation_form extends Model
         'phone',
         'name',
         'email',
-        'showdonation'
-        
     ];
     public function donation()
     {

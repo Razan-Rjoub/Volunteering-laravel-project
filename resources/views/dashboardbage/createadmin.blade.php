@@ -62,7 +62,7 @@
                     @enderror
                 </span><br><br>
                 <label for="image">Upload Image:</label>
-                <input type="file" id="image" name="image" accept="image/*"><br>
+                <input type="file" id="image" name="image" accept="image/*" width="100" height="100"><br>
                 <span>
                     @error('image')
                         {{ $message }}

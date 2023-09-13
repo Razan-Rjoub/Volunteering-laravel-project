@@ -86,7 +86,7 @@
                                 
                                 <a  href="{{route('pdfItem')}}"><button class="btn btn-warning mb-5" >download your items donation</button> </a>                       </div>
                         </div>
- 
+
 
                     </div>
 

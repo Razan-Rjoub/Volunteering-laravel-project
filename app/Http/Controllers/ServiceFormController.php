@@ -26,34 +26,34 @@ class ServiceFormController extends Controller
     
 
 
-    
+
     public function infoService()
     {
         return view('Service.serviceform');
 
-        
-     
+
+
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-  
- 
-  
-  
-     
-         
 
-   
-  
+
+
+
+
+
+
+
+
      public function stoService(Request $request)
      {
          $request->validate([
              'name' => 'required',
              'email' => ['required', 'email', 'ends_with:.com'],
-             'phone' => ['required', 'regex:/^07[789]\d{7}$/'], 
+             'phone' => ['required', 'regex:/^07[789]\d{7}$/'],
              'description' => 'required',
              'date' => 'required|date',
              'time' => 'required',
@@ -62,12 +62,13 @@ class ServiceFormController extends Controller
            [
             'phone.regex' => 'The phone  must start with 07 and to be 10 number.'
             ]);
-         
-         
+
+
         if (Auth::check()) {
             $userId = Auth::id();
     $user = User::find($userId);
           }
+
          Service_form::create([
              'user_id' => Auth::id(),
              'name' => $request->input('name'),
@@ -78,14 +79,15 @@ class ServiceFormController extends Controller
              'Date' => $request->input('date'),
              'time' => $request->input('time')
          ]);
-         // Redirect back with a success message or handle the response as needed
+
+
          return redirect()->route('paysuccess')->with([
-            'success' => 'Donation successfully
-        '
-        ]);     }
-     
-         
-   
+            'success' => 'Donation successfully'
+        ]);
+       }
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -103,8 +105,8 @@ class ServiceFormController extends Controller
      * @return \Illuminate\Http\Response
      */
 
- 
-   
+
+
 
 
     public function store(StoreService_formRequest $request)
@@ -159,10 +161,10 @@ class ServiceFormController extends Controller
         Service_form::destroy($id);
     return redirect('donatedservicesform')->with('flash_message','donated services form deleted!');
     }
-  
 
 
-  
+
+
 }
 
 

@@ -3,14 +3,15 @@
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
-                <span class="subheading mb-3">Causes</span>
-                <h2 class="heading">Featured Causes</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Animi quaerat, eaque asperiores quos
-                    natus, ratione.</p>
+                <h2 class="heading">Emergency Cases</h2>
+                <p>Donations for emergency cases are a lifeline in times of crisis. Your
+                    contribution can make a profound difference, providing crucial support
+                    to those facing urgent needs, such as disaster survivors, medical emergencies,
+                    and humanitarian crises.</p>
 
                 <div id="features-slider-nav" class="mt-5 d-flex justify-content-center">
                     <button class="btn btn-primary prev d-flex align-items-center me-2" data-controls="prev"> <span
-                            class="icon-chevron-left"></span> <span class="ms-3">Prev</span></button>
+                            class="icon-chevron-left"></span> <span class="ms-3" style="background-color:rgba(89, 136, 107, 0.7)">Prev</span></button>
                     <button class="btn btn-primary next d-flex align-items-center" data-controls="next"><span
                             class="me-3">Next</span> <span class="icon-chevron-right"></span></button>
                 </div>
@@ -30,7 +31,20 @@
                             <div class="px-4 pb-5 pt-3">
 
                                 <h3><a href="#">{{$item->DonationName}}</a></h3>
-                                <p>{{$item->description}}</p>
+                                <p>
+                                    @php
+                                        $description = $item->description;
+                                        $words = explode(' ', $description, 11); // Split into words (up to 11 words)
+                                        $limitedDescription = implode(' ', array_slice($words, 0, 10)); // Join the first 10 words
+                                        $remainingWords = implode(' ', array_slice($words, 10)); // Join the remaining words
+                                    @endphp
+
+                                    {{ $limitedDescription }}
+                                    @if (count($words) > 10)
+                                        <span id="more{{ $item->id }}" style="display: none;">{{ $remainingWords }}</span>
+                                        <a href="#" id="link{{ $item->id }}" onclick="toggleDescription(event, {{ $item->id }}); return false;">Read More...</a>
+                                    @endif
+                                </p>
 
                                 @php
 

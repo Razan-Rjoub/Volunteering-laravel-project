@@ -71,7 +71,7 @@ Donations Services
                   <td>{{ $item->description }}</td>
                   <td>
                     @if ($item->image)
-                    <img src="{{ $item->image }}" alt="Image" width="100">
+                    <img src="{{ $item->image }}" alt="Image" width="100" height="100">
 
                     @else
                     No Image
