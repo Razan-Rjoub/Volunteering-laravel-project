@@ -37,7 +37,7 @@ height: 100%;
         <div class="container-fluid h-custom">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-9 col-lg-6 col-xl-5">
-              <img src="assets/img/Charity-cuate.png"
+              <img src="assets/img/loginimage.png"
                 class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
@@ -62,7 +62,7 @@ height: 100%;
                   </button> --}}
 
                   <a href="{{route('google-auth')}}"> <button type="button" class="btn btn-warning btn-floating mx-1">
-                    <i class="bi bi-google" style="color: white"></i>
+                    <i class="bi bi-google" style="color: white; "></i>
                 </button></a>
 
                   {{-- <button type="button" class="btn btn-warning btn-floating mx-1">

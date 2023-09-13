@@ -123,10 +123,10 @@
 											</ul>
 										</div>
 									@else
-										<a href="{{ route('login') }}" class="btn  btn-warning" style="color: white">
+										<a href="{{ route('login') }}" class="btn  btn-warning" style="color: white;">
 											<span>Login</span>
 										</a>
-										<a href="{{ route('register') }}" class="btn btn-primary">
+										<a href="{{ route('register') }}" class="btn btn-primary" style=" margin-left:10px">
 											<span>Register</span>
 										</a>
 									@endauth

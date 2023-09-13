@@ -1,3 +1,3 @@
 <a href="/">
-    <img src="assets/img/logo3.png" alt="" style="width:200px; margin-top:20px">
+    <img src="assets/img/furnishareblack.png" alt="" style="width:150px; margin-top:20px">
 </a>
