@@ -23,7 +23,7 @@ height: calc(100% - 73px);
 height: 100%;
 }
 }
- 
+
     </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -37,7 +37,7 @@ height: 100%;
         <div class="container-fluid h-custom">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-9 col-lg-6 col-xl-5">
-              <img src="assets/img/Charity-cuate.png"
+              <img src="assets/img/loginimage.png"
                 class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
@@ -57,23 +57,23 @@ height: 100%;
                 @csrf
                 <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                   <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-                  <button type="button" class="btn btn-warning btn-floating mx-1">
+                  {{-- <button type="button" class="btn btn-warning btn-floating mx-1">
                     <i class="bi bi-facebook" style="color: white"></i>
-                  </button>
-      
+                  </button> --}}
+
                   <a href="{{route('google-auth')}}"> <button type="button" class="btn btn-warning btn-floating mx-1">
-                    <i class="bi bi-google" style="color: white"></i>
+                    <i class="bi bi-google" style="color: white; "></i>
                 </button></a>
-      
-                  <button type="button" class="btn btn-warning btn-floating mx-1">
+
+                  {{-- <button type="button" class="btn btn-warning btn-floating mx-1">
                     <i class="bi bi-linkedin" style="color: white"></i>
-                  </button>
+                  </button> --}}
                 </div>
-      
+
                 <div class="divider d-flex align-items-center my-4">
                   <p class="text-center fw-bold mx-3 mb-0">Or</p>
                 </div>
-      
+
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                   <input  type="email" name="email" :value="old('email')" required autofocus
@@ -81,7 +81,7 @@ height: 100%;
                     placeholder="Enter a valid email address" />
                   <label class="form-label"for="email" value="{{ __('Email') }}">Email address</label>
                 </div>
-      
+
                 <!-- Password input -->
                 <div class="form-outline mb-3">
                   <input type="password" name="password" required autocomplete="current-password"
@@ -90,7 +90,7 @@ height: 100%;
                   <label class="form-label" for="password"
                   value="{{ __('Password') }}">Password</label>
                 </div>
-      
+
                 <div class="d-flex justify-content-between align-items-center">
                   <!-- Checkbox -->
                   <div class="form-check">
@@ -106,7 +106,7 @@ height: 100%;
                   </a>
               @endif
                 </div>
-      
+
                 <div class="text-center text-lg-start mt-4 pt-2">
                     <button type="submit" class="btn btn-warning btn-lg btn-block" style="color:white">
                         {{ __('Log in') }}</button>

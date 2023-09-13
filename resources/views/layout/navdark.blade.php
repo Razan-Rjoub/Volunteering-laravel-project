@@ -17,7 +17,7 @@
 
 		{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css"> --}}
 		<link rel="stylesheet" href="{{ asset('hero/css/style.css') }}">
-
+		<link href='{{ asset('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css')}}' rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -49,7 +49,7 @@
 
     <title>@yield('title')</title>
     <style>
-		.imgnav{
+		/* .imgnav{
 			max-width: 70px;
 		}
    @media only screen and (min-width: 481px) and (max-width: 768px) {
@@ -65,8 +65,9 @@
 		.name{
 			font-size: 15px
 		}
-     
-   }
+   } */
+
+
    .site-nav{
             /* background-color: #222; */
             padding-top: 10px;
@@ -77,14 +78,17 @@
             color:#222;
             
         }
-		
+
+
+
+
 
     </style>
 </head>
 
 <body>
 
-    <div class="site-mobile-menu site-navbar-target" style="color:rgb(0 0 0 / 67%)">
+    <div class="site-mobile-menu site-navbar-target">
         <div class="site-mobile-menu-header">
             <div class="site-mobile-menu-close">
                 <span class="icofont-close js-menu-toggle"></span>
@@ -99,12 +103,12 @@
 				<div class="site-navigation">
 					<div class="row g-0 align-items-center">
 						<div class="col-2">
-							<img class="logo" src="{{asset('assets/img/furnishareyellow.png')}}" alt="" style="width:75px">
-							{{-- <a href="index.html" class="logo m-0 float-start text-white">Volunteer</a> --}}
+
+							<a href="{{ route('home') }}" class="logo m-0 float-start text-white"><img src="{{ asset('assets/img/furnishareblack.png')}}" alt="" width="80"></a>
 						</div>
 						<div class="col-6 text-center">
-							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-								<li class="{{ request()->routeIs('home') ? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
+							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto" >
+								<li class="{{ request()->routeIs('home') ? 'active' : '' }}" ><a href="{{ route('home') }}">Home</a></li>
 								<li class="{{ request()->routeIs('Give Donation') ? 'active' : '' }}"><a href="{{ route('Give Donation') }}">Donation</a></li>
 								<li class="{{ request()->routeIs('Give Services') ? 'active' : '' }}"><a href="{{ route('Give Services') }}">Services</a></li>
 								<li class="{{ request()->routeIs('Give Items') ? 'active' : '' }}"><a href="{{ route('Give Items') }}">Item</a></li>
@@ -120,8 +124,9 @@
 										<div class="nav-item navbar-dropdown dropdown-user dropdown">
 											<a class="nav-link dropdown-toggle" href="#" id="userDropdown" data-bs-toggle="dropdown">
 												<div style="display: flex; align-items: center; justify-content: flex-end;">
-													<span class="name" style="color:white; padding-right:20px">{{ auth()->user()->name }}</span>
-													<img src="{{ auth()->user()->image }}" alt="Image" class="imgnav img-fluid rounded-circle" >
+													<span class="name" style="color:rgb(0, 0, 0); padding-right:7px;color:black">{{ auth()->user()->name }}</span>
+                                                    <div style="color: #000000; padding-right:10px; font-size:13px"><i class='bx bxs-down-arrow'></i></div>
+													<img src="{{ auth()->user()->image }}" alt="Image" class="imgnav img-fluid rounded-circle" style="width: 50px; height: 50px;" >
 												</div>
 											</a>
 											<ul class="dropdown-menu">
@@ -143,10 +148,10 @@
 											</ul>
 										</div>
 									@else
-										<a href="{{ route('login') }}" class="btn  btn-warning" style="color: white">
+										<a href="{{ route('login') }}" class="btn  btn-warning" style="color: white;">
 											<span>Login</span>
 										</a>
-										<a href="{{ route('register') }}" class="btn btn-primary">
+										<a href="{{ route('register') }}" class="btn btn-primary" style=" margin-left:10px">
 											<span>Register</span>
 										</a>
 									@endauth

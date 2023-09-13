@@ -94,12 +94,12 @@
 				<div class="site-navigation">
 					<div class="row g-0 align-items-center">
 						<div class="col-2">
-							<img class="logo" src="{{asset('assets/img/furnishareyellow.png')}}" alt="" style="width:85px">
-							{{-- <a href="index.html" class="logo m-0 float-start text-white">Volunteer</a> --}}
+
+							<a href="{{ route('home') }}" class="logo m-0 float-start text-white"><img src="{{ asset('assets/img/furnishareyellow.png')}}" alt="" width="80"></a>
 						</div>
 						<div class="col-6 text-center">
-							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-								<li class="{{ request()->routeIs('home') ? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
+							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto" >
+								<li class="{{ request()->routeIs('home') ? 'active' : '' }}" ><a href="{{ route('home') }}">Home</a></li>
 								<li class="{{ request()->routeIs('Give Donation') ? 'active' : '' }}"><a href="{{ route('Give Donation') }}">Donation</a></li>
 								<li class="{{ request()->routeIs('Give Services') ? 'active' : '' }}"><a href="{{ route('Give Services') }}">Services</a></li>
 								<li class="{{ request()->routeIs('Give Items') ? 'active' : '' }}"><a href="{{ route('Give Items') }}">Item</a></li>
@@ -115,8 +115,9 @@
 										<div class="nav-item navbar-dropdown dropdown-user dropdown">
 											<a class="nav-link dropdown-toggle" href="#" id="userDropdown" data-bs-toggle="dropdown">
 												<div style="display: flex; align-items: center; justify-content: flex-end;">
-													<span class="name" style="color:white; padding-right:20px">{{ auth()->user()->name }}</span>
-													<img src="{{ auth()->user()->image }}" alt="Image" class="imgnav img-fluid rounded-circle" >
+													<span class="name" style="color:white; padding-right:7px;">{{ auth()->user()->name }}</span>
+                                                    <div style="color: #fff; padding-right:10px; font-size:13px"><i class='bx bxs-down-arrow'></i></div>
+													<img src="{{ auth()->user()->image }}" alt="Image" class="imgnav img-fluid rounded-circle" style="width: 50px; height: 50px;" >
 												</div>
 											</a>
 											<ul class="dropdown-menu">
@@ -138,10 +139,10 @@
 											</ul>
 										</div>
 									@else
-										<a href="{{ route('login') }}" class="btn  btn-warning" style="color: white">
+										<a href="{{ route('login') }}" class="btn  btn-warning" style="color: white;">
 											<span>Login</span>
 										</a>
-										<a href="{{ route('register') }}" class="btn btn-primary">
+										<a href="{{ route('register') }}" class="btn btn-primary" style=" margin-left:10px">
 											<span>Register</span>
 										</a>
 									@endauth

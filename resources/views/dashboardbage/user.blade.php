@@ -53,7 +53,7 @@ User
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-
+                <th>Image</th>
                   <th>Name</th>
                   <th>Email</th>
                   <th>Phone</th>
@@ -65,10 +65,18 @@ User
 
                     @foreach ( $data as $item )
                 <tr>
+                    <td>
+                        @if ($item->image)
+                        <img src="{{ $item->image }}" alt="Image" width="100" height="100">
+
+                        @else
+                        No Image
+                        @endif
+                      </td>
 
                   <td>{{ $item->name }}</td>
-                  <td>{{ $item->email }}</td>
 
+                  <td><a href="mailto:{{ $item->email }}">{{ $item->email}}</a></td>
                   <td>{{ $item->phone }}</td>
 
                 <td>

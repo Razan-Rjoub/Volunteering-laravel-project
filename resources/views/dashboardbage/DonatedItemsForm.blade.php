@@ -55,6 +55,7 @@ Donation form
                 <tr>
 
                   <th>Volnteer name</th>
+                  <th>Volunteer Email</th>
                   <th>Volunteer Phone</th>
                   <th>Volunteer Address</th>
                   <th>Description</th>
@@ -73,6 +74,7 @@ Donation form
 
 
                   <td>{{ $item->volunteerName }}</td>
+                  <td><a href="mailto:{{ $item->volunteerEmail }}">{{ $item->volunteerEmail}}</a></td>
                   <td>{{ $item->volunteerPhone}}</td>
                   <td>{{ $item->volunteerAddress}}</td>
                   <td>

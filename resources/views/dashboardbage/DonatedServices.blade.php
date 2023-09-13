@@ -68,7 +68,13 @@ Donations Services
                 <tr>
 
                   <td>{{ $item->ServiceName }}</td>
-                  <td>{{ $item->description }}</td>
+                  <td>
+                    <div class="description-wrapper">
+                        <span class="short-description">{{ Str::limit($item->description,70) }}</span>
+                        <span class="full-description" style="display: none;">{{ $item->description }}</span>
+                    </div>
+                    <a href="#" class="read-more">Read More</a>
+                </td>
                   <td>
                     @if ($item->image)
                     <img src="{{ $item->image }}" alt="Image" width="100" height="100">
@@ -129,7 +135,31 @@ Donations Services
 @endsection
 
 @section('scripts')
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const readMoreLinks = document.querySelectorAll('.read-more');
 
+      readMoreLinks.forEach(function (link) {
+          link.addEventListener('click', function (e) {
+              e.preventDefault();
+
+              const descriptionWrapper = this.previousElementSibling;
+              const shortDescription = descriptionWrapper.querySelector('.short-description');
+              const fullDescription = descriptionWrapper.querySelector('.full-description');
+
+              if (shortDescription.style.display === 'none') {
+                  shortDescription.style.display = 'inline';
+                  fullDescription.style.display = 'none';
+                  this.innerText = 'Read More';
+              } else {
+                  shortDescription.style.display = 'none';
+                  fullDescription.style.display = 'inline';
+                  this.innerText = 'Read Less';
+              }
+          });
+      });
+  });
+</script>
 
 <script src="{{URL::asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->

@@ -33,7 +33,7 @@ class UsertController extends Controller
                 'required',
 
             ]]
-            
+
 
         );
 
@@ -55,11 +55,17 @@ class UsertController extends Controller
     }
 
 
+    
+
+
+
     public function show($id)
     {
         $data=User::find($id);
         return view('dashboardbage.user')->with('data',$data);
     }
+
+
     public function edit($id)
     {
         $data=User::find($id);
@@ -72,30 +78,59 @@ class UsertController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
+
+
+    // public function update(Request $request, $id)
+    // {
+    //     $data['name'] = $request->name;
+    //     $data['email'] = $request->email;
+    //     $data['password'] = $request->password;
+    //     $data['phone']= $request->phone;
+    //     $filename = '';
+
+    //     if ($request->hasFile('image')) {
+    //         $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+    //         $request->image->move(public_path('/assets/img/'), $filename);
+    //         $data['image'] = $filename;
+    //     } else {
+    //         unset($data['image']);
+    //     }
+
+
+    //     User::where(['id' => $id])->update($data);
+    //     return redirect('user')->with('flash_message','admin Update!');
+    // }
+
     public function update(Request $request, $id)
     {
-        $data['name'] = $request->name;
-        $data['email'] = $request->email;
-        $data['password'] = $request->password;
-        $data['phone']= $request->phone;
-        $filename = '';
+        $data = User::find($id);
+
 
         if ($request->hasFile('image')) {
+
+            if (file_exists(public_path($data->image))) {
+                unlink(public_path($data->image));
+            }
+
+
             $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
             $request->image->move(public_path('/assets/img/'), $filename);
-            $data['image'] = $filename;
-        } else {
-            unset($data['image']);
+
+
+            $data->update(['image' => $filename]);
         }
 
 
-        User::where(['id' => $id])->update($data);
-        return redirect('user')->with('flash_message','admin Update!');
+        $data->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone'=>$request->phone,
+            'password'=> bcrypt($request->password),
+
+        ]);
+
+        return redirect('user')->with('flash_message', 'user Update!');
     }
-
-
-
-
 
 
     public function destroy($id)

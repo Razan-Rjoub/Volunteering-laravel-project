@@ -18,6 +18,7 @@
 
         .h-custom {
             height: calc(100% - 73px);
+            width: 20px;
         }
 
         @media (max-width: 450px) {
@@ -38,7 +39,7 @@
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="assets/img/Charity-cuate.png" class="img-fluid" alt="Sample image">
+                    <img src="assets/img/loginimage.png" class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <x-guest-layout>
@@ -58,17 +59,13 @@
                                 <div
                                     class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                                     <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-                                    <button type="button" class="btn btn-warning btn-floating mx-1">
-                                        <i class="bi bi-facebook" style="color: white"></i>
-                                    </button>
+
 
                                     <a href="{{route('google-auth')}}"> <button type="button" class="btn btn-warning btn-floating mx-1">
-                                        <i class="bi bi-google" style="color: white"></i>
+                                        <i class="bi bi-google" style=" width: 20px;color: white"></i>
                                     </button></a>
 
-                                    <button type="button" class="btn btn-warning btn-floating mx-1">
-                                        <i class="bi bi-linkedin" style="color: white"></i>
-                                    </button>
+
                                 </div>
 
                                 <div class="divider d-flex align-items-center my-4">

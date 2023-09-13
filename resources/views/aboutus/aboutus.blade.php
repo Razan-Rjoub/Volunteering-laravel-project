@@ -25,7 +25,7 @@
 		<div class="container">
 			<div class="row g-5 justify-content-between">
 				<div class="col-lg-6 has-bg" data-aos="fade-right">
-					<img src="style/images/hero_2.jpg" alt="Image" class="img-fluid img-box-shadow rounded">
+					<img src= "style/images/his44.png" alt="Image" class="img-fluid img-box-shadow rounded" width="550" height="500">
 				</div>
 				<div class="col-lg-6 align-self-center" data-aos="fade-left" data-aos-delay="100">
 					<h2 class="heading mb-4">History</h2>

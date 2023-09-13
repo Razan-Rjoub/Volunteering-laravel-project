@@ -168,7 +168,7 @@ Route::resource('/donationitemform', ItemFormController::class);
 Route::resource('/donatedservicesform', ServiceFormController::class);
 Route::resource('/admin', AdminController::class);
 Route::resource('/category',CategoryController::class);
-//Route::resource('/dash',CountController::class);
+Route::get('/count',[CountController::class, 'index']);
 
 
 
